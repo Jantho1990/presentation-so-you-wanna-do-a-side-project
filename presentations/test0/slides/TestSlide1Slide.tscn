@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7tn5mmu6pl4t"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_33nrj"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_53rlj"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_cb4bl"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_sisbx"]
+
+[sub_resource type="Resource" id="Resource_q0w3p"]
+script = ExtResource("2_53rlj")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_vt40s"]
+script = ExtResource("3_sisbx")
+animation_duration = 0.5
+
+[node name="TestSlide1Slide" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_33nrj")
+steps = Array[ExtResource("2_cb4bl")]([SubResource("Resource_q0w3p"), SubResource("Resource_vt40s")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBox"]
+layout_mode = 2
+text = "Hey, it's a shark!"
+
+[node name="Label2" type="Label" parent="PanelContainer/VBox"]
+layout_mode = 2
+text = "It jumped over the moaning petunia."

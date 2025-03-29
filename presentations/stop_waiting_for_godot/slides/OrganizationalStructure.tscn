@@ -1,0 +1,238 @@
+[gd_scene load_steps=26 format=3 uid="uid://cyrdlrtt8amva"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_uuppn"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_1vwom"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="2_6bsdh"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_jclc0"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_yxmkl"]
+[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_fvbif"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_macli"]
+[ext_resource type="Script" uid="uid://ctoliojwclq4e" path="res://resources/SlideToZeroStep.gd" id="5_cvv62"]
+[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_lbibo"]
+[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="5_mqqbh"]
+[ext_resource type="Script" uid="uid://els5543ifwap" path="res://resources/WaitStep.gd" id="6_at5m6"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_h882t"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="7_81kp2"]
+[ext_resource type="Script" uid="uid://yq4ysscbjf0r" path="res://resources/SlideToLocalPositionStep.gd" id="8_p5joh"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("2_1vwom")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_pmjey"]
+script = ExtResource("4_macli")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_j8sux"]
+script = ExtResource("2_6bsdh")
+slide_steps = Array[ExtResource("2_jclc0")]([SubResource("Resource_sho4t"), SubResource("Resource_pmjey")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_8q0xr"]
+script = ExtResource("5_cvv62")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper/Point0")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_3q4wg"]
+script = ExtResource("5_cvv62")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2/Point1")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_bcxl1"]
+script = ExtResource("5_cvv62")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3/Point2")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_d4yry"]
+script = ExtResource("8_p5joh")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4")])
+target_position = Vector2(0, -2000)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_7prd2"]
+script = ExtResource("7_81kp2")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1oynb"]
+script = ExtResource("6_at5m6")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("3_yxmkl")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_w2fk1"]
+script = ExtResource("2_6bsdh")
+slide_steps = Array[ExtResource("2_jclc0")]([SubResource("Resource_d4yry"), SubResource("Resource_7prd2"), SubResource("Resource_1oynb"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[node name="OrganizationalStructure" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uuppn")
+steps = Array[ExtResource("2_jclc0")]([SubResource("Resource_j8sux"), SubResource("Resource_8q0xr"), SubResource("Resource_3q4wg"), SubResource("Resource_bcxl1"), SubResource("Resource_w2fk1")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="VBox2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox2/MarginContainer"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]Organizational Structure[/b]"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_type_variation = &"HSepGreen"
+theme_override_styles/separator = ExtResource("4_fvbif")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2"]
+layout_mode = 2
+
+[node name="Version4" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 1.4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+custom_minimum_size = Vector2(896, 143)
+layout_mode = 2
+script = ExtResource("5_mqqbh")
+
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper"]
+layout_mode = 2
+offset_left = -1200.0
+offset_right = -304.0
+offset_bottom = 143.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper/Point0"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_lbibo")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper/Point0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper/Point0/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Godot Foundation
+[ul]Formerly part of the Software Freedom Conservancy[/ul]"
+fit_content = true
+
+[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("5_mqqbh")
+
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2"]
+layout_mode = 2
+offset_left = 2000.0
+offset_right = 2896.0
+offset_bottom = 64.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2/Point1"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_lbibo")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2/Point1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "No single person or entity owns Godot"
+fit_content = true
+
+[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("5_mqqbh")
+
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3"]
+layout_mode = 2
+offset_top = 1200.0
+offset_right = 896.0
+offset_bottom = 1264.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3/Point2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_lbibo")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "More info: godotengine.org/governance"
+fit_content = true
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("6_h882t")]
+layout_mode = 2
+size_flags_vertical = 8

@@ -1,0 +1,236 @@
+[gd_scene load_steps=26 format=3 uid="uid://sa1lkwdxqfqt"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_1us8k"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_0d06w"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_c8g0y"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="2_r8oaf"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_i3op3"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_1sn0g"]
+[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_u0fcc"]
+[ext_resource type="Script" uid="uid://dttfkqalo7xhk" path="res://resources/HighlightStep.gd" id="5_e5tsw"]
+[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_k6hyc"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_bgh1v"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_dkgf4"]
+[ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="6_nsl52"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("2_c8g0y")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_cltvl"]
+script = ExtResource("4_1sn0g")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_5v7b5"]
+script = ExtResource("2_r8oaf")
+slide_steps = Array[ExtResource("2_0d06w")]([SubResource("Resource_sho4t"), SubResource("Resource_cltvl")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_v605g"]
+script = ExtResource("5_e5tsw")
+highlight_color = Color(1, 0.929412, 0.631373, 1)
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point0")])
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_h778g"]
+script = ExtResource("5_e5tsw")
+highlight_color = Color(1, 1, 1, 1)
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point0")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_sqv37"]
+script = ExtResource("5_e5tsw")
+highlight_color = Color(1, 0.929412, 0.631373, 1)
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point1")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_7w4po"]
+script = ExtResource("6_nsl52")
+slide_steps = Array[ExtResource("2_0d06w")]([SubResource("Resource_h778g"), SubResource("Resource_sqv37")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_0j2c0"]
+script = ExtResource("5_e5tsw")
+highlight_color = Color(1, 1, 1, 1)
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point1")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_plt3t"]
+script = ExtResource("5_e5tsw")
+highlight_color = Color(1, 0.929412, 0.631373, 1)
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point2")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_3al2h"]
+script = ExtResource("6_nsl52")
+slide_steps = Array[ExtResource("2_0d06w")]([SubResource("Resource_0j2c0"), SubResource("Resource_plt3t")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_bq7b8"]
+script = ExtResource("6_bgh1v")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("3_i3op3")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_not6t"]
+script = ExtResource("2_r8oaf")
+slide_steps = Array[ExtResource("2_0d06w")]([SubResource("Resource_bq7b8"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[node name="SupportedOSes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1us8k")
+steps = Array[ExtResource("2_0d06w")]([SubResource("Resource_5v7b5"), SubResource("Resource_v605g"), SubResource("Resource_7w4po"), SubResource("Resource_3al2h"), SubResource("Resource_not6t")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="VBox2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox2/MarginContainer"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]Supported OSes (Editor)[/b]"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_type_variation = &"HSepGreen"
+theme_override_styles/separator = ExtResource("4_u0fcc")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="List" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.4
+theme_override_constants/separation = 32
+
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point0"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_k6hyc")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point0/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Desktop
+[ul]Windows[/ul]
+[ul]Mac[/ul]
+[ul]Linux[/ul]"
+fit_content = true
+
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point1"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_k6hyc")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point1/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Mobile
+[ul]Android (experimental)[/ul]"
+fit_content = true
+
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_k6hyc")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point2/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Web
+[ul]Yes, you can use it in a browser (with limitations)[/ul]"
+fit_content = true
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("6_dkgf4")]
+layout_mode = 2
+size_flags_vertical = 8

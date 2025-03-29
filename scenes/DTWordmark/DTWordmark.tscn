@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2crawx2oaeju"]
+
+[ext_resource type="FontFile" uid="uid://colfk4ev4t2ub" path="res://assets/fonts/a-anterobot-font/Anterobot-Rp0E3.ttf" id="1_mmy48"]
+
+[node name="DTWordmark" type="VBoxContainer"]
+theme_override_constants/separation = -18
+
+[node name="Dice" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mmy48")
+theme_override_font_sizes/font_size = 128
+text = "Dice"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tower" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mmy48")
+theme_override_font_sizes/font_size = 128
+text = "Tower"
+horizontal_alignment = 1
+vertical_alignment = 1

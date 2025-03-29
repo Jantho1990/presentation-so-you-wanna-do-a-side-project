@@ -1,0 +1,189 @@
+[gd_scene load_steps=40 format=3 uid="uid://brtqwto1mgfvj"]
+
+[ext_resource type="Script" uid="uid://cx5ff6rmig1pl" path="res://nodes/Presentation.gd" id="1_qwp1m"]
+[ext_resource type="PackedScene" uid="uid://djat1tin5gf31" path="res://presentations/stop_waiting_for_godot/slides/GodotApps3D.tscn" id="2_1cd00"]
+[ext_resource type="PackedScene" uid="uid://n0jie61s1qrc" path="res://presentations/stop_waiting_for_godot/slides/WhoAreYou.tscn" id="2_4cyv6"]
+[ext_resource type="PackedScene" uid="uid://c64ou5363pi5n" path="res://presentations/stop_waiting_for_godot/slides/SWFGTitle.tscn" id="2_p7eqa"]
+[ext_resource type="PackedScene" uid="uid://t36ohlettqw5" path="res://presentations/stop_waiting_for_godot/slides/GodotGames3D.tscn" id="2_ypekr"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="3_e6ge7"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="3_j7lga"]
+[ext_resource type="PackedScene" uid="uid://dpjgjyoq0wxtg" path="res://presentations/stop_waiting_for_godot/slides/IntroducingGodotEngine.tscn" id="3_us3kw"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="4_173sc"]
+[ext_resource type="PackedScene" uid="uid://b550pbe3vnrxo" path="res://presentations/stop_waiting_for_godot/slides/WhoAmI.tscn" id="4_pttk1"]
+[ext_resource type="PackedScene" uid="uid://lvorls185ve6" path="res://presentations/stop_waiting_for_godot/slides/WhatIsMyTalk.tscn" id="5_v7d3j"]
+[ext_resource type="PackedScene" uid="uid://xeq2tiwt5kfl" path="res://presentations/stop_waiting_for_godot/slides/TitleWhyGodot.tscn" id="6_a3esq"]
+[ext_resource type="PackedScene" uid="uid://dk54xyvfb1os4" path="res://presentations/stop_waiting_for_godot/slides/GodotHistory.tscn" id="6_d336g"]
+[ext_resource type="PackedScene" uid="uid://t78fslafkw7s" path="res://presentations/stop_waiting_for_godot/slides/OpenSourceSoftware.tscn" id="7_ji8mb"]
+[ext_resource type="PackedScene" uid="uid://x6yn2ear2b3f" path="res://presentations/stop_waiting_for_godot/slides/WhyIChoseGodot.tscn" id="7_n8gat"]
+[ext_resource type="PackedScene" uid="uid://ccjo3vakb25i" path="res://presentations/stop_waiting_for_godot/slides/Funding.tscn" id="8_50k6i"]
+[ext_resource type="PackedScene" uid="uid://d1mokbu71lip4" path="res://presentations/stop_waiting_for_godot/slides/TitleWhatIsGodot.tscn" id="8_b2ria"]
+[ext_resource type="PackedScene" uid="uid://cyrdlrtt8amva" path="res://presentations/stop_waiting_for_godot/slides/OrganizationalStructure.tscn" id="9_w46tj"]
+[ext_resource type="PackedScene" uid="uid://dxj12d5goaywq" path="res://presentations/stop_waiting_for_godot/slides/DownloadingTheEngine.tscn" id="10_ong8w"]
+[ext_resource type="PackedScene" uid="uid://bfmb3vlqc0vqj" path="res://presentations/stop_waiting_for_godot/slides/AndEven.tscn" id="10_sjf76"]
+[ext_resource type="PackedScene" uid="uid://cc33b1lhevig8" path="res://presentations/stop_waiting_for_godot/slides/VersionComparison.tscn" id="11_bwcrq"]
+[ext_resource type="PackedScene" uid="uid://sa1lkwdxqfqt" path="res://presentations/stop_waiting_for_godot/slides/SupportedOS.tscn" id="12_0yuxa"]
+[ext_resource type="PackedScene" uid="uid://cemt1nywye2g8" path="res://presentations/stop_waiting_for_godot/slides/DevelopingAGame.tscn" id="13_cmsgu"]
+[ext_resource type="PackedScene" uid="uid://cvxrmrm0xm2vl" path="res://presentations/stop_waiting_for_godot/slides/TitleGettingStarted.tscn" id="13_ntdbm"]
+[ext_resource type="PackedScene" uid="uid://vbm3y2n6466n" path="res://presentations/stop_waiting_for_godot/slides/ReleaseTargets.tscn" id="14_kma21"]
+[ext_resource type="PackedScene" uid="uid://b3d1jsp5xgig7" path="res://presentations/stop_waiting_for_godot/slides/ReleaseTargetsConsoles.tscn" id="15_ht5p6"]
+[ext_resource type="PackedScene" uid="uid://bw4c5y8ekyw1i" path="res://presentations/stop_waiting_for_godot/slides/EcosystemAssets.tscn" id="16_06oxa"]
+[ext_resource type="PackedScene" uid="uid://bw7je5p1y6unm" path="res://presentations/stop_waiting_for_godot/slides/EcosystemLearning.tscn" id="17_rwp6d"]
+[ext_resource type="PackedScene" uid="uid://08b4e853v7hq" path="res://presentations/stop_waiting_for_godot/slides/EcosystemCompanies.tscn" id="18_itb5m"]
+[ext_resource type="PackedScene" uid="uid://b6si2jmde62u6" path="res://presentations/stop_waiting_for_godot/slides/TitleOverviewByExample.tscn" id="23_rkwlr"]
+[ext_resource type="PackedScene" uid="uid://bcpu0a4clf1cr" path="res://presentations/stop_waiting_for_godot/slides/EcosystemIssues.tscn" id="24_fo040"]
+[ext_resource type="PackedScene" uid="uid://b4s1j0tcjyxhb" path="res://presentations/stop_waiting_for_godot/slides/TitleDeeperDiveSWFG.tscn" id="24_x8bub"]
+[ext_resource type="PackedScene" uid="uid://clfegfg576kj" path="res://presentations/stop_waiting_for_godot/slides/TitleDeeperDiveDT.tscn" id="25_lfyb6"]
+[ext_resource type="PackedScene" uid="uid://d066yjjjq2hwd" path="res://presentations/stop_waiting_for_godot/slides/TitleConclusion.tscn" id="26_2h8ge"]
+[ext_resource type="PackedScene" uid="uid://bj2tv6tqsblpc" path="res://presentations/stop_waiting_for_godot/slides/TitleEcosystem.tscn" id="26_ma6yq"]
+[ext_resource type="PackedScene" uid="uid://dku1gacrgwjdk" path="res://presentations/stop_waiting_for_godot/slides/TitleThankYou.tscn" id="27_t5c83"]
+[ext_resource type="PackedScene" uid="uid://djv23k0lqqcqm" path="res://presentations/stop_waiting_for_godot/slides/ConclusionDetails.tscn" id="33_kygol"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("3_j7lga")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("4_173sc")
+animation_duration = 0.5
+
+[node name="StopWaitingForGodotPresentation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qwp1m")
+close_on_finish = null
+
+[node name="SWFGTitle" parent="." instance=ExtResource("2_p7eqa")]
+layout_mode = 1
+steps = Array[ExtResource("3_e6ge7")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
+
+[node name="WhoAreYou" parent="." instance=ExtResource("2_4cyv6")]
+visible = false
+layout_mode = 1
+
+[node name="IntroducingGodotEngine" parent="." instance=ExtResource("3_us3kw")]
+visible = false
+layout_mode = 1
+
+[node name="WhoAmI" parent="." instance=ExtResource("4_pttk1")]
+visible = false
+layout_mode = 1
+
+[node name="WhatIsMyTalk" parent="." instance=ExtResource("5_v7d3j")]
+visible = false
+layout_mode = 1
+
+[node name="TitleWhyGodot" parent="." instance=ExtResource("6_a3esq")]
+visible = false
+layout_mode = 1
+
+[node name="WhyIChoseGodot" parent="." instance=ExtResource("7_n8gat")]
+visible = false
+layout_mode = 1
+
+[node name="GodotGames3D" parent="." instance=ExtResource("2_ypekr")]
+visible = false
+layout_mode = 1
+
+[node name="GodotApps3D" parent="." instance=ExtResource("2_1cd00")]
+visible = false
+layout_mode = 1
+
+[node name="AndEven" parent="." instance=ExtResource("10_sjf76")]
+visible = false
+layout_mode = 1
+
+[node name="TitleWhatIsGodot" parent="." instance=ExtResource("8_b2ria")]
+visible = false
+layout_mode = 1
+
+[node name="GodotHistory" parent="." instance=ExtResource("6_d336g")]
+visible = false
+layout_mode = 1
+
+[node name="OpenSourceSoftware" parent="." instance=ExtResource("7_ji8mb")]
+visible = false
+layout_mode = 1
+
+[node name="Funding" parent="." instance=ExtResource("8_50k6i")]
+visible = false
+layout_mode = 1
+
+[node name="OrganizationalStructure" parent="." instance=ExtResource("9_w46tj")]
+visible = false
+layout_mode = 1
+
+[node name="TitleGettingStarted" parent="." instance=ExtResource("13_ntdbm")]
+visible = false
+layout_mode = 1
+
+[node name="DownloadingTheEngine" parent="." instance=ExtResource("10_ong8w")]
+visible = false
+layout_mode = 1
+
+[node name="VersionComparison" parent="." instance=ExtResource("11_bwcrq")]
+visible = false
+layout_mode = 1
+
+[node name="SupportedOSes" parent="." instance=ExtResource("12_0yuxa")]
+visible = false
+layout_mode = 1
+
+[node name="DevelopingAGame" parent="." instance=ExtResource("13_cmsgu")]
+visible = false
+layout_mode = 1
+
+[node name="ReleaseTargets" parent="." instance=ExtResource("14_kma21")]
+visible = false
+layout_mode = 1
+
+[node name="ReleaseTargetsConsoles" parent="." instance=ExtResource("15_ht5p6")]
+visible = false
+layout_mode = 1
+
+[node name="TitleEcosystem" parent="." instance=ExtResource("26_ma6yq")]
+visible = false
+layout_mode = 1
+
+[node name="EcosystemLearning" parent="." instance=ExtResource("17_rwp6d")]
+visible = false
+layout_mode = 1
+
+[node name="EcosystemIssues" parent="." instance=ExtResource("24_fo040")]
+visible = false
+layout_mode = 1
+
+[node name="EcosystemAssets" parent="." instance=ExtResource("16_06oxa")]
+visible = false
+layout_mode = 1
+
+[node name="EcosystemCompanies" parent="." instance=ExtResource("18_itb5m")]
+visible = false
+layout_mode = 1
+
+[node name="TitleOverviewByExample" parent="." instance=ExtResource("23_rkwlr")]
+visible = false
+layout_mode = 1
+
+[node name="TitleDeeperDiveSWFG" parent="." instance=ExtResource("24_x8bub")]
+visible = false
+layout_mode = 1
+
+[node name="TitleDeeperDiveDT" parent="." instance=ExtResource("25_lfyb6")]
+visible = false
+layout_mode = 1
+
+[node name="TitleConclusion" parent="." instance=ExtResource("26_2h8ge")]
+visible = false
+layout_mode = 1
+
+[node name="ConclusionDetails" parent="." instance=ExtResource("33_kygol")]
+visible = false
+layout_mode = 1
+
+[node name="TitleThankYou" parent="." instance=ExtResource("27_t5c83")]
+visible = false
+layout_mode = 1

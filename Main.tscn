@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://4ii5pqg6cy81"]
+
+[ext_resource type="PackedScene" uid="uid://g11g8qtloe0y" path="res://scenes/SWFGPresentationLauncher/SWFGPresentationLauncher.tscn" id="1_6bxt2"]
+
+[sub_resource type="Environment" id="Environment_56ksq"]
+
+[node name="Main" type="Node"]
+
+[node name="SWFGPresentationTest" parent="." instance=ExtResource("1_6bxt2")]
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.03, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+environment = SubResource("Environment_56ksq")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)

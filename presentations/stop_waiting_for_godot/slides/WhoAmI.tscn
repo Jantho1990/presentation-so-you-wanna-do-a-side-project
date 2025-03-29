@@ -1,0 +1,400 @@
+[gd_scene load_steps=31 format=3 uid="uid://b550pbe3vnrxo"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_svyub"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_18vhw"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_j66e8"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="2_sfn30"]
+[ext_resource type="Script" uid="uid://ctoliojwclq4e" path="res://resources/SlideToZeroStep.gd" id="3_e2bfm"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="4_bv1bt"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_y3xew"]
+[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="5_34ac4"]
+[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="6_oda56"]
+[ext_resource type="Texture2D" uid="uid://bqscws1ahi6gx" path="res://assets/media/images/me-asset.jpg" id="6_xakas"]
+[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="7_jaes5"]
+[ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="7_t87py"]
+[ext_resource type="Texture2D" uid="uid://ccfgi7halul2c" path="res://assets/media/images/loonicy_logo_white_lettering_sm.png" id="8_elme1"]
+[ext_resource type="Script" uid="uid://yq4ysscbjf0r" path="res://resources/SlideToLocalPositionStep.gd" id="8_grrgu"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="9_ea23u"]
+[ext_resource type="PackedScene" uid="uid://c2crawx2oaeju" path="res://scenes/DTWordmark/DTWordmark.tscn" id="9_plk0l"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="10_tyisn"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("2_18vhw")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_arwlc"]
+script = ExtResource("4_y3xew")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_whc7a"]
+script = ExtResource("2_sfn30")
+slide_steps = Array[ExtResource("2_j66e8")]([SubResource("Resource_sho4t"), SubResource("Resource_arwlc")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_gi0mb"]
+script = ExtResource("3_e2bfm")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper/Mugshot")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_uly4x"]
+script = ExtResource("3_e2bfm")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_ytwgk"]
+script = ExtResource("3_e2bfm")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper3/LoonicyStuff")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_0owdj"]
+script = ExtResource("8_grrgu")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper/Mugshot")])
+target_position = Vector2(-800, 0)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_l2pno"]
+script = ExtResource("8_grrgu")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList")])
+target_position = Vector2(0, 1000)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_8tfej"]
+script = ExtResource("8_grrgu")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper3/LoonicyStuff")])
+target_position = Vector2(800, 0)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_hhihw"]
+script = ExtResource("7_t87py")
+slide_steps = Array[ExtResource("2_j66e8")]([SubResource("Resource_0owdj"), SubResource("Resource_l2pno"), SubResource("Resource_8tfej")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_ff5r5"]
+script = ExtResource("9_ea23u")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("4_bv1bt")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_ywcmg"]
+script = ExtResource("2_sfn30")
+slide_steps = Array[ExtResource("2_j66e8")]([SubResource("Resource_hhihw"), SubResource("Resource_ff5r5"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[node name="WhoAmI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_svyub")
+steps = Array[ExtResource("2_j66e8")]([SubResource("Resource_whc7a"), SubResource("Resource_gi0mb"), SubResource("Resource_uly4x"), SubResource("Resource_ytwgk"), SubResource("Resource_ywcmg")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="VBox2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox2/MarginContainer"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]Who am I?[/b]"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_type_variation = &"HSepGreen"
+theme_override_styles/separator = ExtResource("5_34ac4")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="HBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox"]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("6_oda56")
+
+[node name="Mugshot" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper"]
+layout_mode = 2
+offset_left = -800.0
+offset_right = -400.0
+offset_bottom = 600.0
+
+[node name="Me" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper/Mugshot"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("6_xakas")
+stretch_mode = 5
+
+[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox"]
+custom_minimum_size = Vector2(540, 700)
+layout_mode = 2
+size_flags_horizontal = 6
+script = ExtResource("6_oda56")
+
+[node name="BioList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 0
+offset_top = 1000.0
+offset_right = 410.0
+offset_bottom = 1700.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList"]
+custom_minimum_size = Vector2(410, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Josh Anthony"
+fit_content = true
+
+[node name="Name" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/Name"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_jaes5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Name: Josh Anthony"
+fit_content = true
+
+[node name="Husband" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/Husband"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_jaes5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/Husband"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Husband since: 2015"
+fit_content = true
+
+[node name="Father" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/Father"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_jaes5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/Father"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Father since: 2016"
+fit_content = true
+
+[node name="Dev" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/Dev"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_jaes5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/Dev"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Web Developer since: 2013"
+fit_content = true
+
+[node name="GameDeveloper" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/GameDeveloper"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_jaes5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/GameDeveloper"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Developing games since: 2018"
+fit_content = true
+
+[node name="GodotUser" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/GodotUser"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_jaes5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/GodotUser"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Using Godot since: 2019"
+fit_content = true
+
+[node name="Loonicy" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/Loonicy"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_jaes5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/Loonicy"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Cofounder of: Loonicy Entertainment"
+fit_content = true
+
+[node name="CurrentGame" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/CurrentGame"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_jaes5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2/BioList/CurrentGame"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Current Game: Dice Tower"
+fit_content = true
+
+[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox"]
+custom_minimum_size = Vector2(359, 700)
+layout_mode = 2
+script = ExtResource("6_oda56")
+
+[node name="LoonicyStuff" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper3"]
+layout_mode = 2
+offset_left = 800.0
+offset_right = 1159.0
+offset_bottom = 700.0
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="LoonicyLogo" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper3/LoonicyStuff"]
+layout_mode = 2
+texture = ExtResource("8_elme1")
+stretch_mode = 2
+
+[node name="DTWordmark" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper3/LoonicyStuff" instance=ExtResource("9_plk0l")]
+layout_mode = 2
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("10_tyisn")]
+layout_mode = 2

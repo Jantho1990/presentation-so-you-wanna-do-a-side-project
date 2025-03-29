@@ -1,0 +1,293 @@
+[gd_scene load_steps=23 format=3 uid="uid://dxj12d5goaywq"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_65uo1"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_hhgkh"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_j0uii"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="2_wm136"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_5lusk"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="4_ygbvc"]
+[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="5_hhmtg"]
+[ext_resource type="Texture2D" uid="uid://ulhi0bin0nml" path="res://assets/media/images/godot-download-page.png" id="5_r7425"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="5_vqd8b"]
+[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="7_ett1j"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="8_yrb4s"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("2_j0uii")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_mife1"]
+script = ExtResource("4_5lusk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/TextureRect")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_b3vqa"]
+script = ExtResource("2_wm136")
+slide_steps = Array[ExtResource("2_hhgkh")]([SubResource("Resource_sho4t"), SubResource("Resource_mife1")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_s56ty"]
+script = ExtResource("4_5lusk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Link")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_4x1w3"]
+script = ExtResource("4_5lusk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Platforms")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1631e"]
+script = ExtResource("4_5lusk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/CSharp")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_7fd3p"]
+script = ExtResource("4_5lusk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Distributed")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_tqxqu"]
+script = ExtResource("4_5lusk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Compile")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_yc1wc"]
+script = ExtResource("5_vqd8b")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/TextureRect"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("4_ygbvc")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_cgghm"]
+script = ExtResource("2_wm136")
+slide_steps = Array[ExtResource("2_hhgkh")]([SubResource("Resource_yc1wc"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[node name="DownloadingTheEngine" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_65uo1")
+steps = Array[ExtResource("2_hhgkh")]([SubResource("Resource_b3vqa"), SubResource("Resource_s56ty"), SubResource("Resource_4x1w3"), SubResource("Resource_1631e"), SubResource("Resource_7fd3p"), SubResource("Resource_tqxqu"), SubResource("Resource_cgghm")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="VBox2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox2/MarginContainer"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]Downloading the Engine[/b]"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_type_variation = &"HSepGreen"
+theme_override_styles/separator = ExtResource("5_hhmtg")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="HBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox"]
+layout_mode = 2
+texture = ExtResource("5_r7425")
+stretch_mode = 4
+
+[node name="List" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"V32"
+
+[node name="Link" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Link"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_ett1j")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Link"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "godotengine.org/download"
+fit_content = true
+
+[node name="Platforms" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Platforms"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_ett1j")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Platforms"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Windows, Mac, Linux"
+fit_content = true
+
+[node name="CSharp" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/CSharp"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_ett1j")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/CSharp"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Regular or C#"
+fit_content = true
+
+[node name="Distributed" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Distributed"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("7_ett1j")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Distributed"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Distributed/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Regular also on:
+[ul]Steam[/ul]
+[ul]Epic Games Store[/ul]
+[ul]itch.io[/ul]"
+fit_content = true
+
+[node name="Compile" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Compile"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_ett1j")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Compile"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Compile from source"
+fit_content = true
+
+[node name="TODO" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/TODO"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("7_ett1j")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/TODO"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "TODO: Distributed, Web Editor, Compile"
+fit_content = true
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("8_yrb4s")]
+layout_mode = 2
+size_flags_vertical = 8

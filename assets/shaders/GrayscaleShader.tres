@@ -1,0 +1,14 @@
+[gd_resource type="Shader" format=3 uid="uid://xsbjk8grxrr0"]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform float gray_amount : hint_range(0, 1);
+
+void fragment() {
+    COLOR *= texture(TEXTURE, UV);
+    vec3 original = COLOR.rgb;
+    float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
+    vec3 grayscale = vec3(avg);
+    COLOR.rgb = mix(original, grayscale, gray_amount);
+}"

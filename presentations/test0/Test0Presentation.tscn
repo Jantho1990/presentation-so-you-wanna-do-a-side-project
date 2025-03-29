@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://cie0dy35ien8t"]
+
+[ext_resource type="Script" uid="uid://cx5ff6rmig1pl" path="res://nodes/Presentation.gd" id="1_3yxg0"]
+[ext_resource type="PackedScene" uid="uid://dm1fyqv1tqg6k" path="res://presentations/test0/slides/TestSlide0Slide.tscn" id="2_qgbn8"]
+[ext_resource type="PackedScene" uid="uid://c7tn5mmu6pl4t" path="res://presentations/test0/slides/TestSlide1Slide.tscn" id="3_tpdon"]
+[ext_resource type="PackedScene" uid="uid://n0jie61s1qrc" path="res://presentations/stop_waiting_for_godot/slides/WhoAreYou.tscn" id="4_7u5ug"]
+[ext_resource type="PackedScene" uid="uid://b550pbe3vnrxo" path="res://presentations/stop_waiting_for_godot/slides/WhoAmI.tscn" id="4_31qwd"]
+[ext_resource type="PackedScene" uid="uid://cafaojdih10d6" path="res://presentations/test0/slides/TestSteps0Slide.tscn" id="4_k1o2a"]
+[ext_resource type="PackedScene" uid="uid://bjcnpde24tlkc" path="res://presentations/test0/slides/TestSelfIntroSlide.tscn" id="5_i2vtd"]
+[ext_resource type="PackedScene" uid="uid://dpjgjyoq0wxtg" path="res://presentations/stop_waiting_for_godot/slides/IntroducingGodotEngine.tscn" id="5_ubqep"]
+[ext_resource type="PackedScene" uid="uid://lvorls185ve6" path="res://presentations/stop_waiting_for_godot/slides/WhatIsMyTalk.tscn" id="7_wid81"]
+
+[node name="Test0Presentation2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3yxg0")
+
+[node name="TestSlide0Slide" parent="." instance=ExtResource("2_qgbn8")]
+layout_mode = 1
+
+[node name="TestSlide1Slide" parent="." instance=ExtResource("3_tpdon")]
+visible = false
+layout_mode = 1
+
+[node name="WhoAreYou" parent="." instance=ExtResource("4_7u5ug")]
+visible = false
+layout_mode = 1
+
+[node name="IntroducingGodotEngine" parent="." instance=ExtResource("5_ubqep")]
+visible = false
+layout_mode = 1
+
+[node name="WhoAmI" parent="." instance=ExtResource("4_31qwd")]
+visible = false
+layout_mode = 1
+
+[node name="WhatIsMyTalk" parent="." instance=ExtResource("7_wid81")]
+visible = false
+layout_mode = 1
+
+[node name="TestSteps0Slide" parent="." instance=ExtResource("4_k1o2a")]
+visible = false
+layout_mode = 1
+
+[node name="TestSelfIntroSlide" parent="." instance=ExtResource("5_i2vtd")]
+visible = false
+layout_mode = 1

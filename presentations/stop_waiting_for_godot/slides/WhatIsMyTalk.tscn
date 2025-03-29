@@ -1,0 +1,264 @@
+[gd_scene load_steps=29 format=3 uid="uid://lvorls185ve6"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_wkxdl"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="2_6cdlk"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_k55db"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_v56u6"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_jhodw"]
+[ext_resource type="Script" uid="uid://ctoliojwclq4e" path="res://resources/SlideToZeroStep.gd" id="3_s0fjj"]
+[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_b47k7"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_dw7u0"]
+[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_7i1l2"]
+[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="5_rd8fr"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_vhpgr"]
+[ext_resource type="Script" uid="uid://yq4ysscbjf0r" path="res://resources/SlideToLocalPositionStep.gd" id="7_ppsv7"]
+[ext_resource type="Script" uid="uid://els5543ifwap" path="res://resources/WaitStep.gd" id="8_a5xh0"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="8_h72ux"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("2_k55db")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_pr0ym"]
+script = ExtResource("4_dw7u0")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_xips6"]
+script = ExtResource("2_6cdlk")
+slide_steps = Array[ExtResource("2_v56u6")]([SubResource("Resource_sho4t"), SubResource("Resource_pr0ym")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_ki3dc"]
+script = ExtResource("3_s0fjj")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper/WhatThisTalkIs")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_2w2ts"]
+script = ExtResource("3_s0fjj")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper2/WhatIsGodot")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_uffhg"]
+script = ExtResource("3_s0fjj")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper3/HowDoYouUseGodot")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_euqcf"]
+script = ExtResource("7_ppsv7")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper/WhatThisTalkIs")])
+target_position = Vector2(1900, 0)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_x2l7r"]
+script = ExtResource("7_ppsv7")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper2/WhatIsGodot")])
+target_position = Vector2(1900, 0)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_bftxd"]
+script = ExtResource("7_ppsv7")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper3/HowDoYouUseGodot")])
+target_position = Vector2(1900, 0)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_rdlkd"]
+script = ExtResource("2_6cdlk")
+slide_steps = Array[ExtResource("2_v56u6")]([SubResource("Resource_euqcf"), SubResource("Resource_x2l7r"), SubResource("Resource_bftxd")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_k3g8j"]
+script = ExtResource("8_h72ux")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_m8a6m"]
+script = ExtResource("8_a5xh0")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("3_jhodw")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_fu5c2"]
+script = ExtResource("2_6cdlk")
+slide_steps = Array[ExtResource("2_v56u6")]([SubResource("Resource_rdlkd"), SubResource("Resource_k3g8j"), SubResource("Resource_m8a6m"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[node name="WhatIsMyTalk" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wkxdl")
+steps = Array[ExtResource("2_v56u6")]([SubResource("Resource_xips6"), SubResource("Resource_ki3dc"), SubResource("Resource_2w2ts"), SubResource("Resource_uffhg"), SubResource("Resource_fu5c2")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="VBox2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox2/MarginContainer"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]What is my talk?[/b]"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_type_variation = &"HSepGreen"
+theme_override_styles/separator = ExtResource("4_b47k7")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 64
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
+custom_minimum_size = Vector2(960, 98)
+layout_mode = 2
+script = ExtResource("5_rd8fr")
+
+[node name="WhatThisTalkIs" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper"]
+layout_mode = 2
+offset_left = -1200.0
+offset_right = -240.0
+offset_bottom = 90.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper/WhatThisTalkIs"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_7i1l2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper/WhatThisTalkIs"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper/WhatThisTalkIs/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "This is a high-level introduction to the
+Godot Game Engine"
+fit_content = true
+
+[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
+custom_minimum_size = Vector2(960, 188)
+layout_mode = 2
+script = ExtResource("5_rd8fr")
+
+[node name="WhatIsGodot" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper2"]
+layout_mode = 2
+offset_left = -1200.0
+offset_right = -240.0
+offset_bottom = 135.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper2/WhatIsGodot"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_7i1l2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper2/WhatIsGodot"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper2/WhatIsGodot/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "[b]What is Godot?[/b]
+[ul]How it's organized[/ul]
+[ul]Getting started[/ul]
+[ul]Ecosystem[/ul]"
+fit_content = true
+
+[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
+custom_minimum_size = Vector2(960, 188)
+layout_mode = 2
+script = ExtResource("5_rd8fr")
+
+[node name="HowDoYouUseGodot" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper3"]
+layout_mode = 2
+offset_left = -1200.0
+offset_right = -240.0
+offset_bottom = 135.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper3/HowDoYouUseGodot"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_7i1l2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper3/HowDoYouUseGodot"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper3/HowDoYouUseGodot/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "[b]How do you use Godot?[/b]
+[ul]Look at a sample project[/ul]
+[ul]Briefly explore Dice Tower[/ul]
+[ul]Technical taste[/ul]"
+fit_content = true
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("6_vhpgr")]
+layout_mode = 2
+size_flags_vertical = 8

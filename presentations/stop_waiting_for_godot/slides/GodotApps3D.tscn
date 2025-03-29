@@ -1,0 +1,501 @@
+[gd_scene load_steps=29 format=3 uid="uid://djat1tin5gf31"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_rd132"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_ohlcx"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_sdr0n"]
+[ext_resource type="Script" uid="uid://qpv26n56bah3" path="res://resources/AnimationPlayStep.gd" id="3_rtcbb"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_ldg0d"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="4_piqbf"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="5_qxe4d"]
+[ext_resource type="PackedScene" uid="uid://p8wlcoi8pcx" path="res://scenes/VideoWidget3D/VideoWidget3D.tscn" id="6_olju8"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_v7oeh"]
+[ext_resource type="VideoStream" uid="uid://couq1r3v2sy3a" path="res://assets/media/videos/rpg-in-a-box-854x480.ogv" id="7_4hcn5"]
+[ext_resource type="VideoStream" uid="uid://cykujngoajjr5" path="res://assets/media/videos/pixelorama-0.9-854x480.ogv" id="8_dj0no"]
+[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="11_oo15e"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="12_5isnh"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("2_ohlcx")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_r7mgo"]
+script = ExtResource("4_ldg0d")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_qxmch"]
+script = ExtResource("4_piqbf")
+slide_steps = Array[ExtResource("2_sdr0n")]([SubResource("Resource_sho4t"), SubResource("Resource_r7mgo")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_n38q5"]
+script = ExtResource("3_rtcbb")
+animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
+animation_name = "advance_video_1"
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_b7x7y"]
+script = ExtResource("3_rtcbb")
+animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
+animation_name = "advance_video_2"
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_w3854"]
+script = ExtResource("3_rtcbb")
+animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
+animation_name = "end_video"
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_ekako"]
+script = ExtResource("6_v7oeh")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_fdd1m"]
+script = ExtResource("5_qxe4d")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_bbpph"]
+script = ExtResource("4_piqbf")
+slide_steps = Array[ExtResource("2_sdr0n")]([SubResource("Resource_w3854"), SubResource("Resource_ekako"), SubResource("Resource_fdd1m")])
+animation_duration = 0.5
+
+[sub_resource type="World3D" id="World3D_eyk47"]
+
+[sub_resource type="Animation" id="Animation_5i6fi"]
+resource_name = "RESET"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/RPGInABox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wrapper/Pixelorama")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, -1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/RPGInABox:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Pixelorama:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../..:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1ykq6"]
+resource_name = "advance_video_1"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/RPGInABox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wrapper/Pixelorama")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, -1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/RPGInABox:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Pixelorama:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../..:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ucuvo"]
+resource_name = "advance_video_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Pixelorama:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/RPGInABox:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wrapper/RPGInABox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 1, 0.3, 1, 0, 0, 1, 0.7, 1, -5, 0, 5)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Wrapper/Pixelorama")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 1, 1, -1, 0.4, 1, 1, 1, -1, 0.8, 1, 0, 0, 1)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Pixelorama:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/RPGInABox:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3oq6r"]
+resource_name = "end_video"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Pixelorama:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wrapper/Pixelorama")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 1, 0.3, 1, 0, 0, 1, 0.7, 1, -5, 0, 5)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Pixelorama:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/RPGInABox:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../..:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ng1i"]
+_data = {
+&"RESET": SubResource("Animation_5i6fi"),
+&"advance_video_1": SubResource("Animation_1ykq6"),
+&"advance_video_2": SubResource("Animation_ucuvo"),
+&"end_video": SubResource("Animation_3oq6r")
+}
+
+[node name="GodotApps3D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rd132")
+steps = Array[ExtResource("2_sdr0n")]([SubResource("Resource_qxmch"), SubResource("Resource_n38q5"), SubResource("Resource_b7x7y"), SubResource("Resource_bbpph")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="PanelContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="PanelContainer/SubViewportContainer"]
+own_world_3d = true
+world_3d = SubResource("World3D_eyk47")
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="VideoSlides3D" type="Node3D" parent="PanelContainer/SubViewportContainer/SubViewport"]
+
+[node name="Wrapper" type="Node3D" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="RPGInABox" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/Wrapper" instance=ExtResource("6_olju8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+videoStreamResource = ExtResource("7_4hcn5")
+
+[node name="Pixelorama" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/Wrapper" instance=ExtResource("6_olju8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
+videoStreamResource = ExtResource("8_dj0no")
+
+[node name="Camera3D" type="Camera3D" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D"]
+transform = Transform3D(0.936672, 0, 0.350207, 0, 1, 0, -0.350207, 0, 0.936672, 1.06671, 0, 3.67467)
+
+[node name="OffscreenTarget" type="Node3D" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.9441)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D"]
+libraries = {
+"": SubResource("AnimationLibrary_1ng1i")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="VBox2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox2/MarginContainer"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]Not just games...[/b]"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_type_variation = &"HSepGreen"
+theme_override_styles/separator = ExtResource("11_oo15e")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="RPGInABox" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
+visible = false
+custom_minimum_size = Vector2(540, 314)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_type_variation = &"AsidePanelEditorBlue"
+
+[node name="List" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/RPGInABox"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Title" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/RPGInABox/List"]
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "[b]RPG in a Box[/b]"
+fit_content = true
+
+[node name="Desc" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/RPGInABox/List"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "Latest release: 2023"
+fit_content = true
+
+[node name="Desc2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/RPGInABox/List"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "Developer: Justin Arnold"
+fit_content = true
+
+[node name="Desc3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/RPGInABox/List"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "Platforms:
+[ul]PC (Windows, Mac, Linux)[/ul]"
+fit_content = true
+
+[node name="Pixelorama" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(540, 314)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_type_variation = &"AsidePanelEditorBlue"
+
+[node name="List" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/Pixelorama"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Title" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/Pixelorama/List"]
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "[b]Pixelorama[/b]"
+fit_content = true
+
+[node name="Desc" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/Pixelorama/List"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "Latest release: 2023"
+fit_content = true
+
+[node name="Desc2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/Pixelorama/List"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "Developer: Orama Interactive"
+fit_content = true
+
+[node name="Desc3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/Pixelorama/List"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "Platforms:
+[ul]PC (Windows, Mac, Linux)[/ul]"
+fit_content = true
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("12_5isnh")]
+layout_mode = 2
+size_flags_vertical = 8

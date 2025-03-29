@@ -1,0 +1,6 @@
+Background Color: #1d2229
+Base Color: #363d4a
+Godot Blue: #478cbf
+Base Type Green: #42ffc2
+Keyword Color Red: #ff7085
+String Color: #ffeda1

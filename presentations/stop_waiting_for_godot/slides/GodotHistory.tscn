@@ -1,0 +1,371 @@
+[gd_scene load_steps=32 format=3 uid="uid://dk54xyvfb1os4"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_mocak"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_82sgg"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_vvdyb"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="2_w8nmh"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_yoo7d"]
+[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_d33sc"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_t6xoa"]
+[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="5_db2ov"]
+[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_glwwr"]
+[ext_resource type="Script" uid="uid://ctoliojwclq4e" path="res://resources/SlideToZeroStep.gd" id="5_tb051"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_6houe"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_m8nt7"]
+[ext_resource type="Script" uid="uid://yq4ysscbjf0r" path="res://resources/SlideToLocalPositionStep.gd" id="6_y8acl"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("2_82sgg")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_3pi83"]
+script = ExtResource("4_t6xoa")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_cnqu4"]
+script = ExtResource("2_w8nmh")
+slide_steps = Array[ExtResource("2_vvdyb")]([SubResource("Resource_sho4t"), SubResource("Resource_3pi83")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_4w7ut"]
+script = ExtResource("5_tb051")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper/Point0")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_fg1he"]
+script = ExtResource("5_tb051")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2/Point1")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_happ8"]
+script = ExtResource("5_tb051")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3/Point2")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_8el5d"]
+script = ExtResource("5_tb051")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper4/Point3")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_h8cwq"]
+script = ExtResource("5_tb051")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper5/Point4")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_ry6kw"]
+script = ExtResource("5_tb051")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper6/Point5")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_7nolk"]
+script = ExtResource("6_y8acl")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper6/Point5")])
+target_position = Vector2(0, 2000)
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_mlaim"]
+script = ExtResource("6_y8acl")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper5/Point4")])
+target_position = Vector2(0, 2000)
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_kos4w"]
+script = ExtResource("6_y8acl")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper4/Point3")])
+target_position = Vector2(0, 2000)
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_rec84"]
+script = ExtResource("6_y8acl")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3/Point2")])
+target_position = Vector2(0, 2000)
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_ip0e7"]
+script = ExtResource("6_y8acl")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2/Point1")])
+target_position = Vector2(0, 2000)
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_iv65w"]
+script = ExtResource("6_y8acl")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper/Point0")])
+target_position = Vector2(0, 2000)
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_6id3u"]
+script = ExtResource("6_6houe")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("3_yoo7d")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_i0l7j"]
+script = ExtResource("2_w8nmh")
+slide_steps = Array[ExtResource("2_vvdyb")]([SubResource("Resource_7nolk"), SubResource("Resource_mlaim"), SubResource("Resource_kos4w"), SubResource("Resource_rec84"), SubResource("Resource_ip0e7"), SubResource("Resource_iv65w"), SubResource("Resource_6id3u"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[node name="GodotHistory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mocak")
+steps = Array[ExtResource("2_vvdyb")]([SubResource("Resource_cnqu4"), SubResource("Resource_4w7ut"), SubResource("Resource_fg1he"), SubResource("Resource_happ8"), SubResource("Resource_8el5d"), SubResource("Resource_h8cwq"), SubResource("Resource_ry6kw"), SubResource("Resource_i0l7j")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="VBox2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox2/MarginContainer"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]Godot History[/b]"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_type_variation = &"HSepGreen"
+theme_override_styles/separator = ExtResource("4_d33sc")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2"]
+layout_mode = 2
+
+[node name="Version4" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 1.4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+custom_minimum_size = Vector2(896, 143)
+layout_mode = 2
+script = ExtResource("5_db2ov")
+
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper"]
+layout_mode = 2
+offset_top = 2000.0
+offset_right = 896.0
+offset_bottom = 2143.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper/Point0"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_glwwr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper/Point0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper/Point0/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Started as a closed-source engine developed by
+Juan Linietsky and Ariel Manzuer for their games work"
+fit_content = true
+
+[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("5_db2ov")
+
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2"]
+layout_mode = 2
+offset_top = 2000.0
+offset_right = 896.0
+offset_bottom = 2064.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2/Point1"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_glwwr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2/Point1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Version 1.0 open-sourced in 2014"
+fit_content = true
+
+[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("5_db2ov")
+
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3"]
+layout_mode = 2
+offset_top = 2000.0
+offset_right = 896.0
+offset_bottom = 2064.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3/Point2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_glwwr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Version 2.0 released in 2016"
+fit_content = true
+
+[node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("5_db2ov")
+
+[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper4"]
+layout_mode = 2
+offset_top = 2000.0
+offset_right = 896.0
+offset_bottom = 2064.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper4/Point3"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_glwwr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper4/Point3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Version 3.0 released in 2018"
+fit_content = true
+
+[node name="AnimationWrapper5" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("5_db2ov")
+
+[node name="Point4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper5"]
+layout_mode = 2
+offset_top = 2000.0
+offset_right = 896.0
+offset_bottom = 2064.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper5/Point4"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_glwwr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper5/Point4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Version 4.0 released in 2023"
+fit_content = true
+
+[node name="AnimationWrapper6" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("5_db2ov")
+
+[node name="Point5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper6"]
+layout_mode = 2
+offset_top = 2000.0
+offset_right = 896.0
+offset_bottom = 2064.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper6/Point5"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_glwwr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper6/Point5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Most current version is 4.1, LTS version is 3.5"
+fit_content = true
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("6_m8nt7")]
+layout_mode = 2
+size_flags_vertical = 8

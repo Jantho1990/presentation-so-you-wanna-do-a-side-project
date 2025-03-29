@@ -1,0 +1,437 @@
+[gd_scene load_steps=48 format=3 uid="uid://djv23k0lqqcqm"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_4v5al"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="2_h66d8"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_ov1gk"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_pda48"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_rw5h1"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_5gn0l"]
+[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_yc564"]
+[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="5_nv1a6"]
+[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_qocan"]
+[ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="6_6eghi"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_aujeq"]
+[ext_resource type="Script" uid="uid://ctoliojwclq4e" path="res://resources/SlideToZeroStep.gd" id="6_u3sw6"]
+[ext_resource type="Script" uid="uid://yq4ysscbjf0r" path="res://resources/SlideToLocalPositionStep.gd" id="7_8gdbf"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="8_k1lak"]
+[ext_resource type="Script" uid="uid://els5543ifwap" path="res://resources/WaitStep.gd" id="9_1ye27"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("2_pda48")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_744ps"]
+script = ExtResource("4_5gn0l")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_sn6hl"]
+script = ExtResource("2_h66d8")
+slide_steps = Array[ExtResource("2_ov1gk")]([SubResource("Resource_sho4t"), SubResource("Resource_744ps")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_bjodr"]
+script = ExtResource("4_5gn0l")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper/Point0")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_aj6jd"]
+script = ExtResource("6_u3sw6")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper/Point0")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_ngxtf"]
+script = ExtResource("6_6eghi")
+slide_steps = Array[ExtResource("2_ov1gk")]([SubResource("Resource_bjodr"), SubResource("Resource_aj6jd")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_omj25"]
+script = ExtResource("4_5gn0l")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper2/Point1")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_hbqm5"]
+script = ExtResource("6_u3sw6")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper2/Point1")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_8q86k"]
+script = ExtResource("6_6eghi")
+slide_steps = Array[ExtResource("2_ov1gk")]([SubResource("Resource_omj25"), SubResource("Resource_hbqm5")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_u7d0j"]
+script = ExtResource("4_5gn0l")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper3/Point2")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_mwux3"]
+script = ExtResource("6_u3sw6")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper3/Point2")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_saslp"]
+script = ExtResource("6_6eghi")
+slide_steps = Array[ExtResource("2_ov1gk")]([SubResource("Resource_u7d0j"), SubResource("Resource_mwux3")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_dljrt"]
+script = ExtResource("4_5gn0l")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper4/Point3")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_orncs"]
+script = ExtResource("6_u3sw6")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper4/Point3")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_ymhoc"]
+script = ExtResource("6_6eghi")
+slide_steps = Array[ExtResource("2_ov1gk")]([SubResource("Resource_dljrt"), SubResource("Resource_orncs")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_rqcto"]
+script = ExtResource("4_5gn0l")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper5/Point4")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_jcd54"]
+script = ExtResource("6_u3sw6")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper5/Point4")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_q64xh"]
+script = ExtResource("6_6eghi")
+slide_steps = Array[ExtResource("2_ov1gk")]([SubResource("Resource_rqcto"), SubResource("Resource_jcd54")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_pwu33"]
+script = ExtResource("4_5gn0l")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper6/Point5")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_kt00n"]
+script = ExtResource("6_u3sw6")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper6/Point5")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_65qg6"]
+script = ExtResource("6_6eghi")
+slide_steps = Array[ExtResource("2_ov1gk")]([SubResource("Resource_pwu33"), SubResource("Resource_kt00n")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_ut1ap"]
+script = ExtResource("7_8gdbf")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper/Point0")])
+target_position = Vector2(500, -500)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_kr2u7"]
+script = ExtResource("7_8gdbf")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper2/Point1")])
+target_position = Vector2(2200, 777)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_dtycd"]
+script = ExtResource("7_8gdbf")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper3/Point2")])
+target_position = Vector2(-1200, -100)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_2jyxj"]
+script = ExtResource("7_8gdbf")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper4/Point3")])
+target_position = Vector2(953, 1800)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_xoged"]
+script = ExtResource("7_8gdbf")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper5/Point4")])
+target_position = Vector2(-900, 1200)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_eg12t"]
+script = ExtResource("7_8gdbf")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper6/Point5")])
+target_position = Vector2(2000, -200)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_8vuul"]
+script = ExtResource("6_6eghi")
+slide_steps = Array[ExtResource("2_ov1gk")]([SubResource("Resource_ut1ap"), SubResource("Resource_kr2u7"), SubResource("Resource_dtycd"), SubResource("Resource_2jyxj"), SubResource("Resource_xoged"), SubResource("Resource_eg12t")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_u6o0g"]
+script = ExtResource("8_k1lak")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_y3c5b"]
+script = ExtResource("9_1ye27")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("3_rw5h1")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1wvi1"]
+script = ExtResource("2_h66d8")
+slide_steps = Array[ExtResource("2_ov1gk")]([SubResource("Resource_8vuul"), SubResource("Resource_u6o0g"), SubResource("Resource_y3c5b"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[node name="ConclusionDetails" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4v5al")
+steps = Array[ExtResource("2_ov1gk")]([SubResource("Resource_sn6hl"), SubResource("Resource_ngxtf"), SubResource("Resource_8q86k"), SubResource("Resource_saslp"), SubResource("Resource_ymhoc"), SubResource("Resource_q64xh"), SubResource("Resource_65qg6"), SubResource("Resource_1wvi1")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="VBox2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox2/MarginContainer"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]What Was Spoken Of[/b]"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBox/VBox2"]
+layout_mode = 2
+theme_type_variation = &"HSepGreen"
+theme_override_styles/separator = ExtResource("4_yc564")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="BioList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.4
+theme_override_constants/separation = 32
+
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("5_nv1a6")
+
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_top = -100.0
+offset_right = 896.0
+offset_bottom = -36.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper/Point0"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_qocan")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper/Point0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Godot is a mature, growing game engine"
+fit_content = true
+
+[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("5_nv1a6")
+
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_top = -100.0
+offset_right = 896.0
+offset_bottom = -36.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper2/Point1"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_qocan")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper2/Point1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Easy to pick up, lots of resources to learn mastery"
+fit_content = true
+
+[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList"]
+custom_minimum_size = Vector2(1200, 90)
+layout_mode = 2
+script = ExtResource("5_nv1a6")
+
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_top = -100.0
+offset_right = 1200.0
+offset_bottom = -10.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper3/Point2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_qocan")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper3/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Free and open source, with protection against bad actors"
+fit_content = true
+
+[node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("5_nv1a6")
+
+[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper4"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_top = -100.0
+offset_right = 896.0
+offset_bottom = -36.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper4/Point3"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_qocan")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper4/Point3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Can be used for making simple or complex games"
+fit_content = true
+
+[node name="AnimationWrapper5" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("5_nv1a6")
+
+[node name="Point4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper5"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_top = -100.0
+offset_right = 896.0
+offset_bottom = -36.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper5/Point4"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_qocan")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper5/Point4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "I love working with Godot!"
+fit_content = true
+
+[node name="AnimationWrapper6" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("5_nv1a6")
+
+[node name="Point5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper6"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_top = -100.0
+offset_right = 896.0
+offset_bottom = -36.0
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper6/Point5"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_qocan")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/BioList/AnimationWrapper6/Point5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Stop waiting for Godot and try it for yourself!"
+fit_content = true
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("6_aujeq")]
+layout_mode = 2
+size_flags_vertical = 8

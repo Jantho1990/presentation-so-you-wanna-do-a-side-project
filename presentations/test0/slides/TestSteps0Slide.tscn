@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://cafaojdih10d6"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_y73s2"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="2_782v3"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_huhny"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_k1l8g"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="4_fnuc8"]
+
+[sub_resource type="Resource" id="Resource_o2w7q"]
+script = ExtResource("2_k1l8g")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_4uv2m"]
+script = ExtResource("2_782v3")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/GridContainer/Label")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_l83c2"]
+script = ExtResource("2_782v3")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/GridContainer/Label4")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_m27iv"]
+script = ExtResource("2_782v3")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/GridContainer/Label2"), NodePath("PanelContainer/GridContainer/Label3")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_lq6v2"]
+script = ExtResource("4_fnuc8")
+animation_duration = 0.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pj441"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+
+[node name="TestSteps0Slide" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y73s2")
+steps = Array[ExtResource("2_huhny")]([SubResource("Resource_o2w7q"), SubResource("Resource_4uv2m"), SubResource("Resource_l83c2"), SubResource("Resource_m27iv"), SubResource("Resource_lq6v2")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pj441")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="PanelContainer/GridContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "This is Step 1"
+
+[node name="Label2" type="Label" parent="PanelContainer/GridContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "This is Step 3"
+
+[node name="Label3" type="Label" parent="PanelContainer/GridContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "This is also Step 3"
+
+[node name="Label4" type="Label" parent="PanelContainer/GridContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "This is Step 2"
