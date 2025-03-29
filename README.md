@@ -1,9 +1,9 @@
-# Stop Waiting For Godot: Introducing You to the Godot Game Engine
+# So, You Wanna Do a Side Project?
 
-This is the github repo for Josh Anthony's _Stop Waiting for Godot_ presentation,
-originally presented for IGDA Twin Cities on 11/8/2023.
+This is the github repo for Josh Anthony's _So, You Wanna Do a Side Project_ presentation,
+to be presented at Minnebar 19 (2025).
 
-Built using Godot 4.1. Includes a partially-baked system for making presentations,
+Built using Godot 4.4, based on the Stop Waiting for Godot presentation. Includes a partially-baked system for making presentations,
 including use of stepped animations. In theory, this could be expanded upon and
 made a proper presentation software. I don't intend to do that at this time.
 
