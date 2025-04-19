@@ -1,16 +1,14 @@
-[gd_scene load_steps=29 format=3 uid="uid://benydbkmussbj"]
+[gd_scene load_steps=18 format=3 uid="uid://benydbkmussbj"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_bkwun"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_648qv"]
 [ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_d3pqb"]
 [ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_gq055"]
 [ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_0duii"]
-[ext_resource type="Script" uid="uid://ctoliojwclq4e" path="res://resources/SlideToZeroStep.gd" id="6_n87eq"]
 [ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="7_0nj43"]
 [ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="8_35ypc"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="9_tyl67"]
 [ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="10_80sf7"]
-[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="11_l75uo"]
 [ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="11_yjyx1"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="12_qipgt"]
 
@@ -28,51 +26,6 @@ script = ExtResource("3_d3pqb")
 slide_steps = Array[ExtResource("2_648qv")]([SubResource("Resource_sho4t"), SubResource("Resource_lvhcn")])
 animation_duration = 0.5
 
-[sub_resource type="Resource" id="Resource_oeayl"]
-script = ExtResource("5_0duii")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Title")])
-animation_duration = 0.5
-
-[sub_resource type="Resource" id="Resource_uksvl"]
-script = ExtResource("6_n87eq")
-animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper/Point0")])
-animation_duration = 0.2
-
-[sub_resource type="Resource" id="Resource_ow63s"]
-script = ExtResource("6_n87eq")
-animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2/Point1")])
-animation_duration = 0.2
-
-[sub_resource type="Resource" id="Resource_iy036"]
-script = ExtResource("6_n87eq")
-animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3/Point2")])
-animation_duration = 0.2
-
-[sub_resource type="Resource" id="Resource_j7x3s"]
-script = ExtResource("5_0duii")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/Title")])
-animation_duration = 0.5
-
-[sub_resource type="Resource" id="Resource_fq04a"]
-script = ExtResource("6_n87eq")
-animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper/Point0")])
-animation_duration = 0.2
-
-[sub_resource type="Resource" id="Resource_eduke"]
-script = ExtResource("6_n87eq")
-animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper2/Point1")])
-animation_duration = 0.2
-
-[sub_resource type="Resource" id="Resource_oa1sx"]
-script = ExtResource("6_n87eq")
-animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper3/Point2")])
-animation_duration = 0.2
-
-[sub_resource type="Resource" id="Resource_lpsns"]
-script = ExtResource("6_n87eq")
-animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper4/Point3")])
-animation_duration = 0.2
-
 [sub_resource type="Resource" id="Resource_nk01r"]
 script = ExtResource("7_0nj43")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer")])
@@ -87,7 +40,7 @@ script = ExtResource("3_d3pqb")
 slide_steps = Array[ExtResource("2_648qv")]([SubResource("Resource_nk01r"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
-[node name="EcosystemIssues" type="Control"]
+[node name="InfoBase2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -95,7 +48,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bkwun")
-steps = Array[ExtResource("2_648qv")]([SubResource("Resource_gwk0t"), SubResource("Resource_oeayl"), SubResource("Resource_uksvl"), SubResource("Resource_ow63s"), SubResource("Resource_iy036"), SubResource("Resource_j7x3s"), SubResource("Resource_fq04a"), SubResource("Resource_eduke"), SubResource("Resource_oa1sx"), SubResource("Resource_lpsns"), SubResource("Resource_ynpfl")])
+steps = Array[ExtResource("2_648qv")]([SubResource("Resource_gwk0t"), SubResource("Resource_ynpfl")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -126,9 +79,10 @@ theme_override_constants/margin_left = 64
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox2/MarginContainer"]
 custom_minimum_size = Vector2(0, 68)
 layout_mode = 2
+theme_type_variation = &"SlideHeaderRichTextLabel"
 theme_override_font_sizes/bold_font_size = 48
 bbcode_enabled = true
-text = "[b]Ecosystem - Issues[/b]"
+text = "[b]Your Title Here![/b]"
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBox/VBox2"]
 layout_mode = 2
@@ -168,9 +122,8 @@ script = ExtResource("10_80sf7")
 
 [node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper"]
 layout_mode = 2
-offset_top = 2000.0
 offset_right = 540.0
-offset_bottom = 2064.0
+offset_bottom = 64.0
 theme_override_constants/separation = 16
 
 [node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper/Point0" instance=ExtResource("11_yjyx1")]
@@ -193,19 +146,12 @@ script = ExtResource("10_80sf7")
 
 [node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2"]
 layout_mode = 2
-offset_top = 2000.0
 offset_right = 640.0
-offset_bottom = 2064.0
+offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2/Point1"]
-custom_minimum_size = Vector2(64, 64)
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2/Point1" instance=ExtResource("11_yjyx1")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("11_l75uo")
-expand_mode = 3
-stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2/Point1"]
 layout_mode = 2
@@ -224,19 +170,12 @@ script = ExtResource("10_80sf7")
 
 [node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3"]
 layout_mode = 2
-offset_top = 2000.0
 offset_right = 600.0
-offset_bottom = 2064.0
+offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3/Point2"]
-custom_minimum_size = Vector2(64, 64)
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3/Point2" instance=ExtResource("11_yjyx1")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("11_l75uo")
-expand_mode = 3
-stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3/Point2"]
 layout_mode = 2
@@ -272,19 +211,12 @@ script = ExtResource("10_80sf7")
 
 [node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper"]
 layout_mode = 2
-offset_left = 1200.0
-offset_right = 2000.0
+offset_right = 800.0
 offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper/Point0"]
-custom_minimum_size = Vector2(64, 64)
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper/Point0" instance=ExtResource("11_yjyx1")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("11_l75uo")
-expand_mode = 3
-stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper/Point0"]
 layout_mode = 2
@@ -303,19 +235,12 @@ script = ExtResource("10_80sf7")
 
 [node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper2"]
 layout_mode = 2
-offset_left = 1200.0
-offset_right = 2000.0
+offset_right = 800.0
 offset_bottom = 188.0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper2/Point1"]
-custom_minimum_size = Vector2(64, 64)
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper2/Point1" instance=ExtResource("11_yjyx1")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture = ExtResource("11_l75uo")
-expand_mode = 3
-stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper2/Point1"]
 layout_mode = 2
@@ -342,19 +267,12 @@ script = ExtResource("10_80sf7")
 
 [node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper3"]
 layout_mode = 2
-offset_left = 1200.0
-offset_right = 2000.0
+offset_right = 800.0
 offset_bottom = 188.0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper3/Point2"]
-custom_minimum_size = Vector2(64, 64)
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper3/Point2" instance=ExtResource("11_yjyx1")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture = ExtResource("11_l75uo")
-expand_mode = 3
-stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper3/Point2"]
 layout_mode = 2
@@ -381,19 +299,12 @@ script = ExtResource("10_80sf7")
 
 [node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper4"]
 layout_mode = 2
-offset_left = 1200.0
-offset_right = 2000.0
+offset_right = 800.0
 offset_bottom = 98.0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper4/Point3"]
-custom_minimum_size = Vector2(64, 64)
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper4/Point3" instance=ExtResource("11_yjyx1")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture = ExtResource("11_l75uo")
-expand_mode = 3
-stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3/AnimationWrapper4/Point3"]
 layout_mode = 2

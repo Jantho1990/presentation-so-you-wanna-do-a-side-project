@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://chbmko3nyf2im"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://chbmko3nyf2im"]
 
 [ext_resource type="StyleBox" uid="uid://bx5ulv703y1xh" path="res://assets/themes/StopWaitingForGodot/resources/AsideEditorBlue.tres" id="1_i8qjl"]
 [ext_resource type="FontFile" uid="uid://fbi0ipgd8bha" path="res://assets/fonts/REM/static/REM-Italic.ttf" id="2_0wpnx"]
@@ -8,6 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://hfgxwrl7l1ub" path="res://assets/themes/StopWaitingForGodot/resources/PanelEditorBlue.tres" id="5_nou70"]
 [ext_resource type="FontFile" uid="uid://eb0kbwad3330" path="res://assets/fonts/Expletus_Sans/static/ExpletusSans-Bold.ttf" id="7_453wt"]
 [ext_resource type="FontFile" uid="uid://dplw3q54uip0o" path="res://assets/fonts/REM/static/REM-Regular.ttf" id="7_vuux4"]
+[ext_resource type="FontFile" uid="uid://cwn4b1lbd10pl" path="res://assets/fonts/Expletus_Sans/static/ExpletusSans-BoldItalic.ttf" id="8_11p67"]
 [ext_resource type="FontFile" uid="uid://c1hbhvqbprxvi" path="res://assets/fonts/REM/static/REM-Bold.ttf" id="8_453wt"]
 
 [resource]
@@ -50,7 +51,9 @@ RichSlideTitle/constants/shadow_offset_x = 4
 RichSlideTitle/constants/shadow_offset_y = 4
 RichSlideTitle/constants/shadow_outline_size = 8
 RichSlideTitle/font_sizes/bold_font_size = 172
+RichSlideTitle/font_sizes/bold_italics_font_size = 172
 RichSlideTitle/fonts/bold_font = ExtResource("7_453wt")
+RichSlideTitle/fonts/bold_italics_font = ExtResource("8_11p67")
 SlideHeaderRichTextLabel/base_type = &"RichTextLabel"
 SlideHeaderRichTextLabel/colors/default_color = Color(0.992157, 0.992157, 1, 1)
 SlideHeaderRichTextLabel/font_sizes/bold_font_size = 48

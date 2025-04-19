@@ -69,7 +69,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/RichTextLabel:modulate")
+tracks/2/path = NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/Title:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -156,7 +156,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/RichTextLabel:modulate")
+tracks/2/path = NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/Title:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -239,7 +239,7 @@ theme_override_constants/separation = 64
 layout_mode = 2
 theme_override_constants/margin_left = 264
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer"]
+[node name="Title" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 235)
 layout_mode = 2
@@ -247,9 +247,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichSlideTitle"
 bbcode_enabled = true
-text = "[b]Why Godot?[/b]"
+text = "[b]Your title![/b]"
 
-[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("8_4wakq")]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 96
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/MarginContainer" instance=ExtResource("8_4wakq")]
 layout_mode = 2
 size_flags_vertical = 8
 

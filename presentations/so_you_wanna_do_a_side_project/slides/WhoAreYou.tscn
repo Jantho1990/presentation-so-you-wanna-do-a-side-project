@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b2km3n4egy0j"]
+[gd_scene load_steps=29 format=3 uid="uid://b2km3n4egy0j"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_i6aha"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_6l4oe"]
@@ -7,9 +7,9 @@
 [ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_2ygyl"]
 [ext_resource type="Script" uid="uid://dineujlp1l13t" path="res://resources/WAYIntroStep.gd" id="6_1ydcn"]
 [ext_resource type="Script" uid="uid://yts7ifi5785a" path="res://resources/WAYAdvanceStep.gd" id="7_p6g8a"]
-[ext_resource type="Script" uid="uid://c6i7g20fmnnl8" path="res://resources/WAYNoPizzaStep.gd" id="8_3atvv"]
 [ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="9_8k33o"]
 [ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="10_r0kwj"]
+[ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="11_lapv2"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="12_hjius"]
 [ext_resource type="Texture2D" uid="uid://dhd68fdyndif6" path="res://assets/media/images/apocalypse-asset.jpg" id="13_1kc74"]
 [ext_resource type="Texture2D" uid="uid://dn75sj7gwr5ia" path="res://assets/media/images/despaired-asset.jpg" id="14_1sqja"]
@@ -41,7 +41,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_oep1g"]
 script = ExtResource("7_p6g8a")
-fadeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unreal"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Despair")])
+fadeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/NotEnoughTime"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Despair")])
 fadeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Apocalypse")])
 stabilizeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/ProjectIdea/RichTextLabel2")])
 stabilizeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/ProjectIdea/RichTextLabel")])
@@ -49,34 +49,10 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_xky36"]
 script = ExtResource("7_p6g8a")
-fadeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curiosity"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Explore")])
+fadeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curious"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Explore")])
 fadeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Despair")])
-stabilizeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unreal/RichTextLabel2")])
-stabilizeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unreal/RichTextLabel")])
-animation_duration = 0.5
-
-[sub_resource type="Resource" id="Resource_hr8q7"]
-script = ExtResource("7_p6g8a")
-fadeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Beginner"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Developer")])
-fadeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Explore")])
-stabilizeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curiosity/RichTextLabel2")])
-stabilizeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curiosity/RichTextLabel")])
-animation_duration = 0.5
-
-[sub_resource type="Resource" id="Resource_fk1tv"]
-script = ExtResource("7_p6g8a")
-fadeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/FreePizza"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Pizza")])
-fadeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Developer")])
-stabilizeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Beginner/RichTextLabel2")])
-stabilizeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Beginner/RichTextLabel")])
-animation_duration = 0.5
-
-[sub_resource type="Resource" id="Resource_vwuu2"]
-script = ExtResource("8_3atvv")
-fadeGrayPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/FreePizza/RightArrow")])
-stabilizeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/FreePizza/RichTextLabel2")])
-stabilizeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/FreePizza/RichTextLabel")])
-grayscaleImagePath = NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Pizza")
+stabilizeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/NotEnoughTime/RichTextLabel2")])
+stabilizeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/NotEnoughTime/RichTextLabel")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_lpmeh"]
@@ -105,7 +81,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i6aha")
-steps = Array[ExtResource("2_6l4oe")]([SubResource("Resource_e1lh8"), SubResource("Resource_yyh3t"), SubResource("Resource_oep1g"), SubResource("Resource_xky36"), SubResource("Resource_hr8q7"), SubResource("Resource_fk1tv"), SubResource("Resource_vwuu2"), SubResource("Resource_h1qoh")])
+steps = Array[ExtResource("2_6l4oe")]([SubResource("Resource_e1lh8"), SubResource("Resource_yyh3t"), SubResource("Resource_oep1g"), SubResource("Resource_xky36"), SubResource("Resource_h1qoh")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -165,14 +141,8 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/ProjectIdea"]
-custom_minimum_size = Vector2(64, 64)
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/ProjectIdea" instance=ExtResource("11_lapv2")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("12_hjius")
-expand_mode = 3
-stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/ProjectIdea"]
 layout_mode = 2
@@ -181,7 +151,7 @@ size_flags_vertical = 4
 theme_override_font_sizes/italics_font_size = 40
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[shake][i]Fleeing the fires of Unity ownership?[/i][/shake]"
+text = "[i]Have an idea for a project, but not sure what to do?[/i]"
 fit_content = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/ProjectIdea"]
@@ -192,34 +162,30 @@ size_flags_vertical = 4
 theme_override_font_sizes/italics_font_size = 40
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[i]Fleeing the fires of Unity ownership?[/i]"
+text = "[i]Have an idea for a project, but not sure what to do?[/i]"
 fit_content = true
 
-[node name="Unreal" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox"]
+[node name="NotEnoughTime" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unreal"]
-custom_minimum_size = Vector2(64, 64)
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/NotEnoughTime" instance=ExtResource("11_lapv2")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("12_hjius")
-expand_mode = 3
-stretch_mode = 5
+expand_mode = 5
+stretch_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unreal"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/NotEnoughTime"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_font_sizes/italics_font_size = 40
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[tornado radius=5.0 freq=10.0][i]Working in Unreal feeling unrealistic?[/i][/tornado]"
+text = "[tornado radius=5.0 freq=10.0][i]Feel like you have no time for projects?[/i][/tornado]"
 fit_content = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unreal"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/NotEnoughTime"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -227,34 +193,28 @@ size_flags_vertical = 4
 theme_override_font_sizes/italics_font_size = 40
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[i]Working in Unreal feeling unrealistic?[/i]"
+text = "[i]Feel like you have no time for projects?[/i]"
 fit_content = true
 
-[node name="Curiosity" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox"]
+[node name="Curious" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curiosity"]
-custom_minimum_size = Vector2(64, 64)
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curious" instance=ExtResource("11_lapv2")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("12_hjius")
-expand_mode = 3
-stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curiosity"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curious"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_font_sizes/italics_font_size = 40
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[wave amp=29.0 freq=15.0][i]Interested in exploring other game engines?[/i][/wave]"
+text = "[wave amp=29.0 freq=15.0][i]Wondering how other people do side projects?[/i][/wave]"
 fit_content = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curiosity"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curious"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -262,7 +222,7 @@ size_flags_vertical = 4
 theme_override_font_sizes/italics_font_size = 40
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[i]Interested in exploring other game engines?[/i]"
+text = "[i]Wondering how other people do side projects?[/i]"
 fit_content = true
 
 [node name="Beginner" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox"]

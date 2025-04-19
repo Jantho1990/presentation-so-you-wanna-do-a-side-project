@@ -5,7 +5,7 @@
 [node name="IconFlag" type="TextureRect"]
 custom_minimum_size = Vector2(64, 64)
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 0
 texture = ExtResource("1_4gi1k")
 expand_mode = 3
 stretch_mode = 5

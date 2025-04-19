@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bo68drp11sapj"]
+[gd_scene load_steps=17 format=3 uid="uid://bo68drp11sapj"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_jyiav"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_uqoxy"]
@@ -25,16 +25,6 @@ script = ExtResource("3_c16rm")
 slide_steps = Array[ExtResource("2_uqoxy")]([SubResource("Resource_sho4t"), SubResource("Resource_qpkur")])
 animation_duration = 0.5
 
-[sub_resource type="Resource" id="Resource_s0hnc"]
-script = ExtResource("5_5xovr")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point0")])
-animation_duration = 0.5
-
-[sub_resource type="Resource" id="Resource_aoldq"]
-script = ExtResource("5_5xovr")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point1")])
-animation_duration = 0.5
-
 [sub_resource type="Resource" id="Resource_c5igg"]
 script = ExtResource("6_280sy")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4")])
@@ -57,7 +47,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jyiav")
-steps = Array[ExtResource("2_uqoxy")]([SubResource("Resource_hx63c"), SubResource("Resource_s0hnc"), SubResource("Resource_aoldq"), SubResource("Resource_4r8tj")])
+steps = Array[ExtResource("2_uqoxy")]([SubResource("Resource_hx63c"), SubResource("Resource_4r8tj")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -146,7 +136,6 @@ text = "Freewill Donations
 fit_content = true
 
 [node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
