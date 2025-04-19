@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt0q3yfxuiytc"]
+
+[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="1_qxasr"]
+[ext_resource type="Script" uid="uid://7nica5gmrs2p" path="res://scenes/SlideHeader/SlideHeader.gd" id="1_r7ar7"]
+
+[node name="SlideHeader" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 72.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_r7ar7")
+
+[node name="Indent" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+
+[node name="SlideHeader" type="RichTextLabel" parent="Indent"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+theme_type_variation = &"SlideHeaderRichTextLabel"
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]Your Slide Title![/b]"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+theme_type_variation = &"HSepGreen"
+theme_override_styles/separator = ExtResource("1_qxasr")

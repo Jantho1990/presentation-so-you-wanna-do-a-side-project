@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bo68drp11sapj"]
+[gd_scene load_steps=18 format=3 uid="uid://bo68drp11sapj"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_jyiav"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_uqoxy"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_280sy"]
 [ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="7_etbui"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="8_7ator"]
+[ext_resource type="PackedScene" uid="uid://bt0q3yfxuiytc" path="res://scenes/SlideHeader/SlideHeader.tscn" id="8_uqoxy"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="9_rqs6t"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="10_em8ir"]
 
@@ -39,7 +40,7 @@ script = ExtResource("3_c16rm")
 slide_steps = Array[ExtResource("2_uqoxy")]([SubResource("Resource_c5igg"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
-[node name="Funding" type="Control"]
+[node name="InfoBase1" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,7 +69,12 @@ theme_override_constants/margin_bottom = 32
 layout_mode = 2
 theme_override_constants/separation = 64
 
+[node name="SlideHeader" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("8_uqoxy")]
+layout_mode = 2
+title = "Info!"
+
 [node name="VBox2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox2"]
