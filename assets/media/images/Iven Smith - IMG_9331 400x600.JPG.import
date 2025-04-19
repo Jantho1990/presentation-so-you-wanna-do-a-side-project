@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cm5kh8ot7ehdl"
+path="res://.godot/imported/Iven Smith - IMG_9331 400x600.JPG-b965393909a1ed75546671d12ff317cd.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/media/images/Iven Smith - IMG_9331 400x600.JPG"
+dest_files=["res://.godot/imported/Iven Smith - IMG_9331 400x600.JPG-b965393909a1ed75546671d12ff317cd.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
