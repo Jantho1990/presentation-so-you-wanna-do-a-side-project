@@ -202,6 +202,7 @@ text = "Sunday"
 fit_content = true
 
 [node name="CellY1X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleLeft"
@@ -216,6 +217,7 @@ text = "[right]6:00am[/right]"
 fit_content = true
 
 [node name="CellY1X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -230,6 +232,7 @@ text = "Morning Prep"
 fit_content = true
 
 [node name="CellY1X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -240,10 +243,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Morning Prep"
 fit_content = true
 
 [node name="CellY1X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -254,10 +258,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Morning Prep"
 fit_content = true
 
 [node name="CellY1X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -268,10 +273,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Morning Prep"
 fit_content = true
 
 [node name="CellY1X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -282,10 +288,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Morning Prep"
 fit_content = true
 
 [node name="CellY1X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -296,10 +303,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Morning Prep"
 fit_content = true
 
 [node name="CellY1X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleRight"
@@ -310,10 +318,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "[center][i]zzzzzz[/i][/center]"
 fit_content = true
 
 [node name="CellY2X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleLeft"
@@ -328,6 +337,7 @@ text = "[right]7:30am[/right]"
 fit_content = true
 
 [node name="CellY2X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -343,6 +353,7 @@ Side Project"
 fit_content = true
 
 [node name="CellY2X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -353,10 +364,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Side Project"
 fit_content = true
 
 [node name="CellY2X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -367,10 +379,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Gym
+Side Project"
 fit_content = true
 
 [node name="CellY2X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -381,10 +395,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Side Project"
 fit_content = true
 
 [node name="CellY2X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -395,10 +410,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Gym
+Side Project"
 fit_content = true
 
 [node name="CellY2X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -409,10 +426,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Side Project"
 fit_content = true
 
 [node name="CellY2X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleRight"
@@ -423,10 +441,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "[center][i]zzzzzz[/i][/center]"
 fit_content = true
 
 [node name="CellY3X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleLeft"
@@ -441,6 +460,7 @@ text = "[right]9:00am[/right]"
 fit_content = true
 
 [node name="CellY3X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -455,6 +475,7 @@ text = "Day Job"
 fit_content = true
 
 [node name="CellY3X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -465,10 +486,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Day Job"
 fit_content = true
 
 [node name="CellY3X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -479,10 +501,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Day Job"
 fit_content = true
 
 [node name="CellY3X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -493,10 +516,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Day Job"
 fit_content = true
 
 [node name="CellY3X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -507,10 +531,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Day Job"
 fit_content = true
 
 [node name="CellY3X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -521,10 +546,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Side Project"
 fit_content = true
 
 [node name="CellY3X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleRight"
@@ -535,10 +561,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Family Day "
 fit_content = true
 
 [node name="CellY4X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleLeft"
@@ -553,6 +580,7 @@ text = "[right]5:00pm[/right]"
 fit_content = true
 
 [node name="CellY4X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -568,6 +596,7 @@ Family time"
 fit_content = true
 
 [node name="CellY4X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -578,10 +607,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Stop work
+Family time"
 fit_content = true
 
 [node name="CellY4X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -592,10 +623,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Stop work
+Family time"
 fit_content = true
 
 [node name="CellY4X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -606,10 +639,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Stop work
+Family time"
 fit_content = true
 
 [node name="CellY4X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -620,10 +655,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Stop work
+Family time"
 fit_content = true
 
 [node name="CellY4X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -634,10 +671,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Stop work
+Family time"
 fit_content = true
 
 [node name="CellY4X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleRight"
@@ -648,10 +687,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Family Day"
 fit_content = true
 
 [node name="CellY5X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleLeft"
@@ -666,6 +706,7 @@ text = "[right]7:30pm[/right]"
 fit_content = true
 
 [node name="CellY5X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -681,6 +722,7 @@ Relax"
 fit_content = true
 
 [node name="CellY5X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -691,10 +733,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Side Project
+Relax"
 fit_content = true
 
 [node name="CellY5X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -705,10 +749,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Side Project
+Relax"
 fit_content = true
 
 [node name="CellY5X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -719,10 +765,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Side Project
+Relax"
 fit_content = true
 
 [node name="CellY5X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -733,10 +781,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Side Project
+Relax"
 fit_content = true
 
 [node name="CellY5X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -747,10 +797,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Relax"
 fit_content = true
 
 [node name="CellY5X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleRight"
@@ -761,10 +812,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Family Day"
 fit_content = true
 
 [node name="CellY6X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleLeft"
@@ -779,6 +831,7 @@ text = "[right]9:00pm[/right]"
 fit_content = true
 
 [node name="CellY6X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -793,6 +846,7 @@ text = "Wind down"
 fit_content = true
 
 [node name="CellY6X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -803,10 +857,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Wind down"
 fit_content = true
 
 [node name="CellY6X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -817,10 +872,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Wind down"
 fit_content = true
 
 [node name="CellY6X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -831,10 +887,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Wind down"
 fit_content = true
 
 [node name="CellY6X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -845,10 +902,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Wind down"
 fit_content = true
 
 [node name="CellY6X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -859,10 +917,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Relax"
 fit_content = true
 
 [node name="CellY6X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleRight"
@@ -873,10 +932,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Family Day"
 fit_content = true
 
 [node name="CellY7X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleLeft"
@@ -891,6 +951,7 @@ text = "[right]10:00pm[/right]"
 fit_content = true
 
 [node name="CellY7X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -905,6 +966,7 @@ text = "Bedtime"
 fit_content = true
 
 [node name="CellY7X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -915,10 +977,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Bedtime"
 fit_content = true
 
 [node name="CellY7X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -929,10 +992,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Bedtime"
 fit_content = true
 
 [node name="CellY7X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -943,10 +1007,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Bedtime"
 fit_content = true
 
 [node name="CellY7X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -957,10 +1022,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Bedtime"
 fit_content = true
 
 [node name="CellY7X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -971,10 +1037,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Relax"
 fit_content = true
 
 [node name="CellY7X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleRight"
@@ -985,10 +1052,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Bedtime"
 fit_content = true
 
 [node name="CellY8X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleLeft"
@@ -1003,6 +1071,7 @@ text = "[right]11:00pm[/right]"
 fit_content = true
 
 [node name="CellY8X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -1018,6 +1087,7 @@ bedtime"
 fit_content = true
 
 [node name="CellY8X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -1028,10 +1098,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "More honest
+bedtime"
 fit_content = true
 
 [node name="CellY8X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -1042,10 +1114,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "More honest
+bedtime"
 fit_content = true
 
 [node name="CellY8X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -1056,10 +1130,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "More honest
+bedtime"
 fit_content = true
 
 [node name="CellY8X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -1070,10 +1146,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "More honest
+bedtime"
 fit_content = true
 
 [node name="CellY8X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddle"
@@ -1084,10 +1162,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "Maybe time for bed?"
 fit_content = true
 
 [node name="CellY8X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellMiddleRight"
@@ -1098,10 +1177,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "More honest
+bedtime"
 fit_content = true
 
 [node name="CellY9X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellBottomLeft"
@@ -1116,6 +1197,7 @@ text = "[right]1:00am[/right]"
 fit_content = true
 
 [node name="CellY9X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellBottomMiddle"
@@ -1130,6 +1212,7 @@ text = "[center][i]sigh[/i][/center]"
 fit_content = true
 
 [node name="CellY9X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellBottomMiddle"
@@ -1140,10 +1223,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "[center][i]sigh[/i][/center]"
 fit_content = true
 
 [node name="CellY9X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellBottomMiddle"
@@ -1154,10 +1238,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "[center][i]sigh[/i][/center]"
 fit_content = true
 
 [node name="CellY9X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellBottomMiddle"
@@ -1168,10 +1253,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "[center][i]sigh[/i][/center]"
 fit_content = true
 
 [node name="CellY9X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellBottomMiddle"
@@ -1182,10 +1268,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "[center][i]sigh[/i][/center]"
 fit_content = true
 
 [node name="CellY9X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellBottomMiddle"
@@ -1196,10 +1283,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "[center][i]sigh[/i][/center]"
 fit_content = true
 
 [node name="CellY9X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+custom_minimum_size = Vector2(208, 78)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TableCellBottomRight"
@@ -1210,7 +1298,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichTableContent"
 bbcode_enabled = true
-text = "A bunch of text on multiple lines"
+text = "[center][i]sigh[/i][/center]"
 fit_content = true
 
 [node name="BioList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent"]
