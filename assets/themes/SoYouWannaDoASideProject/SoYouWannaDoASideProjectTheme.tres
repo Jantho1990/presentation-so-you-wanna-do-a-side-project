@@ -1,0 +1,61 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://chbmko3nyf2im"]
+
+[ext_resource type="StyleBox" uid="uid://bx5ulv703y1xh" path="res://assets/themes/StopWaitingForGodot/resources/AsideEditorBlue.tres" id="1_i8qjl"]
+[ext_resource type="FontFile" uid="uid://fbi0ipgd8bha" path="res://assets/fonts/REM/static/REM-Italic.ttf" id="2_0wpnx"]
+[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="2_7wa6p"]
+[ext_resource type="StyleBox" uid="uid://blaoon77rhqpy" path="res://assets/themes/StopWaitingForGodot/resources/KeywordColorRed.tres" id="3_fw1wi"]
+[ext_resource type="StyleBox" uid="uid://c11s1a5xkqd2g" path="res://assets/themes/StopWaitingForGodot/resources/EditorBackgroundColor.tres" id="4_2v34b"]
+[ext_resource type="StyleBox" uid="uid://hfgxwrl7l1ub" path="res://assets/themes/StopWaitingForGodot/resources/PanelEditorBlue.tres" id="5_nou70"]
+[ext_resource type="FontFile" uid="uid://eb0kbwad3330" path="res://assets/fonts/Expletus_Sans/static/ExpletusSans-Bold.ttf" id="7_453wt"]
+[ext_resource type="FontFile" uid="uid://dplw3q54uip0o" path="res://assets/fonts/REM/static/REM-Regular.ttf" id="7_vuux4"]
+[ext_resource type="FontFile" uid="uid://c1hbhvqbprxvi" path="res://assets/fonts/REM/static/REM-Bold.ttf" id="8_453wt"]
+
+[resource]
+default_font = ExtResource("7_vuux4")
+default_font_size = 24
+AsidePanelEditorBlue/base_type = &"PanelContainer"
+AsidePanelEditorBlue/styles/panel = ExtResource("1_i8qjl")
+FooterRichTextLabel/base_type = &"RichTextLabel"
+FooterRichTextLabel/font_sizes/italics_font_size = 16
+FooterRichTextLabel/fonts/italics_font = ExtResource("2_0wpnx")
+HSepGreen/base_type = &"HSeparator"
+HSepGreen/constants/separation = 0
+HSepGreen/styles/separator = ExtResource("2_7wa6p")
+HSepRed/base_type = &"HSeparator"
+HSepRed/styles/separator = ExtResource("3_fw1wi")
+PanelContainer/styles/panel = ExtResource("4_2v34b")
+PanelEditorBlue/base_type = &"PanelContainer"
+PanelEditorBlue/styles/panel = ExtResource("5_nou70")
+Rich16/base_type = &"RichTextLabel"
+Rich16/font_sizes/bold_font_size = 16
+Rich16/font_sizes/bold_italics_font_size = 16
+Rich16/font_sizes/italics_font_size = 16
+Rich16/font_sizes/mono_font_size = 16
+Rich16/font_sizes/normal_font_size = 16
+Rich32/base_type = &"RichTextLabel"
+Rich32/font_sizes/bold_font_size = 32
+Rich32/font_sizes/bold_italics_font_size = 32
+Rich32/font_sizes/italics_font_size = 32
+Rich32/font_sizes/mono_font_size = 32
+Rich32/font_sizes/normal_font_size = 32
+Rich64/base_type = &"RichTextLabel"
+Rich64/font_sizes/bold_font_size = 64
+Rich64/font_sizes/bold_italics_font_size = 64
+Rich64/font_sizes/italics_font_size = 64
+Rich64/font_sizes/mono_font_size = 64
+Rich64/font_sizes/normal_font_size = 64
+RichSlideTitle/base_type = &"RichTextLabel"
+RichSlideTitle/colors/font_shadow_color = Color(0.00784314, 0.00784314, 0, 1)
+RichSlideTitle/constants/shadow_offset_x = 4
+RichSlideTitle/constants/shadow_offset_y = 4
+RichSlideTitle/constants/shadow_outline_size = 8
+RichSlideTitle/font_sizes/bold_font_size = 172
+RichSlideTitle/fonts/bold_font = ExtResource("7_453wt")
+SlideHeaderRichTextLabel/base_type = &"RichTextLabel"
+SlideHeaderRichTextLabel/colors/default_color = Color(0.992157, 0.992157, 1, 1)
+SlideHeaderRichTextLabel/font_sizes/bold_font_size = 48
+SlideHeaderRichTextLabel/fonts/bold_font = ExtResource("8_453wt")
+V16/base_type = &"VBoxContainer"
+V16/constants/separation = 16
+V32/base_type = &"VBoxContainer"
+V32/constants/separation = 32

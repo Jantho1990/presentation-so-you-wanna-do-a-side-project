@@ -277,5 +277,5 @@ size_flags_vertical = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_clmje")
+&"": SubResource("AnimationLibrary_clmje")
 }

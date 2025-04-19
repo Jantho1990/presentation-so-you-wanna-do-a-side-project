@@ -1,0 +1,153 @@
+[gd_scene load_steps=14 format=3 uid="uid://cj1hewcgrp8nj"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_bb6bq"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_a2cgg"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="3_uitoj"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="4_cxvga"]
+[ext_resource type="StyleBox" uid="uid://dj8jofx857n22" path="res://assets/themes/StopWaitingForGodot/resources/HSepKeywordColorRed.tres" id="6_53g7k"]
+[ext_resource type="Texture2D" uid="uid://bvbvtmqme10ck" path="res://assets/media/images/title-image.png" id="6_740wd"]
+[ext_resource type="PackedScene" uid="uid://diak4ipf17jt0" path="res://scenes/LineDecorations/LineDecorations.tscn" id="6_dhgcs"]
+[ext_resource type="StyleBox" uid="uid://g8gt4dthr7ts" path="res://assets/themes/StopWaitingForGodot/resources/HSepCCCGray.tres" id="7_7ldby"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="8_ci1xb"]
+[ext_resource type="FontFile" uid="uid://cwn4b1lbd10pl" path="res://assets/fonts/Expletus_Sans/static/ExpletusSans-BoldItalic.ttf" id="9_dhgcs"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("3_uitoj")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("4_cxvga")
+animation_duration = 0.5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3arb"]
+
+[node name="SWFGTitle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bb6bq")
+steps = Array[ExtResource("2_a2cgg")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_740wd")
+expand_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"PanelEditorBlue"
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b3arb")
+
+[node name="LineDecorations" parent="PanelContainer" instance=ExtResource("6_dhgcs")]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06
+anchor_top = 0.01
+anchor_right = 0.06
+anchor_bottom = 0.99
+theme_override_styles/separator = ExtResource("6_53g7k")
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.9
+anchor_right = 0.99
+anchor_bottom = 0.9
+theme_override_styles/separator = ExtResource("7_7ldby")
+
+[node name="TitleContainer" type="Control" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/TitleContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.15
+anchor_right = 0.9
+anchor_bottom = 0.8
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="RichTextLabel" parent="PanelContainer/TitleContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/normal_font = ExtResource("9_dhgcs")
+theme_override_fonts/bold_font = ExtResource("9_dhgcs")
+theme_override_font_sizes/bold_font_size = 192
+bbcode_enabled = true
+text = "[center][b]So,
+You Wanna Do
+A Side Project?[/b][/center]"
+fit_content = true
+
+[node name="Subtitle" type="RichTextLabel" parent="PanelContainer/TitleContainer/VBox"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 72
+bbcode_enabled = true
+text = "[right]Introducing You to the Godot Game Engine[/right]"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="VBox3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 64
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox3"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 264
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer"]
+custom_minimum_size = Vector2(0, 235)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/bold_font_size = 172
+bbcode_enabled = true
+text = "[b]Thank you![/b]"
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("8_ci1xb")]
+layout_mode = 2
+size_flags_vertical = 8

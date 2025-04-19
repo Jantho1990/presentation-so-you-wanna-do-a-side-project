@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://xeq2tiwt5kfl"]
+[gd_scene load_steps=19 format=3 uid="uid://xeq2tiwt5kfl"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_msque"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_1t7tl"]
@@ -6,9 +6,8 @@
 [ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_pn37g"]
 [ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_hbf8g"]
 [ext_resource type="Script" uid="uid://qpv26n56bah3" path="res://resources/AnimationPlayStep.gd" id="4_a5vb5"]
-[ext_resource type="StyleBox" uid="uid://dj8jofx857n22" path="res://assets/themes/StopWaitingForGodot/resources/HSepKeywordColorRed.tres" id="4_bcmuv"]
-[ext_resource type="StyleBox" uid="uid://g8gt4dthr7ts" path="res://assets/themes/StopWaitingForGodot/resources/HSepCCCGray.tres" id="5_ol0ti"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_qou1u"]
+[ext_resource type="PackedScene" uid="uid://diak4ipf17jt0" path="res://scenes/LineDecorations/LineDecorations.tscn" id="7_ab1vc"]
 [ext_resource type="Animation" uid="uid://26b1efpj5vui" path="res://assets/animations/TitleSlides.tres" id="9_x57a3"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
@@ -46,7 +45,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PanelContainer/Control/VSeparator:anchor_bottom")
+tracks/0/path = NodePath("PanelContainer/LineDecoration/VSeparator:anchor_bottom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -58,7 +57,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PanelContainer/Control/HSeparator:anchor_right")
+tracks/1/path = NodePath("PanelContainer/LineDecoration/HSeparator:anchor_right")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -82,7 +81,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PanelContainer/Control/VSeparator:modulate")
+tracks/3/path = NodePath("PanelContainer/LineDecoration/VSeparator:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -94,7 +93,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("PanelContainer/Control/HSeparator:modulate")
+tracks/4/path = NodePath("PanelContainer/LineDecoration/HSeparator:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -106,7 +105,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("PanelContainer/Control/HSeparator:anchor_left")
+tracks/5/path = NodePath("PanelContainer/LineDecoration/HSeparator:anchor_left")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -118,7 +117,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("PanelContainer/Control/VSeparator:anchor_top")
+tracks/6/path = NodePath("PanelContainer/LineDecoration/VSeparator:anchor_top")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -133,7 +132,7 @@ resource_name = "title_in"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PanelContainer/Control/VSeparator:anchor_bottom")
+tracks/0/path = NodePath("PanelContainer/LineDecoration/VSeparator:anchor_bottom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -145,7 +144,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PanelContainer/Control/HSeparator:anchor_right")
+tracks/1/path = NodePath("PanelContainer/LineDecoration/HSeparator:anchor_right")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -169,7 +168,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PanelContainer/Control/VSeparator:modulate")
+tracks/3/path = NodePath("PanelContainer/LineDecoration/VSeparator:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -181,7 +180,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("PanelContainer/Control/HSeparator:modulate")
+tracks/4/path = NodePath("PanelContainer/LineDecoration/HSeparator:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -217,29 +216,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"PanelEditorBlue"
 
-[node name="Control" type="Control" parent="PanelContainer"]
+[node name="LineDecoration" parent="PanelContainer" instance=ExtResource("7_ab1vc")]
 layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VSeparator" type="VSeparator" parent="PanelContainer/Control"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.06
-anchor_top = 0.01
-anchor_right = 0.06
-anchor_bottom = 0.01
-theme_override_styles/separator = ExtResource("4_bcmuv")
-
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/Control"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.01
-anchor_top = 0.9
-anchor_right = 0.01
-anchor_bottom = 0.9
-theme_override_styles/separator = ExtResource("5_ol0ti")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -277,5 +255,5 @@ size_flags_vertical = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_clmje")
+&"": SubResource("AnimationLibrary_clmje")
 }

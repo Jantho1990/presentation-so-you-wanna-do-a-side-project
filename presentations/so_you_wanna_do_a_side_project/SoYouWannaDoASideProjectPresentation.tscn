@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ixeixm2n366t"]
+
+[ext_resource type="Script" uid="uid://cx5ff6rmig1pl" path="res://nodes/Presentation.gd" id="1_tvrrd"]
+[ext_resource type="PackedScene" uid="uid://cj1hewcgrp8nj" path="res://presentations/so_you_wanna_do_a_side_project/slides/SYWDASPTitle.tscn" id="2_lx6xu"]
+[ext_resource type="PackedScene" uid="uid://b2km3n4egy0j" path="res://presentations/so_you_wanna_do_a_side_project/slides/WhoAreYou.tscn" id="3_g2hp5"]
+
+[node name="SoYouWannaDoASideProjectPresentation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tvrrd")
+metadata/_custom_type_script = "uid://cx5ff6rmig1pl"
+
+[node name="SWFGTitle" parent="." instance=ExtResource("2_lx6xu")]
+layout_mode = 1
+
+[node name="WhoAreYou" parent="." instance=ExtResource("3_g2hp5")]
+visible = false
+layout_mode = 1
