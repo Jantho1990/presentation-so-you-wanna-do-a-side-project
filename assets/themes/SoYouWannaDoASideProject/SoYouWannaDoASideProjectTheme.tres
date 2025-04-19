@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://chbmko3nyf2im"]
+[gd_resource type="Theme" load_steps=22 format=3 uid="uid://chbmko3nyf2im"]
 
 [ext_resource type="StyleBox" uid="uid://bx5ulv703y1xh" path="res://assets/themes/StopWaitingForGodot/resources/AsideEditorBlue.tres" id="1_i8qjl"]
 [ext_resource type="FontFile" uid="uid://fbi0ipgd8bha" path="res://assets/fonts/REM/static/REM-Italic.ttf" id="2_0wpnx"]
@@ -12,6 +12,15 @@
 [ext_resource type="FontFile" uid="uid://c1hbhvqbprxvi" path="res://assets/fonts/REM/static/REM-Bold.ttf" id="8_453wt"]
 [ext_resource type="FontFile" uid="uid://cuxyfvmlow8w6" path="res://assets/fonts/REM/static/REM-SemiBold.ttf" id="8_gjo0m"]
 [ext_resource type="FontFile" uid="uid://toegdyh38ek8" path="res://assets/fonts/REM/static/REM-BoldItalic.ttf" id="8_u3tu1"]
+[ext_resource type="StyleBox" uid="uid://8cceia1i2vn0" path="res://assets/themes/SoYouWannaDoASideProject/resources/table/TableCellBottomLeft.tres" id="13_hrf15"]
+[ext_resource type="StyleBox" uid="uid://cv7ltc71lc3kc" path="res://assets/themes/SoYouWannaDoASideProject/resources/table/TableCellBottomMiddle.tres" id="14_k01gw"]
+[ext_resource type="StyleBox" uid="uid://b1t6y5ijhwlou" path="res://assets/themes/SoYouWannaDoASideProject/resources/table/TableCellBottomRight.tres" id="15_jt6tu"]
+[ext_resource type="StyleBox" uid="uid://gqyt5he7q1kc" path="res://assets/themes/SoYouWannaDoASideProject/resources/table/TableCellMiddle.tres" id="16_ieth4"]
+[ext_resource type="StyleBox" uid="uid://dh6iiaavdj7yj" path="res://assets/themes/SoYouWannaDoASideProject/resources/table/TableCellMiddleLeft.tres" id="17_yky7c"]
+[ext_resource type="StyleBox" uid="uid://bb0ofeopeogu3" path="res://assets/themes/SoYouWannaDoASideProject/resources/table/TableCellMiddleRight.tres" id="18_sia58"]
+[ext_resource type="StyleBox" uid="uid://dqshjqmthfuev" path="res://assets/themes/SoYouWannaDoASideProject/resources/table/TableCellTopLeft.tres" id="19_sia58"]
+[ext_resource type="StyleBox" uid="uid://bvuf4ik08gbqn" path="res://assets/themes/SoYouWannaDoASideProject/resources/table/TableCellTopMiddle.tres" id="20_qlch5"]
+[ext_resource type="StyleBox" uid="uid://ctfoqrfcvsj6n" path="res://assets/themes/SoYouWannaDoASideProject/resources/table/TableCellTopRight.tres" id="21_g6wo5"]
 
 [resource]
 default_font = ExtResource("7_vuux4")
@@ -69,10 +78,33 @@ RichSlideTitle/font_sizes/bold_font_size = 172
 RichSlideTitle/font_sizes/bold_italics_font_size = 172
 RichSlideTitle/fonts/bold_font = ExtResource("7_453wt")
 RichSlideTitle/fonts/bold_italics_font = ExtResource("8_11p67")
+RichTableContent/base_type = &"RichTextLabel"
+RichTableContent/font_sizes/italics_font_size = 24
+RichTableContent/font_sizes/normal_font_size = 24
+RichTableContent/fonts/italics_font = ExtResource("2_0wpnx")
+RichTableContent/fonts/normal_font = ExtResource("7_vuux4")
 SlideHeaderRichTextLabel/base_type = &"RichTextLabel"
 SlideHeaderRichTextLabel/colors/default_color = Color(0.992157, 0.992157, 1, 1)
 SlideHeaderRichTextLabel/font_sizes/bold_font_size = 48
 SlideHeaderRichTextLabel/fonts/bold_font = ExtResource("8_453wt")
+TableCellBottomLeft/base_type = &"PanelContainer"
+TableCellBottomLeft/styles/panel = ExtResource("13_hrf15")
+TableCellBottomMiddle/base_type = &"PanelContainer"
+TableCellBottomMiddle/styles/panel = ExtResource("14_k01gw")
+TableCellBottomRight/base_type = &"PanelContainer"
+TableCellBottomRight/styles/panel = ExtResource("15_jt6tu")
+TableCellMiddle/base_type = &"PanelContainer"
+TableCellMiddle/styles/panel = ExtResource("16_ieth4")
+TableCellMiddleLeft/base_type = &"PanelContainer"
+TableCellMiddleLeft/styles/panel = ExtResource("17_yky7c")
+TableCellMiddleRight/base_type = &"PanelContainer"
+TableCellMiddleRight/styles/panel = ExtResource("18_sia58")
+TableCellTopLeft/base_type = &"PanelContainer"
+TableCellTopLeft/styles/panel = ExtResource("19_sia58")
+TableCellTopMiddle/base_type = &"PanelContainer"
+TableCellTopMiddle/styles/panel = ExtResource("20_qlch5")
+TableCellTopRight/base_type = &"PanelContainer"
+TableCellTopRight/styles/panel = ExtResource("21_g6wo5")
 V16/base_type = &"VBoxContainer"
 V16/constants/separation = 16
 V32/base_type = &"VBoxContainer"

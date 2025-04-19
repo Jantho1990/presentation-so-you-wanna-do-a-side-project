@@ -83,28 +83,28 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_right = 64
 
-[node name="BioList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent"]
+[node name="List" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent"]
 custom_minimum_size = Vector2(540, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.4
 theme_override_constants/separation = 32
 
-[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
 custom_minimum_size = Vector2(896, 64)
 layout_mode = 2
 script = ExtResource("13_vy38i")
 
-[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper"]
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper"]
 layout_mode = 2
 offset_right = 896.0
 offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper/Point0" instance=ExtResource("14_wodv5")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper/Point0" instance=ExtResource("14_wodv5")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper/Point0"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper/Point0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -113,21 +113,21 @@ bbcode_enabled = true
 text = "Godot is a mature, growing game engine"
 fit_content = true
 
-[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
+[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
 custom_minimum_size = Vector2(896, 64)
 layout_mode = 2
 script = ExtResource("13_vy38i")
 
-[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper2"]
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper2"]
 layout_mode = 2
 offset_right = 896.0
 offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper2/Point1" instance=ExtResource("14_wodv5")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper2/Point1" instance=ExtResource("14_wodv5")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper2/Point1"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper2/Point1"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -136,21 +136,21 @@ bbcode_enabled = true
 text = "Easy to pick up, lots of resources to learn mastery"
 fit_content = true
 
-[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
+[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
 custom_minimum_size = Vector2(1200, 90)
 layout_mode = 2
 script = ExtResource("13_vy38i")
 
-[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper3"]
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper3"]
 layout_mode = 2
 offset_right = 1200.0
 offset_bottom = 90.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper3/Point2" instance=ExtResource("14_wodv5")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper3/Point2" instance=ExtResource("14_wodv5")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper3/Point2"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper3/Point2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -159,21 +159,21 @@ bbcode_enabled = true
 text = "Free and open source, with protection against bad actors"
 fit_content = true
 
-[node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
+[node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
 custom_minimum_size = Vector2(896, 64)
 layout_mode = 2
 script = ExtResource("13_vy38i")
 
-[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper4"]
+[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper4"]
 layout_mode = 2
 offset_right = 896.0
 offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper4/Point3" instance=ExtResource("14_wodv5")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper4/Point3" instance=ExtResource("14_wodv5")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper4/Point3"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper4/Point3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -182,21 +182,21 @@ bbcode_enabled = true
 text = "Can be used for making simple or complex games"
 fit_content = true
 
-[node name="AnimationWrapper5" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
+[node name="AnimationWrapper5" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
 custom_minimum_size = Vector2(896, 64)
 layout_mode = 2
 script = ExtResource("13_vy38i")
 
-[node name="Point4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper5"]
+[node name="Point4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper5"]
 layout_mode = 2
 offset_right = 896.0
 offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper5/Point4" instance=ExtResource("14_wodv5")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper5/Point4" instance=ExtResource("14_wodv5")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper5/Point4"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper5/Point4"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -205,21 +205,21 @@ bbcode_enabled = true
 text = "I love working with Godot!"
 fit_content = true
 
-[node name="AnimationWrapper6" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
+[node name="AnimationWrapper6" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
 custom_minimum_size = Vector2(896, 64)
 layout_mode = 2
 script = ExtResource("13_vy38i")
 
-[node name="Point5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper6"]
+[node name="Point5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper6"]
 layout_mode = 2
 offset_right = 896.0
 offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper6/Point5" instance=ExtResource("14_wodv5")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper6/Point5" instance=ExtResource("14_wodv5")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper6/Point5"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper6/Point5"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4

@@ -1,0 +1,1364 @@
+[gd_scene load_steps=20 format=3 uid="uid://c8n3ki0ra25lm"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_q1c7v"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_b6j0c"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_cdso3"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_1swd3"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_sdel7"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_sb12x"]
+[ext_resource type="Script" uid="uid://els5543ifwap" path="res://resources/WaitStep.gd" id="7_yf2j3"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="8_kxj75"]
+[ext_resource type="PackedScene" uid="uid://bt0q3yfxuiytc" path="res://scenes/SlideHeader/SlideHeader.tscn" id="9_kt8gf"]
+[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="10_bvbcw"]
+[ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="11_cfnhm"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="12_k5opi"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("4_1swd3")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_744ps"]
+script = ExtResource("5_sdel7")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader/Indent/SlideHeader")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_sn6hl"]
+script = ExtResource("3_cdso3")
+slide_steps = Array[ExtResource("2_b6j0c")]([SubResource("Resource_sho4t"), SubResource("Resource_744ps")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_u6o0g"]
+script = ExtResource("6_sb12x")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader/Indent/SlideHeader")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_y3c5b"]
+script = ExtResource("7_yf2j3")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("8_kxj75")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1wvi1"]
+script = ExtResource("3_cdso3")
+slide_steps = Array[ExtResource("2_b6j0c")]([SubResource("Resource_u6o0g"), SubResource("Resource_y3c5b"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[node name="HowItsGoing" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q1c7v")
+steps = Array[ExtResource("2_b6j0c")]([SubResource("Resource_sn6hl"), SubResource("Resource_1wvi1")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="SlideHeader" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("9_kt8gf")]
+layout_mode = 2
+title = "How It's Going"
+
+[node name="SlideContent" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent"]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 8
+
+[node name="CellY0X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellTopLeft"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY0X0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+fit_content = true
+
+[node name="CellY0X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellTopMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY0X1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Monday"
+fit_content = true
+
+[node name="CellY0X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellTopMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY0X2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Tuesday"
+fit_content = true
+
+[node name="CellY0X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellTopMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY0X3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Wednesday"
+fit_content = true
+
+[node name="CellY0X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellTopMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY0X4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Thursday"
+fit_content = true
+
+[node name="CellY0X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellTopMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY0X5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Friday"
+fit_content = true
+
+[node name="CellY0X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellTopMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY0X6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Saturday"
+fit_content = true
+
+[node name="CellY0X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellTopRight"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY0X7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Sunday"
+fit_content = true
+
+[node name="CellY1X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleLeft"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY1X0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[right]6:00am[/right]"
+fit_content = true
+
+[node name="CellY1X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY1X1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "Morning Prep"
+fit_content = true
+
+[node name="CellY1X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY1X2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY1X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY1X3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY1X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY1X4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY1X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY1X5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY1X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY1X6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY1X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleRight"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY1X7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY2X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleLeft"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY2X0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[right]7:30am[/right]"
+fit_content = true
+
+[node name="CellY2X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY2X1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "Gym
+Side Project"
+fit_content = true
+
+[node name="CellY2X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY2X2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY2X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY2X3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY2X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY2X4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY2X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY2X5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY2X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY2X6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY2X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleRight"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY2X7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY3X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleLeft"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY3X0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[right]9:00am[/right]"
+fit_content = true
+
+[node name="CellY3X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY3X1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "Day Job"
+fit_content = true
+
+[node name="CellY3X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY3X2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY3X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY3X3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY3X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY3X4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY3X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY3X5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY3X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY3X6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY3X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleRight"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY3X7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY4X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleLeft"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY4X0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[right]5:00pm[/right]"
+fit_content = true
+
+[node name="CellY4X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY4X1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "Stop work
+Family time"
+fit_content = true
+
+[node name="CellY4X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY4X2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY4X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY4X3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY4X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY4X4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY4X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY4X5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY4X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY4X6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY4X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleRight"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY4X7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY5X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleLeft"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY5X0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[right]7:30pm[/right]"
+fit_content = true
+
+[node name="CellY5X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY5X1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "Side Project
+Relax"
+fit_content = true
+
+[node name="CellY5X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY5X2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY5X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY5X3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY5X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY5X4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY5X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY5X5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY5X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY5X6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY5X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleRight"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY5X7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY6X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleLeft"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY6X0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[right]9:00pm[/right]"
+fit_content = true
+
+[node name="CellY6X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY6X1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "Wind down"
+fit_content = true
+
+[node name="CellY6X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY6X2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY6X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY6X3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY6X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY6X4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY6X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY6X5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY6X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY6X6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY6X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleRight"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY6X7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY7X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleLeft"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY7X0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[right]10:00pm[/right]"
+fit_content = true
+
+[node name="CellY7X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY7X1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "Bedtime"
+fit_content = true
+
+[node name="CellY7X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY7X2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY7X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY7X3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY7X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY7X4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY7X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY7X5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY7X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY7X6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY7X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleRight"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY7X7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY8X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleLeft"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY8X0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[right]11:00pm[/right]"
+fit_content = true
+
+[node name="CellY8X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY8X1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "More honest
+bedtime"
+fit_content = true
+
+[node name="CellY8X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY8X2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY8X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY8X3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY8X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY8X4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY8X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY8X5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY8X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY8X6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY8X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellMiddleRight"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY8X7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY9X0" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellBottomLeft"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY9X0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[right]1:00am[/right]"
+fit_content = true
+
+[node name="CellY9X1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellBottomMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY9X1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "[center][i]sigh[/i][/center]"
+fit_content = true
+
+[node name="CellY9X2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellBottomMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY9X2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY9X3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellBottomMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY9X3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY9X4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellBottomMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY9X4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY9X5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellBottomMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY9X5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY9X6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellBottomMiddle"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY9X6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="CellY9X7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TableCellBottomRight"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/GridContainer/CellY9X7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichTableContent"
+bbcode_enabled = true
+text = "A bunch of text on multiple lines"
+fit_content = true
+
+[node name="BioList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent"]
+visible = false
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.4
+theme_override_constants/separation = 32
+
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("10_bvbcw")
+
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper"]
+layout_mode = 2
+offset_right = 896.0
+offset_bottom = 64.0
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper/Point0" instance=ExtResource("11_cfnhm")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper/Point0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Godot is a mature, growing game engine"
+fit_content = true
+
+[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("10_bvbcw")
+
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper2"]
+layout_mode = 2
+offset_right = 896.0
+offset_bottom = 64.0
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper2/Point1" instance=ExtResource("11_cfnhm")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper2/Point1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Easy to pick up, lots of resources to learn mastery"
+fit_content = true
+
+[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
+custom_minimum_size = Vector2(1200, 90)
+layout_mode = 2
+script = ExtResource("10_bvbcw")
+
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper3"]
+layout_mode = 2
+offset_right = 1200.0
+offset_bottom = 90.0
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper3/Point2" instance=ExtResource("11_cfnhm")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper3/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Free and open source, with protection against bad actors"
+fit_content = true
+
+[node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("10_bvbcw")
+
+[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper4"]
+layout_mode = 2
+offset_right = 896.0
+offset_bottom = 64.0
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper4/Point3" instance=ExtResource("11_cfnhm")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper4/Point3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Can be used for making simple or complex games"
+fit_content = true
+
+[node name="AnimationWrapper5" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("10_bvbcw")
+
+[node name="Point4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper5"]
+layout_mode = 2
+offset_right = 896.0
+offset_bottom = 64.0
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper5/Point4" instance=ExtResource("11_cfnhm")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper5/Point4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "I love working with Godot!"
+fit_content = true
+
+[node name="AnimationWrapper6" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
+custom_minimum_size = Vector2(896, 64)
+layout_mode = 2
+script = ExtResource("10_bvbcw")
+
+[node name="Point5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper6"]
+layout_mode = 2
+offset_right = 896.0
+offset_bottom = 64.0
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper6/Point5" instance=ExtResource("11_cfnhm")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList/AnimationWrapper6/Point5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Stop waiting for Godot and try it for yourself!"
+fit_content = true
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("12_k5opi")]
+layout_mode = 2
+size_flags_vertical = 8
