@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://chbmko3nyf2im"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://chbmko3nyf2im"]
 
 [ext_resource type="StyleBox" uid="uid://bx5ulv703y1xh" path="res://assets/themes/StopWaitingForGodot/resources/AsideEditorBlue.tres" id="1_i8qjl"]
 [ext_resource type="FontFile" uid="uid://fbi0ipgd8bha" path="res://assets/fonts/REM/static/REM-Italic.ttf" id="2_0wpnx"]
@@ -10,6 +10,8 @@
 [ext_resource type="FontFile" uid="uid://dplw3q54uip0o" path="res://assets/fonts/REM/static/REM-Regular.ttf" id="7_vuux4"]
 [ext_resource type="FontFile" uid="uid://cwn4b1lbd10pl" path="res://assets/fonts/Expletus_Sans/static/ExpletusSans-BoldItalic.ttf" id="8_11p67"]
 [ext_resource type="FontFile" uid="uid://c1hbhvqbprxvi" path="res://assets/fonts/REM/static/REM-Bold.ttf" id="8_453wt"]
+[ext_resource type="FontFile" uid="uid://cuxyfvmlow8w6" path="res://assets/fonts/REM/static/REM-SemiBold.ttf" id="8_gjo0m"]
+[ext_resource type="FontFile" uid="uid://toegdyh38ek8" path="res://assets/fonts/REM/static/REM-BoldItalic.ttf" id="8_u3tu1"]
 
 [resource]
 default_font = ExtResource("7_vuux4")
@@ -45,6 +47,19 @@ Rich64/font_sizes/bold_italics_font_size = 64
 Rich64/font_sizes/italics_font_size = 64
 Rich64/font_sizes/mono_font_size = 64
 Rich64/font_sizes/normal_font_size = 64
+RichContent/base_type = &"RichTextLabel"
+RichContent/font_sizes/bold_font_size = 32
+RichContent/font_sizes/bold_italics_font_size = 32
+RichContent/font_sizes/italics_font_size = 32
+RichContent/font_sizes/mono_font_size = 32
+RichContent/font_sizes/normal_font_size = 32
+RichContent/fonts/bold_font = ExtResource("8_453wt")
+RichContent/fonts/bold_italics_font = ExtResource("8_u3tu1")
+RichContent/fonts/italics_font = ExtResource("2_0wpnx")
+RichContent/fonts/normal_font = ExtResource("7_vuux4")
+RichSlideContentHeading/base_type = &"RichTextLabel"
+RichSlideContentHeading/font_sizes/bold_font_size = 36
+RichSlideContentHeading/fonts/bold_font = ExtResource("8_gjo0m")
 RichSlideTitle/base_type = &"RichTextLabel"
 RichSlideTitle/colors/font_shadow_color = Color(0.00784314, 0.00784314, 0, 1)
 RichSlideTitle/constants/shadow_offset_x = 4

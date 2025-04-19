@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bo68drp11sapj"]
+[gd_scene load_steps=17 format=3 uid="uid://bo68drp11sapj"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_jyiav"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_uqoxy"]
@@ -7,9 +7,8 @@
 [ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_5xovr"]
 [ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_280sy"]
 [ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="7_etbui"]
-[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="8_7ator"]
 [ext_resource type="PackedScene" uid="uid://bt0q3yfxuiytc" path="res://scenes/SlideHeader/SlideHeader.tscn" id="8_uqoxy"]
-[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="9_rqs6t"]
+[ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="9_jyiav"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="10_em8ir"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
@@ -18,7 +17,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_qpkur"]
 script = ExtResource("5_5xovr")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+targetNodes = Array[NodePath]([NodePath("")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_hx63c"]
@@ -28,7 +27,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_c5igg"]
 script = ExtResource("6_280sy")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4")])
+targetNodes = Array[NodePath]([NodePath(""), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/Version4")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
@@ -71,38 +70,17 @@ theme_override_constants/separation = 64
 
 [node name="SlideHeader" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("8_uqoxy")]
 layout_mode = 2
-title = "Info!"
 
-[node name="VBox2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
-visible = false
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox2"]
-layout_mode = 2
-theme_override_constants/margin_left = 64
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox2/MarginContainer"]
-custom_minimum_size = Vector2(0, 68)
-layout_mode = 2
-theme_type_variation = &"SlideHeaderRichTextLabel"
-bbcode_enabled = true
-text = "[b]How does Godot make money?[/b]"
-
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBox/VBox2"]
-layout_mode = 2
-theme_type_variation = &"HSepGreen"
-theme_override_styles/separator = ExtResource("8_7ator")
-
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+[node name="SlideContent" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_right = 64
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent"]
 layout_mode = 2
 
-[node name="Version4" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer"]
+[node name="Version4" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer"]
 custom_minimum_size = Vector2(540, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -111,60 +89,46 @@ size_flags_stretch_ratio = 1.4
 theme_override_constants/separation = 32
 alignment = 1
 
-[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/Version4"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point0"]
-custom_minimum_size = Vector2(64, 64)
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/Version4/Point0" instance=ExtResource("9_jyiav")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture = ExtResource("9_rqs6t")
-expand_mode = 3
-stretch_mode = 5
 
-[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point0"]
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/Version4/Point0"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_top = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point0/Margin"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/Version4/Point0/Margin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme_override_font_sizes/italics_font_size = 40
-theme_override_font_sizes/normal_font_size = 32
+theme_type_variation = &"RichContent"
 bbcode_enabled = true
 text = "Freewill Donations
 [ul]Godot Development Fund[/ul]
 [ul]Formerly Patreon[/ul]"
 fit_content = true
 
-[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/Version4"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point1"]
-custom_minimum_size = Vector2(64, 64)
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/Version4/Point1" instance=ExtResource("9_jyiav")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture = ExtResource("9_rqs6t")
-expand_mode = 3
-stretch_mode = 5
 
-[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point1"]
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/Version4/Point1"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_top = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point1/Margin"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/Version4/Point1/Margin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme_override_font_sizes/italics_font_size = 40
-theme_override_font_sizes/normal_font_size = 32
+theme_type_variation = &"RichContent"
 bbcode_enabled = true
 text = "Sponsors and grants
 [ul]Usually targeting specific engine focus[/ul]
