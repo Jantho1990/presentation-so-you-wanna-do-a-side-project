@@ -1,54 +1,54 @@
-[gd_scene load_steps=18 format=3 uid="uid://benydbkmussbj"]
+[gd_scene load_steps=18 format=3 uid="uid://d3s3xktkqngsm"]
 
-[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_bkwun"]
-[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_648qv"]
-[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_d3pqb"]
-[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_gq055"]
-[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_0duii"]
-[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="7_0nj43"]
-[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="8_35ypc"]
-[ext_resource type="PackedScene" uid="uid://bt0q3yfxuiytc" path="res://scenes/SlideHeader/SlideHeader.tscn" id="8_n86wj"]
-[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="10_80sf7"]
-[ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="11_yjyx1"]
-[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="12_qipgt"]
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_txd5k"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_dsvpl"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_8coui"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_eypnn"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_q0nud"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_l43ll"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="7_2jp3g"]
+[ext_resource type="PackedScene" uid="uid://bt0q3yfxuiytc" path="res://scenes/SlideHeader/SlideHeader.tscn" id="8_bg3kw"]
+[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="9_vq2q0"]
+[ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="10_673h0"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="11_5xmd4"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
-script = ExtResource("4_gq055")
+script = ExtResource("4_eypnn")
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_lvhcn"]
-script = ExtResource("5_0duii")
+script = ExtResource("5_q0nud")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_gwk0t"]
-script = ExtResource("3_d3pqb")
-slide_steps = Array[ExtResource("2_648qv")]([SubResource("Resource_sho4t"), SubResource("Resource_lvhcn")])
+script = ExtResource("3_8coui")
+slide_steps = Array[ExtResource("2_dsvpl")]([SubResource("Resource_sho4t"), SubResource("Resource_lvhcn")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_nk01r"]
-script = ExtResource("7_0nj43")
+script = ExtResource("6_l43ll")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
-script = ExtResource("8_35ypc")
+script = ExtResource("7_2jp3g")
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_ynpfl"]
-script = ExtResource("3_d3pqb")
-slide_steps = Array[ExtResource("2_648qv")]([SubResource("Resource_nk01r"), SubResource("Resource_1vcjn")])
+script = ExtResource("3_8coui")
+slide_steps = Array[ExtResource("2_dsvpl")]([SubResource("Resource_nk01r"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
-[node name="InfoBase2" type="Control"]
+[node name="StartingASideProject" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bkwun")
-steps = Array[ExtResource("2_648qv")]([SubResource("Resource_gwk0t"), SubResource("Resource_ynpfl")])
+script = ExtResource("1_txd5k")
+steps = Array[ExtResource("2_dsvpl")]([SubResource("Resource_gwk0t"), SubResource("Resource_ynpfl")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -69,8 +69,9 @@ theme_override_constants/margin_bottom = 32
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="SlideHeader" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("8_n86wj")]
+[node name="SlideHeader" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("8_bg3kw")]
 layout_mode = 2
+title = "Getting Started with Side Projects"
 
 [node name="SlideContent" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
 layout_mode = 2
@@ -94,13 +95,13 @@ alignment = 1
 layout_mode = 2
 theme_type_variation = &"RichSlideContentHeading"
 bbcode_enabled = true
-text = "[b]Help[/b]"
+text = "[b]Generating Ideas[/b]"
 fit_content = true
 
 [node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
-custom_minimum_size = Vector2(540, 64)
+custom_minimum_size = Vector2(540, 205)
 layout_mode = 2
-script = ExtResource("10_80sf7")
+script = ExtResource("9_vq2q0")
 
 [node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper"]
 layout_mode = 2
@@ -108,7 +109,7 @@ offset_right = 540.0
 offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper/Point0" instance=ExtResource("11_yjyx1")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper/Point0" instance=ExtResource("10_673h0")]
 layout_mode = 2
 
 [node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper/Point0"]
@@ -117,13 +118,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "Godot Discord server"
+text = "[b]Ideas for what to work on[/b]
+[ul]  Interests and passions
+  Learning and practice
+  Someone else's cool thing
+  Commercial opportunities[/ul]"
 fit_content = true
 
 [node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
-custom_minimum_size = Vector2(640, 64)
+custom_minimum_size = Vector2(640, 205)
 layout_mode = 2
-script = ExtResource("10_80sf7")
+script = ExtResource("9_vq2q0")
 
 [node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper2"]
 layout_mode = 2
@@ -131,7 +136,7 @@ offset_right = 640.0
 offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper2/Point1" instance=ExtResource("11_yjyx1")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper2/Point1" instance=ExtResource("10_673h0")]
 layout_mode = 2
 
 [node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper2/Point1"]
@@ -140,30 +145,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "GodotForums.com (community-run)"
-fit_content = true
-
-[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
-custom_minimum_size = Vector2(600, 64)
-layout_mode = 2
-script = ExtResource("10_80sf7")
-
-[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper3"]
-layout_mode = 2
-offset_right = 600.0
-offset_bottom = 64.0
-theme_override_constants/separation = 16
-
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper3/Point2" instance=ExtResource("11_yjyx1")]
-layout_mode = 2
-
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper3/Point2"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_type_variation = &"RichContent"
-bbcode_enabled = true
-text = "Bug Report on Godot repository"
+text = "[b]Have a place to capture thoughts[/b]
+[ul]  Less likely to lose the idea
+  Gets them out of your head
+  Lets you see your possible scope
+  Capture documents are great![/ul]"
 fit_content = true
 
 [node name="SideRight" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer"]
@@ -179,13 +165,13 @@ alignment = 1
 layout_mode = 2
 theme_type_variation = &"RichSlideContentHeading"
 bbcode_enabled = true
-text = "[b]Feature Request[/b]"
+text = "[b]Getting Going[/b]"
 fit_content = true
 
 [node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
-custom_minimum_size = Vector2(800, 64)
+custom_minimum_size = Vector2(800, 205)
 layout_mode = 2
-script = ExtResource("10_80sf7")
+script = ExtResource("9_vq2q0")
 
 [node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper"]
 layout_mode = 2
@@ -193,7 +179,7 @@ offset_right = 800.0
 offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper/Point0" instance=ExtResource("11_yjyx1")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper/Point0" instance=ExtResource("10_673h0")]
 layout_mode = 2
 
 [node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper/Point0"]
@@ -202,13 +188,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "Godot Improvement Proposals repository"
+text = "[b]Explicitly plan when you'll do work[/b]
+[ul]  Pick times that align to your best energy
+  Mornings, evenings, weekends, breaks
+  Consistency helps with motivation
+  Simplifies finding time when it's planned[/ul]"
 fit_content = true
 
 [node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
-custom_minimum_size = Vector2(800, 188)
+custom_minimum_size = Vector2(800, 213)
 layout_mode = 2
-script = ExtResource("10_80sf7")
+script = ExtResource("9_vq2q0")
 
 [node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper2"]
 layout_mode = 2
@@ -216,7 +206,7 @@ offset_right = 800.0
 offset_bottom = 188.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper2/Point1" instance=ExtResource("11_yjyx1")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper2/Point1" instance=ExtResource("10_673h0")]
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper2/Point1"]
@@ -230,15 +220,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "[b]Proposal Issue[/b]
-[ul]  [i]Technical implementation[/i][/ul]
-[ul]  Use when you can specify how the idea should be implemented[/ul]"
+text = "[b]Make do with what you have[/b]
+[ul]  Good tools nice, but not necessary
+  Right moments come when you act
+  Waiting for perfection kills drive
+  Experience teaches what you really need[/ul]"
 fit_content = true
 
 [node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
+visible = false
 custom_minimum_size = Vector2(800, 188)
 layout_mode = 2
-script = ExtResource("10_80sf7")
+script = ExtResource("9_vq2q0")
 
 [node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper3"]
 layout_mode = 2
@@ -246,7 +239,7 @@ offset_right = 800.0
 offset_bottom = 188.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper3/Point2" instance=ExtResource("11_yjyx1")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper3/Point2" instance=ExtResource("10_673h0")]
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper3/Point2"]
@@ -266,9 +259,10 @@ text = "[b]Proposal Discussion[/b]
 fit_content = true
 
 [node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
+visible = false
 custom_minimum_size = Vector2(800, 98)
 layout_mode = 2
-script = ExtResource("10_80sf7")
+script = ExtResource("9_vq2q0")
 
 [node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper4"]
 layout_mode = 2
@@ -276,7 +270,7 @@ offset_right = 800.0
 offset_bottom = 98.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper4/Point3" instance=ExtResource("11_yjyx1")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper4/Point3" instance=ExtResource("10_673h0")]
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper4/Point3"]
@@ -294,6 +288,6 @@ text = "All proposals driven by community interest
 [ul]Engage with the community[/ul]"
 fit_content = true
 
-[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("12_qipgt")]
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("11_5xmd4")]
 layout_mode = 2
 size_flags_vertical = 8
