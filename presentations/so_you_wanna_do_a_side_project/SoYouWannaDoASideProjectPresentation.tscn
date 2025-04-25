@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://ixeixm2n366t"]
+[gd_scene load_steps=8 format=3 uid="uid://ixeixm2n366t"]
 
 [ext_resource type="Script" uid="uid://cx5ff6rmig1pl" path="res://nodes/Presentation.gd" id="1_tvrrd"]
 [ext_resource type="PackedScene" uid="uid://cj1hewcgrp8nj" path="res://presentations/so_you_wanna_do_a_side_project/slides/SYWDASPTitle.tscn" id="2_lx6xu"]
 [ext_resource type="PackedScene" uid="uid://b2km3n4egy0j" path="res://presentations/so_you_wanna_do_a_side_project/slides/WhoAreYou.tscn" id="3_g2hp5"]
 [ext_resource type="PackedScene" uid="uid://cmekalqo5ycxu" path="res://presentations/so_you_wanna_do_a_side_project/slides/WhoAmI.tscn" id="4_g2hp5"]
+[ext_resource type="PackedScene" uid="uid://jfo5jqnr6r3e" path="res://presentations/so_you_wanna_do_a_side_project/slides/WhyDoASideProject.tscn" id="5_f4w56"]
 [ext_resource type="PackedScene" uid="uid://d3s3xktkqngsm" path="res://presentations/so_you_wanna_do_a_side_project/slides/StartingASideProject.tscn" id="5_jafvo"]
+[ext_resource type="PackedScene" uid="uid://bw8qejmhr6ir" path="res://presentations/so_you_wanna_do_a_side_project/slides/MaintainingASideProject.tscn" id="7_p0o1a"]
 
 [node name="SoYouWannaDoASideProjectPresentation" type="Control"]
 layout_mode = 3
@@ -27,6 +29,14 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="WhyDoASideProject" parent="." instance=ExtResource("5_f4w56")]
+visible = false
+layout_mode = 1
+
 [node name="StartingASideProject" parent="." instance=ExtResource("5_jafvo")]
+visible = false
+layout_mode = 1
+
+[node name="MaintainingASideProject" parent="." instance=ExtResource("7_p0o1a")]
 visible = false
 layout_mode = 1

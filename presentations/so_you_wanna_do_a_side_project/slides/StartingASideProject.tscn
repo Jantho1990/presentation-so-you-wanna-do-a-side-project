@@ -260,7 +260,7 @@ fit_content = true
 
 [node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
 visible = false
-custom_minimum_size = Vector2(800, 98)
+custom_minimum_size = Vector2(800, 1812)
 layout_mode = 2
 script = ExtResource("9_vq2q0")
 
