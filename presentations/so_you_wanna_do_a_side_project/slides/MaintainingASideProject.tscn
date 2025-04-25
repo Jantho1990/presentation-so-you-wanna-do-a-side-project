@@ -1,0 +1,244 @@
+[gd_scene load_steps=17 format=3 uid="uid://bw8qejmhr6ir"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_kdhlm"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_3n15g"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_fyjxi"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_5jqun"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_n381t"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_py5je"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="7_te24x"]
+[ext_resource type="PackedScene" uid="uid://bt0q3yfxuiytc" path="res://scenes/SlideHeader/SlideHeader.tscn" id="8_qj4tc"]
+[ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="10_6f34n"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="11_4nxof"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("4_5jqun")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_lvhcn"]
+script = ExtResource("5_n381t")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_gwk0t"]
+script = ExtResource("3_fyjxi")
+slide_steps = Array[ExtResource("2_3n15g")]([SubResource("Resource_sho4t"), SubResource("Resource_lvhcn")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_nk01r"]
+script = ExtResource("6_py5je")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("7_te24x")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_ynpfl"]
+script = ExtResource("3_fyjxi")
+slide_steps = Array[ExtResource("2_3n15g")]([SubResource("Resource_nk01r"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[node name="MaintainingASideProject" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kdhlm")
+steps = Array[ExtResource("2_3n15g")]([SubResource("Resource_gwk0t"), SubResource("Resource_ynpfl")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="SlideHeader" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("8_qj4tc")]
+layout_mode = 2
+title = "Maintaining a Side Project"
+
+[node name="SlideContent" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent"]
+layout_mode = 2
+
+[node name="SideLeft" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 1.4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="ContentHeading" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
+layout_mode = 2
+theme_type_variation = &"RichSlideContentHeading"
+bbcode_enabled = true
+text = "[b]Keep Yourself Going[/b]"
+fit_content = true
+
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point0" instance=ExtResource("10_6f34n")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[b]Never have a zero day[/b]
+[ul]
+  There's always 5 minutes in your day
+  Doing the work engages your brain
+  Tiny amount of progress better than none
+[/ul]"
+fit_content = true
+
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point1" instance=ExtResource("10_6f34n")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[b]Know your weekly time commitment[/b]
+[ul]
+  Helps you plan your work/life balance
+  Lets you guesstimate potential progress
+  Provides you with a time budget to spend
+[/ul]"
+fit_content = true
+
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point2" instance=ExtResource("10_6f34n")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[b]Find a comfortable workplace[/b]
+[ul]
+  Locales and setups bring have an energy
+  Experiment to find what works for you
+  Reduce distraction potential
+[/ul]"
+fit_content = true
+
+[node name="SideRight" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 1.4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="ContentHeading" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
+layout_mode = 2
+theme_type_variation = &"RichSlideContentHeading"
+bbcode_enabled = true
+text = "[b]Keep the Project Going[/b]"
+fit_content = true
+
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point0" instance=ExtResource("10_6f34n")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[b]Plan your goals[/b]
+[ul]
+  It saves your mental energy
+  Gets project details out of your head
+  Broad outlines over explicit details
+[/ul]"
+fit_content = true
+
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point1" instance=ExtResource("10_6f34n")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[b]Find people to work with[/b]
+[ul]
+  Different perspectives improve quality
+  It takes longer if you do all the things
+  Working with people is cool!
+[/ul]"
+fit_content = true
+
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point2" instance=ExtResource("10_6f34n")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[b]Know your project's purpose[/b]
+[ul]
+  Is it commercial? Deadlines are important!
+  Is it educational? When is it learnt?
+  Helps avoid using ill-fitting strategies
+[/ul]"
+fit_content = true
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("11_4nxof")]
+layout_mode = 2
+size_flags_vertical = 8
