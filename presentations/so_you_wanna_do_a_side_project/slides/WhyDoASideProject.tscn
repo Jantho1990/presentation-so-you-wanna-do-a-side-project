@@ -92,7 +92,7 @@ size_flags_stretch_ratio = 1.4
 theme_override_constants/separation = 32
 
 [node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 779)
 layout_mode = 2
 script = ExtResource("10_jwd0t")
 
@@ -115,7 +115,7 @@ text = "Isn't it expensive?"
 fit_content = true
 
 [node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 1148)
 layout_mode = 2
 script = ExtResource("10_jwd0t")
 
@@ -138,7 +138,7 @@ text = "It'll take up my spare time!"
 fit_content = true
 
 [node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(1200, 90)
+custom_minimum_size = Vector2(1200, 1763)
 layout_mode = 2
 script = ExtResource("10_jwd0t")
 
@@ -161,7 +161,7 @@ text = "It's hard, I just want to relax after work!"
 fit_content = true
 
 [node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 1271)
 layout_mode = 2
 script = ExtResource("10_jwd0t")
 

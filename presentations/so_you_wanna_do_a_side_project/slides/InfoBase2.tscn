@@ -98,7 +98,7 @@ text = "[b]Help[/b]"
 fit_content = true
 
 [node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
-custom_minimum_size = Vector2(540, 64)
+custom_minimum_size = Vector2(540, 820)
 layout_mode = 2
 script = ExtResource("10_80sf7")
 
@@ -121,7 +121,7 @@ text = "Godot Discord server"
 fit_content = true
 
 [node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
-custom_minimum_size = Vector2(640, 64)
+custom_minimum_size = Vector2(640, 1271)
 layout_mode = 2
 script = ExtResource("10_80sf7")
 
@@ -144,7 +144,7 @@ text = "GodotForums.com (community-run)"
 fit_content = true
 
 [node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
-custom_minimum_size = Vector2(600, 64)
+custom_minimum_size = Vector2(600, 1230)
 layout_mode = 2
 script = ExtResource("10_80sf7")
 
@@ -183,7 +183,7 @@ text = "[b]Feature Request[/b]"
 fit_content = true
 
 [node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
-custom_minimum_size = Vector2(800, 64)
+custom_minimum_size = Vector2(800, 1558)
 layout_mode = 2
 script = ExtResource("10_80sf7")
 
@@ -266,7 +266,7 @@ text = "[b]Proposal Discussion[/b]
 fit_content = true
 
 [node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
-custom_minimum_size = Vector2(800, 98)
+custom_minimum_size = Vector2(800, 1812)
 layout_mode = 2
 script = ExtResource("10_80sf7")
 

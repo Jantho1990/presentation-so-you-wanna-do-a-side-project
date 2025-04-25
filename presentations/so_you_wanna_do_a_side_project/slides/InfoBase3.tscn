@@ -91,7 +91,7 @@ size_flags_stretch_ratio = 1.4
 theme_override_constants/separation = 32
 
 [node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 1558)
 layout_mode = 2
 script = ExtResource("13_vy38i")
 
@@ -114,7 +114,7 @@ text = "Godot is a mature, growing game engine"
 fit_content = true
 
 [node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 2091)
 layout_mode = 2
 script = ExtResource("13_vy38i")
 
@@ -137,7 +137,7 @@ text = "Easy to pick up, lots of resources to learn mastery"
 fit_content = true
 
 [node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(1200, 90)
+custom_minimum_size = Vector2(1200, 2296)
 layout_mode = 2
 script = ExtResource("13_vy38i")
 
@@ -160,7 +160,7 @@ text = "Free and open source, with protection against bad actors"
 fit_content = true
 
 [node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 1886)
 layout_mode = 2
 script = ExtResource("13_vy38i")
 
@@ -183,7 +183,7 @@ text = "Can be used for making simple or complex games"
 fit_content = true
 
 [node name="AnimationWrapper5" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 1066)
 layout_mode = 2
 script = ExtResource("13_vy38i")
 
@@ -206,7 +206,7 @@ text = "I love working with Godot!"
 fit_content = true
 
 [node name="AnimationWrapper6" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 1927)
 layout_mode = 2
 script = ExtResource("13_vy38i")
 
