@@ -45,7 +45,7 @@ script = ExtResource("3_ppcf2")
 slide_steps = Array[ExtResource("2_t83ug")]([SubResource("Resource_u6o0g"), SubResource("Resource_y3c5b"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
-[node name="WhyDoASideProject" type="Control"]
+[node name="WhyBotherSideProject" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,7 +76,7 @@ theme_override_constants/separation = 64
 
 [node name="SlideHeader" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("9_kikdh")]
 layout_mode = 2
-title = "Why Do a Side Project?"
+title = "Why Bother?"
 
 [node name="SlideContent" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
 layout_mode = 2
@@ -92,7 +92,7 @@ size_flags_stretch_ratio = 1.4
 theme_override_constants/separation = 32
 
 [node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(896, 779)
+custom_minimum_size = Vector2(896, 64)
 layout_mode = 2
 script = ExtResource("10_jwd0t")
 
@@ -115,7 +115,7 @@ text = "Isn't it expensive?"
 fit_content = true
 
 [node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(896, 1148)
+custom_minimum_size = Vector2(896, 64)
 layout_mode = 2
 script = ExtResource("10_jwd0t")
 
@@ -138,7 +138,7 @@ text = "It'll take up my spare time!"
 fit_content = true
 
 [node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(1200, 1763)
+custom_minimum_size = Vector2(1200, 90)
 layout_mode = 2
 script = ExtResource("10_jwd0t")
 
@@ -161,7 +161,7 @@ text = "It's hard, I just want to relax after work!"
 fit_content = true
 
 [node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
-custom_minimum_size = Vector2(896, 1271)
+custom_minimum_size = Vector2(896, 64)
 layout_mode = 2
 script = ExtResource("10_jwd0t")
 
