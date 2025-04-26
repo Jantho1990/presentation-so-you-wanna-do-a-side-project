@@ -1,8 +1,9 @@
-class_name HighlightStep
+class_name ClearHighlightStep
 extends SlideStep
 
 
-@export var highlight_color := Color('#fee7d5')
+const CLEAR_COLOR = Color(1.0, 1.0, 1.0, 1.0)
+
 @export var animatedNodePaths : Array[NodePath]
 
 var _animatedNodes : Array[Node]
@@ -36,7 +37,7 @@ func next() -> void:
   
   _slideTween = slide.create_tween().set_parallel(true)
   for animatedNode in _animatedNodes:
-    _slideTween.tween_property(animatedNode, "modulate", highlight_color, animation_duration).from(_old_modulates[animatedNode])
+    _slideTween.tween_property(animatedNode, "modulate", CLEAR_COLOR, animation_duration).from(_old_modulates[animatedNode])
   await _slideTween.finished
 #  print('DBG: next finished %s' % [targetNodes[0].modulate])
   _slideTween = null
@@ -49,7 +50,7 @@ func previous() -> void:
     _kill_tween()
   _slideTween = slide.create_tween().set_parallel(true)
   for animatedNode in _animatedNodes:
-    _slideTween.tween_property(animatedNode, "modulate", _old_modulates[animatedNode], animation_duration).from(highlight_color)
+    _slideTween.tween_property(animatedNode, "modulate", _old_modulates[animatedNode], animation_duration).from(CLEAR_COLOR)
   await _slideTween.finished
   _slideTween = null
-  step_previous_ended.emit()  
+  step_previous_ended.emit()

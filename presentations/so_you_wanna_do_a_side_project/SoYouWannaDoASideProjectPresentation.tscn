@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://ixeixm2n366t"]
+[gd_scene load_steps=18 format=3 uid="uid://ixeixm2n366t"]
 
 [ext_resource type="Script" uid="uid://cx5ff6rmig1pl" path="res://nodes/Presentation.gd" id="1_tvrrd"]
 [ext_resource type="PackedScene" uid="uid://cj1hewcgrp8nj" path="res://presentations/so_you_wanna_do_a_side_project/slides/SYWDASPTitle.tscn" id="2_lx6xu"]
 [ext_resource type="PackedScene" uid="uid://6dby4714ib0v" path="res://presentations/so_you_wanna_do_a_side_project/slides/TitleThankYou.tscn" id="3_0ajfk"]
 [ext_resource type="PackedScene" uid="uid://b2km3n4egy0j" path="res://presentations/so_you_wanna_do_a_side_project/slides/WhoAreYou.tscn" id="3_g2hp5"]
+[ext_resource type="PackedScene" uid="uid://crqbhf3a8765r" path="res://presentations/so_you_wanna_do_a_side_project/slides/HowItWas.tscn" id="3_s4bo2"]
 [ext_resource type="PackedScene" uid="uid://cmekalqo5ycxu" path="res://presentations/so_you_wanna_do_a_side_project/slides/WhoAmI.tscn" id="4_g2hp5"]
 [ext_resource type="PackedScene" uid="uid://drdxiquxkeg26" path="res://presentations/so_you_wanna_do_a_side_project/slides/WhatThisTalkIs.tscn" id="4_gvklx"]
 [ext_resource type="PackedScene" uid="uid://btgk7b24i3rg5" path="res://presentations/so_you_wanna_do_a_side_project/slides/TitleDefiningSideProjects.tscn" id="5_0ajfk"]
@@ -59,6 +60,10 @@ visible = false
 layout_mode = 1
 
 [node name="TitleMyExperience" parent="." instance=ExtResource("8_3y4bx")]
+visible = false
+layout_mode = 1
+
+[node name="HowItWas" parent="." instance=ExtResource("3_s4bo2")]
 visible = false
 layout_mode = 1
 
