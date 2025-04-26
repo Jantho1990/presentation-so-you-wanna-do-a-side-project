@@ -196,6 +196,22 @@ bbcode_enabled = true
 text = "[b]Composing Music[/b]"
 fit_content = true
 
+[node name="Presentation" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox/Presentation" instance=ExtResource("11_g2wpu")]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox/Presentation"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[b]Giving a presentation[/b]"
+fit_content = true
+
 [node name="Anything" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
 layout_mode = 2
 theme_override_constants/separation = 16

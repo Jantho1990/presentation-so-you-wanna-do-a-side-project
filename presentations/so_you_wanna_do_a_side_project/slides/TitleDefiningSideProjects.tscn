@@ -1,43 +1,43 @@
-[gd_scene load_steps=19 format=3 uid="uid://cqvxth0mpimhi"]
+[gd_scene load_steps=19 format=3 uid="uid://btgk7b24i3rg5"]
 
-[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_amhmr"]
-[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_tiv5n"]
-[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_4xnw2"]
-[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_clora"]
-[ext_resource type="Script" uid="uid://qpv26n56bah3" path="res://resources/AnimationPlayStep.gd" id="5_1wtbt"]
-[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="6_jckja"]
-[ext_resource type="PackedScene" uid="uid://diak4ipf17jt0" path="res://scenes/LineDecorations/LineDecorations.tscn" id="7_nt78o"]
-[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="9_3iyc4"]
-[ext_resource type="Animation" uid="uid://26b1efpj5vui" path="res://assets/animations/TitleSlides.tres" id="10_88m33"]
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_ystdu"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_4eviu"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_65hy7"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_b8ith"]
+[ext_resource type="Script" uid="uid://qpv26n56bah3" path="res://resources/AnimationPlayStep.gd" id="5_d26ke"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="6_b13k6"]
+[ext_resource type="PackedScene" uid="uid://diak4ipf17jt0" path="res://scenes/LineDecorations/LineDecorations.tscn" id="7_310sj"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="8_6t32r"]
+[ext_resource type="Animation" uid="uid://26b1efpj5vui" path="res://assets/animations/TitleSlides.tres" id="9_l6mjs"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
-script = ExtResource("4_clora")
+script = ExtResource("4_b8ith")
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_g1g38"]
-script = ExtResource("5_1wtbt")
+script = ExtResource("5_d26ke")
 animationPlayerPath = NodePath("AnimationPlayer")
 animation_name = "title_in"
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1e5m2"]
-script = ExtResource("3_4xnw2")
-slide_steps = Array[ExtResource("2_tiv5n")]([SubResource("Resource_sho4t"), SubResource("Resource_g1g38")])
+script = ExtResource("3_65hy7")
+slide_steps = Array[ExtResource("2_4eviu")]([SubResource("Resource_sho4t"), SubResource("Resource_g1g38")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_b2tck"]
-script = ExtResource("5_1wtbt")
+script = ExtResource("5_d26ke")
 animationPlayerPath = NodePath("AnimationPlayer")
 animation_name = "title_out"
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
-script = ExtResource("6_jckja")
+script = ExtResource("6_b13k6")
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_lxiyv"]
-script = ExtResource("3_4xnw2")
-slide_steps = Array[ExtResource("2_tiv5n")]([SubResource("Resource_b2tck"), SubResource("Resource_1vcjn")])
+script = ExtResource("3_65hy7")
+slide_steps = Array[ExtResource("2_4eviu")]([SubResource("Resource_b2tck"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
 [sub_resource type="Animation" id="Animation_flyu5"]
@@ -122,18 +122,18 @@ tracks/4/keys = {
 _data = {
 &"RESET": SubResource("Animation_flyu5"),
 &"title_in": SubResource("Animation_8ka77"),
-&"title_out": ExtResource("10_88m33")
+&"title_out": ExtResource("9_l6mjs")
 }
 
-[node name="Title2LineBase" type="Control"]
+[node name="TitleDefiningSideProjects" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_amhmr")
-steps = Array[ExtResource("2_tiv5n")]([SubResource("Resource_1e5m2"), SubResource("Resource_lxiyv")])
+script = ExtResource("1_ystdu")
+steps = Array[ExtResource("2_4eviu")]([SubResource("Resource_1e5m2"), SubResource("Resource_lxiyv")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -144,7 +144,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"PanelEditorBlue"
 
-[node name="LineDecorations" parent="PanelContainer" instance=ExtResource("7_nt78o")]
+[node name="LineDecorations" parent="PanelContainer" instance=ExtResource("7_310sj")]
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -177,10 +177,10 @@ theme_type_variation = &"RichSlideTitle"
 theme_override_font_sizes/bold_italics_font_size = 172
 theme_override_font_sizes/bold_font_size = 172
 bbcode_enabled = true
-text = "[b]Your Title:
-[color=fee7d5][i]With Two Lines![/i][/color][/b]"
+text = "[b]Base Camp:
+[color=fee7d5][i]What and Why[/i][/color][/b]"
 
-[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("9_3iyc4")]
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("8_6t32r")]
 layout_mode = 2
 size_flags_vertical = 8
 
