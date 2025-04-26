@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ixeixm2n366t"]
+[gd_scene load_steps=22 format=3 uid="uid://ixeixm2n366t"]
 
 [ext_resource type="Script" uid="uid://cx5ff6rmig1pl" path="res://nodes/Presentation.gd" id="1_tvrrd"]
 [ext_resource type="PackedScene" uid="uid://cj1hewcgrp8nj" path="res://presentations/so_you_wanna_do_a_side_project/slides/SYWDASPTitle.tscn" id="2_lx6xu"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://08n1pcn5utjb" path="res://presentations/so_you_wanna_do_a_side_project/slides/TitleConclusion.tscn" id="13_ej7u1"]
 [ext_resource type="PackedScene" uid="uid://bgmkmrv2dbwrs" path="res://presentations/so_you_wanna_do_a_side_project/slides/WhyBotherSideProjectResponse.tscn" id="18_1yi3o"]
 [ext_resource type="PackedScene" uid="uid://ckvpy0cxocvbx" path="res://presentations/so_you_wanna_do_a_side_project/slides/ConclusionOverview.tscn" id="18_tenj6"]
+[ext_resource type="PackedScene" uid="uid://dovq32tx3xfdf" path="res://presentations/so_you_wanna_do_a_side_project/slides/FinalThoughts.tscn" id="20_lwktu"]
 
 [node name="SoYouWannaDoASideProjectPresentation" type="Control"]
 layout_mode = 3
@@ -99,6 +100,10 @@ visible = false
 layout_mode = 1
 
 [node name="WhyBotherSideProjectResponse" parent="." instance=ExtResource("18_1yi3o")]
+visible = false
+layout_mode = 1
+
+[node name="FinalThoughts" parent="." instance=ExtResource("20_lwktu")]
 visible = false
 layout_mode = 1
 
