@@ -55,4 +55,5 @@ func previous() -> void:
 
 func _set_slide(value: PresentationSlide) -> void:
   slide = value
+  await slide.tree_entered # This is required for the slide's name to be defined for error messages.
   slide_set.emit()

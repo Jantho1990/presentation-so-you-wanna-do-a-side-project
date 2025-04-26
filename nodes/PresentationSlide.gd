@@ -13,6 +13,10 @@ signal started
 var currentStep : SlideStep
 
 
+func _ready() -> void:
+  assert(_validate_steps(), 'PresentationSlide._ready(): Slide "%s" has undefined steps, presentation will not work!' % [name])
+
+
 func on_SlideStep_next_requested(requestingSlideStep: SlideStep) -> void:
   next()
   
@@ -24,6 +28,8 @@ func on_SlideStep_previous_requested(requestingSlideStep: SlideStep) -> void:
 func _set_steps(value: Array) -> void:
   steps = value
   for slideStep in steps:
+    if not slideStep:
+      continue # We will validate this on ready.
     slideStep.slide = self
     _connect_slide_signals(slideStep)
 
@@ -41,6 +47,13 @@ func _finish() -> void:
 
 func _finish_reverse() -> void:
   emit_signal("finish_reversed")
+
+
+func _validate_steps() -> bool:
+  for slideStep in steps:
+    if !slideStep:
+      return false
+  return true
 
 
 func finish() -> void:

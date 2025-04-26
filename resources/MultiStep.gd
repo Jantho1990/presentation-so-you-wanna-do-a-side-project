@@ -27,6 +27,7 @@ func _set_slide_steps(value: Array) -> void:
   if not slide:
     await slide_set
   for slideStep in slide_steps:
+    assert(!!slideStep, 'MultiStep._set_slide_steps(): MultiStep in slide "%s" has undefined steps, cannot continue!' % [slide.name])
     slideStep.slide = slide
     if slideStep.has_signal("next_requested"):
       slideStep.next_requested.connect(_on_SlideStep_next_requested)
