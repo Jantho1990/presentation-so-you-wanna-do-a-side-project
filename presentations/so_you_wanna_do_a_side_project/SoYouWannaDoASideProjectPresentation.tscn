@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ixeixm2n366t"]
+[gd_scene load_steps=17 format=3 uid="uid://ixeixm2n366t"]
 
 [ext_resource type="Script" uid="uid://cx5ff6rmig1pl" path="res://nodes/Presentation.gd" id="1_tvrrd"]
 [ext_resource type="PackedScene" uid="uid://cj1hewcgrp8nj" path="res://presentations/so_you_wanna_do_a_side_project/slides/SYWDASPTitle.tscn" id="2_lx6xu"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dxcsbkrq48rq4" path="res://presentations/so_you_wanna_do_a_side_project/slides/WhatIsASideProject.tscn" id="5_p0o1a"]
 [ext_resource type="PackedScene" uid="uid://bw8qejmhr6ir" path="res://presentations/so_you_wanna_do_a_side_project/slides/MaintainingASideProject.tscn" id="7_p0o1a"]
 [ext_resource type="PackedScene" uid="uid://bdlnnuqp7wkmx" path="res://presentations/so_you_wanna_do_a_side_project/slides/TitleMyExperience.tscn" id="8_3y4bx"]
+[ext_resource type="PackedScene" uid="uid://bfrj7tuw7rpfh" path="res://presentations/so_you_wanna_do_a_side_project/slides/HowLongDoesItTake.tscn" id="8_k70j2"]
 [ext_resource type="PackedScene" uid="uid://c8n3ki0ra25lm" path="res://presentations/so_you_wanna_do_a_side_project/slides/HowItsGoing.tscn" id="9_ej7u1"]
 [ext_resource type="PackedScene" uid="uid://bxgskyrt4tpgk" path="res://presentations/so_you_wanna_do_a_side_project/slides/TitleProcessSideProjects.tscn" id="10_gvklx"]
 [ext_resource type="PackedScene" uid="uid://08n1pcn5utjb" path="res://presentations/so_you_wanna_do_a_side_project/slides/TitleConclusion.tscn" id="13_ej7u1"]
@@ -46,6 +47,10 @@ visible = false
 layout_mode = 1
 
 [node name="WhatIsASideProject" parent="." instance=ExtResource("5_p0o1a")]
+visible = false
+layout_mode = 1
+
+[node name="HowLongDoesItTake" parent="." instance=ExtResource("8_k70j2")]
 visible = false
 layout_mode = 1
 

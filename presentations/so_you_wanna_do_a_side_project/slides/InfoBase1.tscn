@@ -17,7 +17,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_qpkur"]
 script = ExtResource("5_5xovr")
-targetNodes = Array[NodePath]([NodePath("")])
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_hx63c"]
@@ -27,7 +27,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_c5igg"]
 script = ExtResource("6_280sy")
-targetNodes = Array[NodePath]([NodePath(""), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/Version4")])
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/Version4")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
