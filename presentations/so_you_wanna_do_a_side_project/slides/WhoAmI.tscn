@@ -36,34 +36,40 @@ animation_duration = 0.5
 [sub_resource type="Resource" id="Resource_gi0mb"]
 script = ExtResource("6_6exuj")
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper/Mugshot")])
+axis = 2
 animation_duration = 0.2
 
 [sub_resource type="Resource" id="Resource_uly4x"]
 script = ExtResource("6_6exuj")
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList")])
+axis = 2
 animation_duration = 0.2
 
 [sub_resource type="Resource" id="Resource_ytwgk"]
 script = ExtResource("6_6exuj")
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper3/LoonicyStuff")])
+axis = 2
 animation_duration = 0.2
 
 [sub_resource type="Resource" id="Resource_0owdj"]
 script = ExtResource("8_qjdnh")
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper/Mugshot")])
 target_position = Vector2(-800, 0)
+axis = 2
 animation_duration = 0.2
 
 [sub_resource type="Resource" id="Resource_l2pno"]
 script = ExtResource("8_qjdnh")
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList")])
 target_position = Vector2(0, 1000)
+axis = 2
 animation_duration = 0.2
 
 [sub_resource type="Resource" id="Resource_8tfej"]
 script = ExtResource("8_qjdnh")
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper3/LoonicyStuff")])
 target_position = Vector2(800, 0)
+axis = 2
 animation_duration = 0.2
 
 [sub_resource type="Resource" id="Resource_hhihw"]
