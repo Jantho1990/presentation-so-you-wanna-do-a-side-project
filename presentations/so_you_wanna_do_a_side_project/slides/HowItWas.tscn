@@ -46,113 +46,113 @@ animation_duration = 0.5
 [sub_resource type="Resource" id="Resource_ow6pj"]
 script = ExtResource("5_odlm3")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper/SidePanel0")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://bcqb05pw1pkii"
 
 [sub_resource type="Resource" id="Resource_t4nnu"]
 script = ExtResource("6_ow6pj")
 highlight_color = Color(0.996078, 0.905882, 0.835294, 1)
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point0")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://dttfkqalo7xhk"
 
 [sub_resource type="Resource" id="Resource_drb0a"]
 script = ExtResource("5_drb0a")
 slide_steps = Array[ExtResource("2_ow6pj")]([SubResource("Resource_ow6pj"), SubResource("Resource_t4nnu")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://kdht20jhjko6"
 
 [sub_resource type="Resource" id="Resource_ynsnc"]
 script = ExtResource("5_odlm3")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper/SidePanel1")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://bcqb05pw1pkii"
 
 [sub_resource type="Resource" id="Resource_3a757"]
 script = ExtResource("6_ow6pj")
 highlight_color = Color(0.996078, 0.905882, 0.835294, 1)
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point1")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://dttfkqalo7xhk"
 
 [sub_resource type="Resource" id="Resource_wf8c2"]
 script = ExtResource("9_odlm3")
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point0")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://e2rb8hrg2r31"
 
 [sub_resource type="Resource" id="Resource_4nyxa"]
 script = ExtResource("6_0wbp2")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper/SidePanel0")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://63q6guytynws"
 
 [sub_resource type="Resource" id="Resource_0wbp2"]
 script = ExtResource("5_drb0a")
 slide_steps = Array[ExtResource("2_ow6pj")]([SubResource("Resource_ynsnc"), SubResource("Resource_3a757"), SubResource("Resource_wf8c2"), SubResource("Resource_4nyxa")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://kdht20jhjko6"
 
 [sub_resource type="Resource" id="Resource_odlm3"]
 script = ExtResource("5_odlm3")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper/SidePanel2")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://bcqb05pw1pkii"
 
 [sub_resource type="Resource" id="Resource_3uvdf"]
 script = ExtResource("6_ow6pj")
 highlight_color = Color(0.996078, 0.905882, 0.835294, 1)
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point2")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://dttfkqalo7xhk"
 
 [sub_resource type="Resource" id="Resource_as1pr"]
 script = ExtResource("9_odlm3")
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point1")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://e2rb8hrg2r31"
 
 [sub_resource type="Resource" id="Resource_7duqq"]
 script = ExtResource("6_0wbp2")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper/SidePanel1")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://63q6guytynws"
 
 [sub_resource type="Resource" id="Resource_xqvm3"]
 script = ExtResource("5_drb0a")
 slide_steps = Array[ExtResource("2_ow6pj")]([SubResource("Resource_odlm3"), SubResource("Resource_3uvdf"), SubResource("Resource_as1pr"), SubResource("Resource_7duqq")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://kdht20jhjko6"
 
 [sub_resource type="Resource" id="Resource_glhkg"]
 script = ExtResource("5_odlm3")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper/SidePanel3")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://bcqb05pw1pkii"
 
 [sub_resource type="Resource" id="Resource_8acfr"]
 script = ExtResource("6_ow6pj")
 highlight_color = Color(0.996078, 0.905882, 0.835294, 1)
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point3")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://dttfkqalo7xhk"
 
 [sub_resource type="Resource" id="Resource_wbe73"]
 script = ExtResource("9_odlm3")
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point2")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://e2rb8hrg2r31"
 
 [sub_resource type="Resource" id="Resource_uxila"]
 script = ExtResource("6_0wbp2")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper/SidePanel2")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://63q6guytynws"
 
 [sub_resource type="Resource" id="Resource_glx8p"]
 script = ExtResource("5_drb0a")
 slide_steps = Array[ExtResource("2_ow6pj")]([SubResource("Resource_glhkg"), SubResource("Resource_8acfr"), SubResource("Resource_wbe73"), SubResource("Resource_uxila")])
-animation_duration = 0.5
+animation_duration = 0.2
 metadata/_custom_type_script = "uid://kdht20jhjko6"
 
 [sub_resource type="Resource" id="Resource_yg2j3"]
