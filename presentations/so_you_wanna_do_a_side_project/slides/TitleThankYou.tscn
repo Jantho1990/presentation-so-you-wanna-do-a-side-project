@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://6dby4714ib0v"]
+[gd_scene load_steps=32 format=3 uid="uid://6dby4714ib0v"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_d407s"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_8ea1r"]
@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_y4k0v"]
 [ext_resource type="Script" uid="uid://qpv26n56bah3" path="res://resources/AnimationPlayStep.gd" id="5_8nyt1"]
 [ext_resource type="Script" uid="uid://els5543ifwap" path="res://resources/WaitStep.gd" id="6_1pgaa"]
+[ext_resource type="Script" uid="uid://d0h3stf45a3hu" path="res://resources/SetFadeStep.gd" id="6_x6akf"]
 [ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="7_b1025"]
-[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="8_xjngo"]
 [ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="9_udxkq"]
 [ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="10_n3vlv"]
 [ext_resource type="Texture2D" uid="uid://bvbvtmqme10ck" path="res://assets/media/images/title-image.png" id="11_d407s"]
@@ -20,34 +20,51 @@
 script = ExtResource("4_y4k0v")
 animation_duration = 0.5
 
+[sub_resource type="Resource" id="Resource_6x2id"]
+script = ExtResource("6_x6akf")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/LineDecorations"), NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_d407s"]
+script = ExtResource("7_b1025")
+slide_steps = Array[ExtResource("2_8ea1r")]([SubResource("Resource_sho4t"), SubResource("Resource_6x2id")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
+[sub_resource type="Resource" id="Resource_8ea1r"]
+script = ExtResource("9_udxkq")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/LineDecorations")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
 [sub_resource type="Resource" id="Resource_g1g38"]
 script = ExtResource("5_8nyt1")
 animationPlayerPath = NodePath("AnimationPlayer")
 animation_name = "title_in"
 animation_duration = 0.5
 
-[sub_resource type="Resource" id="Resource_l1pmj"]
-script = ExtResource("6_1pgaa")
-animation_duration = 0.5
-
-[sub_resource type="Resource" id="Resource_lnnen"]
-script = ExtResource("8_xjngo")
-targetNodes = Array[NodePath]([NodePath("Panel")])
-animation_duration = 0.5
-
-[sub_resource type="Resource" id="Resource_3yv8u"]
-script = ExtResource("9_udxkq")
-targetNodes = Array[NodePath]([NodePath("Background")])
-animation_duration = 0.5
-
-[sub_resource type="Resource" id="Resource_kp6gr"]
+[sub_resource type="Resource" id="Resource_w6f5a"]
 script = ExtResource("7_b1025")
-slide_steps = Array[ExtResource("2_8ea1r")]([SubResource("Resource_lnnen"), SubResource("Resource_3yv8u")])
+slide_steps = Array[ExtResource("2_8ea1r")]([SubResource("Resource_8ea1r"), SubResource("Resource_g1g38")])
 animation_duration = 0.5
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
+[sub_resource type="Resource" id="Resource_y4k0v"]
+script = ExtResource("6_1pgaa")
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://els5543ifwap"
+
+[sub_resource type="Resource" id="Resource_8nyt1"]
+script = ExtResource("9_udxkq")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
 
 [sub_resource type="Resource" id="Resource_vq00b"]
 script = ExtResource("3_w6f5a")
-slide_steps = Array[ExtResource("2_8ea1r")]([SubResource("Resource_sho4t"), SubResource("Resource_g1g38"), SubResource("Resource_l1pmj"), SubResource("Resource_kp6gr")])
+slide_steps = Array[ExtResource("2_8ea1r")]([SubResource("Resource_d407s"), SubResource("Resource_w6f5a"), SubResource("Resource_y4k0v"), SubResource("Resource_8nyt1")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_b2tck"]
@@ -138,6 +155,7 @@ texture = ExtResource("11_d407s")
 expand_mode = 2
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,8 +216,19 @@ size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/margin_left = 556
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer"]
-custom_minimum_size = Vector2(728, 270)
+[node name="BackgroundScreen" type="ColorRect" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.396078)
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 270)
 layout_mode = 2
 size_flags_horizontal = 8
 theme_type_variation = &"RichContent"
@@ -212,10 +241,9 @@ theme_override_font_sizes/italics_font_size = 32
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 32
 bbcode_enabled = true
-text = "[right]
-[b]Socials[/b]
+text = "[right][b]Socials[/b]
 Twitter/X: [b]@jantho1990[/b] 
-Bluesky: [b]@joshanthony1990.bsky.social[/b]
+Bluesky: [b]@joshanthony1990[/b]
 
 [b]Websites[/b]
 [i]joshanthony.info
