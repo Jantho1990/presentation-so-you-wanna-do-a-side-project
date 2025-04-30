@@ -1,10 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://c8n3ki0ra25lm"]
+[gd_scene load_steps=36 format=3 uid="uid://c8n3ki0ra25lm"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_q1c7v"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_b6j0c"]
 [ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_cdso3"]
 [ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_1swd3"]
+[ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="4_cdso3"]
 [ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_sdel7"]
+[ext_resource type="Script" uid="uid://d0h3stf45a3hu" path="res://resources/SetFadeStep.gd" id="6_1swd3"]
 [ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_sb12x"]
 [ext_resource type="Script" uid="uid://els5543ifwap" path="res://resources/WaitStep.gd" id="7_yf2j3"]
 [ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="8_kxj75"]
@@ -17,6 +19,82 @@
 script = ExtResource("4_1swd3")
 animation_duration = 0.5
 
+[sub_resource type="Resource" id="Resource_sdel7"]
+script = ExtResource("6_1swd3")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY0X0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY0X1"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY0X2"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY0X3"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY0X4"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY0X5"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY0X6"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY0X7")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_sb12x"]
+script = ExtResource("6_1swd3")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY1X0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY1X1"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY1X2"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY1X3"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY1X4"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY1X5"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY1X6"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY1X7")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_yf2j3"]
+script = ExtResource("6_1swd3")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY2X0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY2X1"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY2X2"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY2X3"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY2X4"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY2X5"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY2X6"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY2X7")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_kxj75"]
+script = ExtResource("6_1swd3")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY3X0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY3X1"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY3X2"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY3X3"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY3X4"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY3X5"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY3X6"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY3X7")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_r0gk3"]
+script = ExtResource("6_1swd3")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY4X0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY4X1"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY4X2"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY4X3"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY4X4"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY4X5"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY4X6"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY4X7")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_kt8gf"]
+script = ExtResource("6_1swd3")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY5X0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY5X1"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY5X2"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY5X3"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY5X4"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY5X5"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY5X6"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY5X7")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_bvbcw"]
+script = ExtResource("6_1swd3")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY6X0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY6X1"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY6X2"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY6X3"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY6X4"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY6X5"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY6X6"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY6X7")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_cfnhm"]
+script = ExtResource("6_1swd3")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY7X0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY7X1"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY7X2"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY7X3"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY7X4"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY7X5"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY7X6"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY7X7")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_k5opi"]
+script = ExtResource("6_1swd3")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY8X0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY8X1"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY8X2"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY8X3"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY8X4"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY8X5"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY8X6"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY8X7")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_sacyw"]
+script = ExtResource("6_1swd3")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY9X0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY9X1"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY9X2"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY9X3"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY9X4"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY9X5"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY9X6"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY9X7")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_oebdx"]
+script = ExtResource("4_cdso3")
+slide_steps = Array[ExtResource("2_b6j0c")]([SubResource("Resource_sho4t"), SubResource("Resource_sdel7"), SubResource("Resource_sb12x"), SubResource("Resource_yf2j3"), SubResource("Resource_kxj75"), SubResource("Resource_r0gk3"), SubResource("Resource_kt8gf"), SubResource("Resource_bvbcw"), SubResource("Resource_cfnhm"), SubResource("Resource_k5opi"), SubResource("Resource_sacyw")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
 [sub_resource type="Resource" id="Resource_744ps"]
 script = ExtResource("5_sdel7")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader/Indent/SlideHeader")])
@@ -24,8 +102,20 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_sn6hl"]
 script = ExtResource("3_cdso3")
-slide_steps = Array[ExtResource("2_b6j0c")]([SubResource("Resource_sho4t"), SubResource("Resource_744ps")])
+slide_steps = Array[ExtResource("2_b6j0c")]([SubResource("Resource_oebdx"), SubResource("Resource_744ps")])
 animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_cdso3"]
+script = ExtResource("5_sdel7")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY0X0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY0X1")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
+[sub_resource type="Resource" id="Resource_1swd3"]
+script = ExtResource("5_sdel7")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY1X0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/TableContainer/TableGrid/CellY1X1")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
 
 [sub_resource type="Resource" id="Resource_u6o0g"]
 script = ExtResource("6_sb12x")
@@ -60,7 +150,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q1c7v")
-steps = Array[ExtResource("2_b6j0c")]([SubResource("Resource_sn6hl"), SubResource("Resource_1wvi1")])
+steps = Array[ExtResource("2_b6j0c")]([SubResource("Resource_sn6hl"), SubResource("Resource_cdso3"), SubResource("Resource_1swd3"), SubResource("Resource_1wvi1")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -1322,7 +1412,7 @@ size_flags_stretch_ratio = 1.4
 theme_override_constants/separation = 32
 
 [node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 1558)
 layout_mode = 2
 script = ExtResource("10_bvbcw")
 
@@ -1345,7 +1435,7 @@ text = "Godot is a mature, growing game engine"
 fit_content = true
 
 [node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 2091)
 layout_mode = 2
 script = ExtResource("10_bvbcw")
 
@@ -1368,7 +1458,7 @@ text = "Easy to pick up, lots of resources to learn mastery"
 fit_content = true
 
 [node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
-custom_minimum_size = Vector2(1200, 90)
+custom_minimum_size = Vector2(1200, 2296)
 layout_mode = 2
 script = ExtResource("10_bvbcw")
 
@@ -1391,7 +1481,7 @@ text = "Free and open source, with protection against bad actors"
 fit_content = true
 
 [node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 1886)
 layout_mode = 2
 script = ExtResource("10_bvbcw")
 
@@ -1414,7 +1504,7 @@ text = "Can be used for making simple or complex games"
 fit_content = true
 
 [node name="AnimationWrapper5" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 1066)
 layout_mode = 2
 script = ExtResource("10_bvbcw")
 
@@ -1437,7 +1527,7 @@ text = "I love working with Godot!"
 fit_content = true
 
 [node name="AnimationWrapper6" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/BioList"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 1927)
 layout_mode = 2
 script = ExtResource("10_bvbcw")
 

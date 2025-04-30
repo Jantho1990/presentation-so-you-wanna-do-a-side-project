@@ -36,6 +36,10 @@ metadata/_custom_type_script = "uid://cx5ff6rmig1pl"
 [node name="SWFGTitle" parent="." instance=ExtResource("2_lx6xu")]
 layout_mode = 1
 
+[node name="HowItsGoing" parent="." instance=ExtResource("9_ej7u1")]
+visible = false
+layout_mode = 1
+
 [node name="WhoAreYou" parent="." instance=ExtResource("3_g2hp5")]
 visible = false
 layout_mode = 1
@@ -73,10 +77,6 @@ visible = false
 layout_mode = 1
 
 [node name="HowItStarted" parent="." instance=ExtResource("12_8ilsc")]
-visible = false
-layout_mode = 1
-
-[node name="HowItsGoing" parent="." instance=ExtResource("9_ej7u1")]
 visible = false
 layout_mode = 1
 
