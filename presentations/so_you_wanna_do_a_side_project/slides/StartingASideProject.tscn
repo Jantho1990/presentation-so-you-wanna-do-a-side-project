@@ -1,14 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://d3s3xktkqngsm"]
+[gd_scene load_steps=40 format=3 uid="uid://d3s3xktkqngsm"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_txd5k"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_dsvpl"]
 [ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_8coui"]
 [ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_eypnn"]
+[ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="4_l43ll"]
 [ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_q0nud"]
+[ext_resource type="Script" uid="uid://d0h3stf45a3hu" path="res://resources/SetFadeStep.gd" id="6_2jp3g"]
+[ext_resource type="Script" uid="uid://dj0n0x0vk30cd" path="res://resources/SetLocalPositionStep.gd" id="6_eypnn"]
 [ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_l43ll"]
 [ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="7_2jp3g"]
 [ext_resource type="PackedScene" uid="uid://bt0q3yfxuiytc" path="res://scenes/SlideHeader/SlideHeader.tscn" id="8_bg3kw"]
-[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="9_vq2q0"]
+[ext_resource type="Script" uid="uid://ctoliojwclq4e" path="res://resources/SlideToZeroStep.gd" id="8_l43ll"]
+[ext_resource type="Script" uid="uid://yq4ysscbjf0r" path="res://resources/SlideToLocalPositionStep.gd" id="9_2jp3g"]
 [ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="10_673h0"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="11_5xmd4"]
 
@@ -16,20 +20,147 @@
 script = ExtResource("4_eypnn")
 animation_duration = 0.5
 
+[sub_resource type="Resource" id="Resource_5mo32"]
+script = ExtResource("6_2jp3g")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/ContentHeading"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/ContentHeading"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_xk4x5"]
+script = ExtResource("4_l43ll")
+slide_steps = Array[ExtResource("2_dsvpl")]([SubResource("Resource_sho4t"), SubResource("Resource_5mo32")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
 [sub_resource type="Resource" id="Resource_lvhcn"]
 script = ExtResource("5_q0nud")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader")])
 animation_duration = 0.5
 
+[sub_resource type="Resource" id="Resource_bg3kw"]
+script = ExtResource("6_eypnn")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point1")])
+target_position = Vector2(-1000, 0)
+axis = 0
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://dj0n0x0vk30cd"
+
+[sub_resource type="Resource" id="Resource_vq2q0"]
+script = ExtResource("6_eypnn")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point1")])
+target_position = Vector2(1000, 0)
+axis = 0
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://dj0n0x0vk30cd"
+
+[sub_resource type="Resource" id="Resource_l43ll"]
+script = ExtResource("6_2jp3g")
+fade = 0
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
 [sub_resource type="Resource" id="Resource_gwk0t"]
 script = ExtResource("3_8coui")
-slide_steps = Array[ExtResource("2_dsvpl")]([SubResource("Resource_sho4t"), SubResource("Resource_lvhcn")])
+slide_steps = Array[ExtResource("2_dsvpl")]([SubResource("Resource_xk4x5"), SubResource("Resource_lvhcn"), SubResource("Resource_bg3kw"), SubResource("Resource_vq2q0"), SubResource("Resource_l43ll")])
 animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_673h0"]
+script = ExtResource("5_q0nud")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/ContentHeading")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
+[sub_resource type="Resource" id="Resource_lm4tc"]
+script = ExtResource("8_l43ll")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point0")])
+axis = 0
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://ctoliojwclq4e"
+
+[sub_resource type="Resource" id="Resource_3vnk8"]
+script = ExtResource("8_l43ll")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point1")])
+axis = 0
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://ctoliojwclq4e"
+
+[sub_resource type="Resource" id="Resource_6jj63"]
+script = ExtResource("5_q0nud")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/ContentHeading")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
+[sub_resource type="Resource" id="Resource_4ikxi"]
+script = ExtResource("8_l43ll")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point0")])
+axis = 0
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://ctoliojwclq4e"
+
+[sub_resource type="Resource" id="Resource_xwmnp"]
+script = ExtResource("8_l43ll")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point1")])
+axis = 0
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://ctoliojwclq4e"
+
+[sub_resource type="Resource" id="Resource_bnadm"]
+script = ExtResource("9_2jp3g")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft")])
+target_position = Vector2(-1000, 0)
+axis = 0
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://yq4ysscbjf0r"
+
+[sub_resource type="Resource" id="Resource_13ynm"]
+script = ExtResource("9_2jp3g")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight")])
+target_position = Vector2(2500, 0)
+axis = 0
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://yq4ysscbjf0r"
+
+[sub_resource type="Resource" id="Resource_vyoem"]
+script = ExtResource("4_l43ll")
+slide_steps = Array[ExtResource("2_dsvpl")]([SubResource("Resource_bnadm"), SubResource("Resource_13ynm")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
+[sub_resource type="Resource" id="Resource_2jp3g"]
+script = ExtResource("6_2jp3g")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_moxxh"]
+script = ExtResource("6_eypnn")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft")])
+target_position = Vector2(-1000, 0)
+axis = 0
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://dj0n0x0vk30cd"
+
+[sub_resource type="Resource" id="Resource_1jh1k"]
+script = ExtResource("6_eypnn")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight")])
+target_position = Vector2(2500, 0)
+axis = 0
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://dj0n0x0vk30cd"
 
 [sub_resource type="Resource" id="Resource_nk01r"]
 script = ExtResource("6_l43ll")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent")])
 animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_a8x8k"]
+script = ExtResource("3_8coui")
+slide_steps = Array[ExtResource("2_dsvpl")]([SubResource("Resource_vyoem"), SubResource("Resource_2jp3g"), SubResource("Resource_moxxh"), SubResource("Resource_1jh1k"), SubResource("Resource_nk01r")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://capy37k215xbr"
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("7_2jp3g")
@@ -37,7 +168,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_ynpfl"]
 script = ExtResource("3_8coui")
-slide_steps = Array[ExtResource("2_dsvpl")]([SubResource("Resource_nk01r"), SubResource("Resource_1vcjn")])
+slide_steps = Array[ExtResource("2_dsvpl")]([SubResource("Resource_a8x8k"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
 [node name="StartingASideProject" type="Control"]
@@ -48,7 +179,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_txd5k")
-steps = Array[ExtResource("2_dsvpl")]([SubResource("Resource_gwk0t"), SubResource("Resource_ynpfl")])
+steps = Array[ExtResource("2_dsvpl")]([SubResource("Resource_gwk0t"), SubResource("Resource_673h0"), SubResource("Resource_lm4tc"), SubResource("Resource_3vnk8"), SubResource("Resource_6jj63"), SubResource("Resource_4ikxi"), SubResource("Resource_xwmnp"), SubResource("Resource_ynpfl")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -98,21 +229,14 @@ bbcode_enabled = true
 text = "[b]Generating Ideas[/b]"
 fit_content = true
 
-[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
-custom_minimum_size = Vector2(540, 205)
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
 layout_mode = 2
-script = ExtResource("9_vq2q0")
-
-[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper"]
-layout_mode = 2
-offset_right = 540.0
-offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper/Point0" instance=ExtResource("10_673h0")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point0" instance=ExtResource("10_673h0")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper/Point0"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -125,21 +249,14 @@ text = "[b]Ideas for what to work on[/b]
   Commercial opportunities[/ul]"
 fit_content = true
 
-[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
-custom_minimum_size = Vector2(640, 205)
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft"]
 layout_mode = 2
-script = ExtResource("9_vq2q0")
-
-[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper2"]
-layout_mode = 2
-offset_right = 640.0
-offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper2/Point1" instance=ExtResource("10_673h0")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point1" instance=ExtResource("10_673h0")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/AnimationWrapper2/Point1"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point1"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -168,21 +285,14 @@ bbcode_enabled = true
 text = "[b]Getting Going[/b]"
 fit_content = true
 
-[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
-custom_minimum_size = Vector2(800, 205)
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
 layout_mode = 2
-script = ExtResource("9_vq2q0")
-
-[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper"]
-layout_mode = 2
-offset_right = 800.0
-offset_bottom = 64.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper/Point0" instance=ExtResource("10_673h0")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point0" instance=ExtResource("10_673h0")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper/Point0"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -195,26 +305,19 @@ text = "[b]Explicitly plan when you'll do work[/b]
   Simplifies finding time when it's planned[/ul]"
 fit_content = true
 
-[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
-custom_minimum_size = Vector2(800, 213)
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
 layout_mode = 2
-script = ExtResource("9_vq2q0")
-
-[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper2"]
-layout_mode = 2
-offset_right = 800.0
-offset_bottom = 188.0
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper2/Point1" instance=ExtResource("10_673h0")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point1" instance=ExtResource("10_673h0")]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper2/Point1"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point1"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_top = 8
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper2/Point1/MarginContainer"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point1/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -225,67 +328,6 @@ text = "[b]Make do with what you have[/b]
   Right moments come when you act
   Waiting for perfection kills drive
   Experience teaches what you really need[/ul]"
-fit_content = true
-
-[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
-visible = false
-custom_minimum_size = Vector2(800, 188)
-layout_mode = 2
-script = ExtResource("9_vq2q0")
-
-[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper3"]
-layout_mode = 2
-offset_right = 800.0
-offset_bottom = 188.0
-theme_override_constants/separation = 16
-
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper3/Point2" instance=ExtResource("10_673h0")]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper3/Point2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_top = 8
-
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper3/Point2/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_type_variation = &"RichContent"
-bbcode_enabled = true
-text = "[b]Proposal Discussion[/b]
-[ul]Idea for a missing feature[/ul]
-[ul]Use when you don't have a clear technical solution for the idea[/ul]"
-fit_content = true
-
-[node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight"]
-visible = false
-custom_minimum_size = Vector2(800, 1812)
-layout_mode = 2
-script = ExtResource("9_vq2q0")
-
-[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper4"]
-layout_mode = 2
-offset_right = 800.0
-offset_bottom = 98.0
-theme_override_constants/separation = 16
-
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper4/Point3" instance=ExtResource("10_673h0")]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper4/Point3"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_top = 8
-
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/AnimationWrapper4/Point3/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_type_variation = &"RichContent"
-bbcode_enabled = true
-text = "All proposals driven by community interest
-[ul]Engage with the community[/ul]"
 fit_content = true
 
 [node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("11_5xmd4")]
