@@ -217,11 +217,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "Bullet Journaling
+text = "Started bullet journaling
 [ul]
   This changed my life
   Planning that fit ADHD
-  See my blog for details
+  See my blog for more info
 [/ul]"
 fit_content = true
 
