@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dxcsbkrq48rq4"]
+[gd_scene load_steps=25 format=3 uid="uid://dxcsbkrq48rq4"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_i4jf8"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_x3jlc"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dhd68fdyndif6" path="res://assets/media/images/apocalypse-asset.jpg" id="13_ugsa8"]
 [ext_resource type="Texture2D" uid="uid://dn75sj7gwr5ia" path="res://assets/media/images/despaired-asset.jpg" id="14_c7hel"]
 [ext_resource type="Texture2D" uid="uid://dqjax7yo1tivs" path="res://assets/media/images/explore-asset.jpg" id="15_tyl7d"]
+[ext_resource type="FontFile" uid="uid://cwn4b1lbd10pl" path="res://assets/fonts/Expletus_Sans/static/ExpletusSans-BoldItalic.ttf" id="16_a5tp5"]
 [ext_resource type="Texture2D" uid="uid://bkp06fjrhmmor" path="res://assets/media/images/developer-asset.jpg" id="16_rtasc"]
 [ext_resource type="Shader" uid="uid://xsbjk8grxrr0" path="res://assets/shaders/GrayscaleShader.tres" id="17_7vig8"]
 [ext_resource type="Texture2D" uid="uid://dwn8f147kbao1" path="res://assets/media/images/pizza-asset.jpg" id="18_0ycwi"]
@@ -111,7 +112,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "[b]Creating a tangible good[/b]"
+text = "Creating a tangible good"
 fit_content = true
 
 [node name="Learning" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
@@ -129,7 +130,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "[b]Learning something new[/b]"
+text = "Learning something new"
 fit_content = true
 
 [node name="Volunteering" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
@@ -145,7 +146,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "[b]Volunteering for Causes[/b]"
+text = "Volunteering for Causes"
 fit_content = true
 
 [node name="Startup" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
@@ -161,7 +162,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "[b]Founding a Company[/b]"
+text = "Founding a Company"
 fit_content = true
 
 [node name="RPG" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
@@ -177,7 +178,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "[b]Running a D&D Campaign[/b]"
+text = "Running a D&D Campaign"
 fit_content = true
 
 [node name="Music" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
@@ -193,7 +194,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "[b]Composing Music[/b]"
+text = "Composing Music"
 fit_content = true
 
 [node name="Presentation" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
@@ -209,10 +210,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "[b]Giving a presentation[/b]"
+text = "Giving a presentation"
 fit_content = true
 
 [node name="Anything" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -285,6 +287,51 @@ size_flags_vertical = 4
 texture = ExtResource("18_0ycwi")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="QuoteBoxSideProjectDefinition" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"AsidePanelContainer"
+
+[node name="QuoteLine" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/QuoteBoxSideProjectDefinition"]
+custom_minimum_size = Vector2(0, 188)
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="LeftQuote" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/QuoteBoxSideProjectDefinition/QuoteLine"]
+custom_minimum_size = Vector2(96, 124)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/bold_italics_font = ExtResource("16_a5tp5")
+theme_override_font_sizes/bold_italics_font_size = 144
+theme_override_font_sizes/bold_font_size = 144
+bbcode_enabled = true
+text = "[b][i]“[/i][/b]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Copy" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/QuoteBoxSideProjectDefinition/QuoteLine"]
+custom_minimum_size = Vector2(900, 124)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]A side project is something you work on that has an objective outcome.[/b]"
+
+[node name="RightQuote" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/QuoteBoxSideProjectDefinition/QuoteLine"]
+custom_minimum_size = Vector2(96, 124)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/bold_italics_font = ExtResource("16_a5tp5")
+theme_override_font_sizes/bold_italics_font_size = 144
+theme_override_font_sizes/bold_font_size = 144
+bbcode_enabled = true
+text = "[b][i]”[/i][/b]"
+scroll_active = false
 
 [node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("19_qvb5p")]
 layout_mode = 2
