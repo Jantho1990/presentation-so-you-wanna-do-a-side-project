@@ -36,7 +36,7 @@ metadata/_custom_type_script = "uid://kdht20jhjko6"
 
 [sub_resource type="Resource" id="Resource_744ps"]
 script = ExtResource("5_erbn2")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader/Indent/SlideHeader")])
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_pbwnf"]

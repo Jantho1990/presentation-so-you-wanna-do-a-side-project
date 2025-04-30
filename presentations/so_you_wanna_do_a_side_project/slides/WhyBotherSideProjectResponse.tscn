@@ -33,7 +33,7 @@ metadata/_custom_type_script = "uid://kdht20jhjko6"
 
 [sub_resource type="Resource" id="Resource_744ps"]
 script = ExtResource("5_rlusi")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader/Indent/SlideHeader")])
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_sn6hl"]
@@ -67,7 +67,7 @@ metadata/_custom_type_script = "uid://bcqb05pw1pkii"
 
 [sub_resource type="Resource" id="Resource_u6o0g"]
 script = ExtResource("6_1uyqe")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader/Indent/SlideHeader"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent")])
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
