@@ -1,11 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://btgk7b24i3rg5"]
+[gd_scene load_steps=26 format=3 uid="uid://btgk7b24i3rg5"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_ystdu"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_4eviu"]
 [ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_65hy7"]
 [ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_b8ith"]
+[ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="4_d26ke"]
 [ext_resource type="Script" uid="uid://qpv26n56bah3" path="res://resources/AnimationPlayStep.gd" id="5_d26ke"]
+[ext_resource type="Script" uid="uid://d0h3stf45a3hu" path="res://resources/SetFadeStep.gd" id="6_310sj"]
 [ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="6_b13k6"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="7_6t32r"]
 [ext_resource type="PackedScene" uid="uid://diak4ipf17jt0" path="res://scenes/LineDecorations/LineDecorations.tscn" id="7_310sj"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="8_6t32r"]
 [ext_resource type="Animation" uid="uid://26b1efpj5vui" path="res://assets/animations/TitleSlides.tres" id="9_l6mjs"]
@@ -14,15 +17,40 @@
 script = ExtResource("4_b8ith")
 animation_duration = 0.5
 
+[sub_resource type="Resource" id="Resource_l6mjs"]
+script = ExtResource("6_310sj")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/LineDecorations")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_ucrro"]
+script = ExtResource("4_d26ke")
+slide_steps = Array[ExtResource("2_4eviu")]([SubResource("Resource_sho4t"), SubResource("Resource_l6mjs")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
+[sub_resource type="Resource" id="Resource_d7ams"]
+script = ExtResource("7_6t32r")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/LineDecorations")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
 [sub_resource type="Resource" id="Resource_g1g38"]
 script = ExtResource("5_d26ke")
 animationPlayerPath = NodePath("AnimationPlayer")
 animation_name = "title_in"
 animation_duration = 0.5
 
+[sub_resource type="Resource" id="Resource_sm2qh"]
+script = ExtResource("4_d26ke")
+slide_steps = Array[ExtResource("2_4eviu")]([SubResource("Resource_d7ams"), SubResource("Resource_g1g38")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
 [sub_resource type="Resource" id="Resource_1e5m2"]
 script = ExtResource("3_65hy7")
-slide_steps = Array[ExtResource("2_4eviu")]([SubResource("Resource_sho4t"), SubResource("Resource_g1g38")])
+slide_steps = Array[ExtResource("2_4eviu")]([SubResource("Resource_ucrro"), SubResource("Resource_sm2qh")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_b2tck"]
