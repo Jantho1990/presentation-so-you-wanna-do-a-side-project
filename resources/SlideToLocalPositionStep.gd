@@ -57,7 +57,7 @@ func next() -> void:
   _slideTween = slide.create_tween().set_parallel(true)
   for animatedNode in _animatedNodes:
     var destination_position = _get_destination_position(animatedNode, target_position)
-    print('DBG: animatedNode %s start %s destination %s' % [animatedNode.name, animatedNode.position, destination_position])
+    #print('DBG: animatedNode %s start %s destination %s' % [animatedNode.name, animatedNode.position, destination_position])
     _slideTween.tween_property(animatedNode, "position", destination_position, animation_duration).from(_old_positions[animatedNode])
   
   await _slideTween.finished

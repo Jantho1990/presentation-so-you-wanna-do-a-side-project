@@ -1,14 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://ctwi2rxx52uky"]
+[gd_scene load_steps=40 format=3 uid="uid://ctwi2rxx52uky"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_menih"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_dtbys"]
 [ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_vb1bw"]
 [ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_iph3c"]
+[ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="4_yhii6"]
 [ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_m18d3"]
 [ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_8defl"]
+[ext_resource type="Script" uid="uid://d0h3stf45a3hu" path="res://resources/SetFadeStep.gd" id="6_j4myk"]
 [ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="7_b7640"]
 [ext_resource type="PackedScene" uid="uid://bt0q3yfxuiytc" path="res://scenes/SlideHeader/SlideHeader.tscn" id="8_2cbaq"]
+[ext_resource type="Script" uid="uid://dttfkqalo7xhk" path="res://resources/HighlightStep.gd" id="8_b6o8d"]
+[ext_resource type="Script" uid="uid://els5543ifwap" path="res://resources/WaitStep.gd" id="8_j4myk"]
 [ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="9_mycu7"]
+[ext_resource type="Script" uid="uid://e2rb8hrg2r31" path="res://resources/ClearHighlightStep.gd" id="9_rmdqn"]
 [ext_resource type="Texture2D" uid="uid://ulhi0bin0nml" path="res://assets/media/images/godot-download-page.png" id="10_qjqqn"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="11_qpk2d"]
 
@@ -16,19 +21,124 @@
 script = ExtResource("4_iph3c")
 animation_duration = 0.5
 
+[sub_resource type="Resource" id="Resource_08ht6"]
+script = ExtResource("6_j4myk")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer/ImgBojo"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer/ImgMorning"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer/ImgConsistency"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_ukic1"]
+script = ExtResource("4_yhii6")
+slide_steps = Array[ExtResource("2_dtbys")]([SubResource("Resource_sho4t"), SubResource("Resource_08ht6")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
 [sub_resource type="Resource" id="Resource_mife1"]
 script = ExtResource("5_m18d3")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox/SideImage")])
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_b3vqa"]
 script = ExtResource("3_vb1bw")
-slide_steps = Array[ExtResource("2_dtbys")]([SubResource("Resource_sho4t"), SubResource("Resource_mife1")])
+slide_steps = Array[ExtResource("2_dtbys")]([SubResource("Resource_ukic1"), SubResource("Resource_mife1")])
 animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_yhii6"]
+script = ExtResource("5_m18d3")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer/ImgBojo")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
+[sub_resource type="Resource" id="Resource_b6o8d"]
+script = ExtResource("8_j4myk")
+animation_duration = 0.3
+metadata/_custom_type_script = "uid://els5543ifwap"
+
+[sub_resource type="Resource" id="Resource_o0lml"]
+script = ExtResource("8_b6o8d")
+highlight_color = Color(0.996078, 0.905882, 0.835294, 1)
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Bojo")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://dttfkqalo7xhk"
+
+[sub_resource type="Resource" id="Resource_35nt8"]
+script = ExtResource("4_yhii6")
+slide_steps = Array[ExtResource("2_dtbys")]([SubResource("Resource_o0lml")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
+[sub_resource type="Resource" id="Resource_j4myk"]
+script = ExtResource("3_vb1bw")
+slide_steps = Array[ExtResource("2_dtbys")]([SubResource("Resource_yhii6"), SubResource("Resource_b6o8d"), SubResource("Resource_35nt8")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://capy37k215xbr"
+
+[sub_resource type="Resource" id="Resource_midtu"]
+script = ExtResource("8_b6o8d")
+highlight_color = Color(0.996078, 0.905882, 0.835294, 1)
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Morning")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://dttfkqalo7xhk"
+
+[sub_resource type="Resource" id="Resource_8fss3"]
+script = ExtResource("9_rmdqn")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Bojo")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://e2rb8hrg2r31"
+
+[sub_resource type="Resource" id="Resource_bvgoo"]
+script = ExtResource("5_m18d3")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer/ImgMorning")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
+[sub_resource type="Resource" id="Resource_i0bf0"]
+script = ExtResource("6_8defl")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer/ImgBojo")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://63q6guytynws"
+
+[sub_resource type="Resource" id="Resource_xyv3k"]
+script = ExtResource("4_yhii6")
+slide_steps = Array[ExtResource("2_dtbys")]([SubResource("Resource_midtu"), SubResource("Resource_8fss3"), SubResource("Resource_bvgoo"), SubResource("Resource_i0bf0")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
+[sub_resource type="Resource" id="Resource_rfylg"]
+script = ExtResource("8_b6o8d")
+highlight_color = Color(0.996078, 0.905882, 0.835294, 1)
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Consistency")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://dttfkqalo7xhk"
+
+[sub_resource type="Resource" id="Resource_bpwlw"]
+script = ExtResource("9_rmdqn")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Morning")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://e2rb8hrg2r31"
+
+[sub_resource type="Resource" id="Resource_h6uqg"]
+script = ExtResource("5_m18d3")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer/ImgConsistency")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
+[sub_resource type="Resource" id="Resource_yojgq"]
+script = ExtResource("6_8defl")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer/ImgMorning")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://63q6guytynws"
+
+[sub_resource type="Resource" id="Resource_0lxm4"]
+script = ExtResource("4_yhii6")
+slide_steps = Array[ExtResource("2_dtbys")]([SubResource("Resource_rfylg"), SubResource("Resource_bpwlw"), SubResource("Resource_h6uqg"), SubResource("Resource_yojgq")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://kdht20jhjko6"
 
 [sub_resource type="Resource" id="Resource_yc1wc"]
 script = ExtResource("6_8defl")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox/SideImage"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/List")])
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
@@ -48,7 +158,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menih")
-steps = Array[ExtResource("2_dtbys")]([SubResource("Resource_b3vqa"), SubResource("Resource_cgghm")])
+steps = Array[ExtResource("2_dtbys")]([SubResource("Resource_b3vqa"), SubResource("Resource_j4myk"), SubResource("Resource_xyv3k"), SubResource("Resource_0lxm4"), SubResource("Resource_cgghm")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -89,14 +199,19 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"V32"
 
-[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List"]
+[node name="Bojo" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point0" instance=ExtResource("9_mycu7")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Bojo" instance=ExtResource("9_mycu7")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point0"]
+[node name="MarginTop" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Bojo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Bojo/MarginTop"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -110,31 +225,19 @@ text = "Bullet Journaling
 [/ul]"
 fit_content = true
 
-[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List"]
-visible = false
+[node name="Morning" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point1" instance=ExtResource("9_mycu7")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Morning" instance=ExtResource("9_mycu7")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point1"]
+[node name="MarginTop" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Morning"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_type_variation = &"RichContent"
-bbcode_enabled = true
-text = "Building Routines and Habits"
-fit_content = true
+theme_type_variation = &"RichContentTopMargin"
 
-[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point2" instance=ExtResource("9_mycu7")]
-layout_mode = 2
-
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point2"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Morning/MarginTop"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -148,19 +251,19 @@ text = "Became a morning person
 [/ul]"
 fit_content = true
 
-[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List"]
+[node name="Consistency" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point3" instance=ExtResource("9_mycu7")]
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Consistency" instance=ExtResource("9_mycu7")]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point3"]
+[node name="MarginTop" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Consistency"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_top = 8
+theme_type_variation = &"RichContentTopMargin"
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point3/MarginContainer"]
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Consistency/MarginTop"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -174,27 +277,22 @@ text = "Established consistency
 [/ul]"
 fit_content = true
 
-[node name="Point4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List"]
-visible = false
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point4" instance=ExtResource("9_mycu7")]
+[node name="ImageContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox"]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/List/Point4"]
+[node name="ImgBojo" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_type_variation = &"RichContent"
-bbcode_enabled = true
-text = "Compile from source"
-fit_content = true
+texture = ExtResource("10_qjqqn")
+stretch_mode = 4
 
-[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox"]
+[node name="ImgMorning" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer"]
+modulate = Color(0.25098, 1, 1, 1)
 layout_mode = 2
+texture = ExtResource("10_qjqqn")
+stretch_mode = 4
 
-[node name="SideImage" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
+[node name="ImgConsistency" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer"]
+modulate = Color(1, 0.333333, 1, 1)
 layout_mode = 2
 texture = ExtResource("10_qjqqn")
 stretch_mode = 4
