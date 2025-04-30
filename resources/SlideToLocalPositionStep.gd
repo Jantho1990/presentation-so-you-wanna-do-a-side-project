@@ -47,7 +47,6 @@ func _update_old_positions() -> void:
 
 
 # Runs when the slide moves to the next step.
-# Interface function. Must be replaced by inhereting resources.
 func next() -> void:
   step_next_began.emit()
   if _slideTween:
@@ -58,6 +57,7 @@ func next() -> void:
   _slideTween = slide.create_tween().set_parallel(true)
   for animatedNode in _animatedNodes:
     var destination_position = _get_destination_position(animatedNode, target_position)
+    print('DBG: animatedNode %s start %s destination %s' % [animatedNode.name, animatedNode.position, destination_position])
     _slideTween.tween_property(animatedNode, "position", destination_position, animation_duration).from(_old_positions[animatedNode])
   
   await _slideTween.finished
@@ -66,7 +66,6 @@ func next() -> void:
   
   
 # Runs when the slide moves to the previous step.
-# Interface function. Must be replaced by inhereting resources.  
 func previous() -> void:
   step_previous_began.emit()
   if _slideTween:

@@ -54,7 +54,6 @@ func next() -> void:
   for targetNode in _targetNodes:
     var new_position = _get_destination_position(targetNode, target_position)
     targetNode.position = new_position
-    print('DBG: setting target node %s position %s new position %s actual position %s' % [targetNode.name, target_position, new_position, targetNode.position])
   
   step_next_ended.emit()
   
