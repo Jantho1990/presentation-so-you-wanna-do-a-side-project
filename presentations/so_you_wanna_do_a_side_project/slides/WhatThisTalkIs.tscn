@@ -10,8 +10,8 @@
 [ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_86aco"]
 [ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="7_2tbgy"]
 [ext_resource type="PackedScene" uid="uid://bt0q3yfxuiytc" path="res://scenes/SlideHeader/SlideHeader.tscn" id="8_287y7"]
-[ext_resource type="Texture2D" uid="uid://ulhi0bin0nml" path="res://assets/media/images/godot-download-page.png" id="9_jwedq"]
 [ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="10_us0bb"]
+[ext_resource type="Texture2D" uid="uid://bx2ravhrk40a" path="res://assets/media/images/mountain-sm.png" id="11_6kavk"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="11_om071"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
@@ -127,7 +127,7 @@ layout_mode = 2
 
 [node name="SideImage" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
 layout_mode = 2
-texture = ExtResource("9_jwedq")
+texture = ExtResource("11_6kavk")
 stretch_mode = 4
 
 [node name="List" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox"]
