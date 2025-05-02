@@ -1,0 +1,267 @@
+[gd_scene load_steps=32 format=3 uid="uid://6dby4714ib0v"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_d407s"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_8ea1r"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_w6f5a"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_y4k0v"]
+[ext_resource type="Script" uid="uid://qpv26n56bah3" path="res://resources/AnimationPlayStep.gd" id="5_8nyt1"]
+[ext_resource type="Script" uid="uid://els5543ifwap" path="res://resources/WaitStep.gd" id="6_1pgaa"]
+[ext_resource type="Script" uid="uid://d0h3stf45a3hu" path="res://resources/SetFadeStep.gd" id="6_x6akf"]
+[ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="7_b1025"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="9_udxkq"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="10_n3vlv"]
+[ext_resource type="Texture2D" uid="uid://bvbvtmqme10ck" path="res://assets/media/images/title-image.png" id="11_d407s"]
+[ext_resource type="StyleBox" uid="uid://hfgxwrl7l1ub" path="res://assets/themes/StopWaitingForGodot/resources/PanelEditorBlue.tres" id="12_5jo72"]
+[ext_resource type="PackedScene" uid="uid://diak4ipf17jt0" path="res://scenes/LineDecorations/LineDecorations.tscn" id="13_8ea1r"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="15_krc8g"]
+[ext_resource type="Animation" uid="uid://26b1efpj5vui" path="res://assets/animations/TitleSlides.tres" id="16_2mqso"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("4_y4k0v")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_6x2id"]
+script = ExtResource("6_x6akf")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/LineDecorations"), NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_d407s"]
+script = ExtResource("7_b1025")
+slide_steps = Array[ExtResource("2_8ea1r")]([SubResource("Resource_sho4t"), SubResource("Resource_6x2id")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
+[sub_resource type="Resource" id="Resource_8ea1r"]
+script = ExtResource("9_udxkq")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/LineDecorations")])
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
+[sub_resource type="Resource" id="Resource_g1g38"]
+script = ExtResource("5_8nyt1")
+animationPlayerPath = NodePath("AnimationPlayer")
+animation_name = "title_in"
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_w6f5a"]
+script = ExtResource("7_b1025")
+slide_steps = Array[ExtResource("2_8ea1r")]([SubResource("Resource_8ea1r"), SubResource("Resource_g1g38")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
+[sub_resource type="Resource" id="Resource_y4k0v"]
+script = ExtResource("6_1pgaa")
+animation_duration = 0.2
+metadata/_custom_type_script = "uid://els5543ifwap"
+
+[sub_resource type="Resource" id="Resource_8nyt1"]
+script = ExtResource("9_udxkq")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
+[sub_resource type="Resource" id="Resource_vq00b"]
+script = ExtResource("3_w6f5a")
+slide_steps = Array[ExtResource("2_8ea1r")]([SubResource("Resource_d407s"), SubResource("Resource_w6f5a"), SubResource("Resource_y4k0v"), SubResource("Resource_8nyt1")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_b2tck"]
+script = ExtResource("5_8nyt1")
+animationPlayerPath = NodePath("AnimationPlayer")
+animation_name = "title_out"
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("10_n3vlv")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_yvaip"]
+script = ExtResource("3_w6f5a")
+slide_steps = Array[ExtResource("2_8ea1r")]([SubResource("Resource_b2tck"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dbd4"]
+
+[sub_resource type="Animation" id="Animation_flyu5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8ka77"]
+resource_name = "title_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(2.46229, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer/LineDecorations")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animate_title_in"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_clmje"]
+_data = {
+&"RESET": SubResource("Animation_flyu5"),
+&"title_in": SubResource("Animation_8ka77"),
+&"title_out": ExtResource("16_2mqso")
+}
+
+[node name="TitleThankYou" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d407s")
+steps = Array[ExtResource("2_8ea1r")]([SubResource("Resource_vq00b"), SubResource("Resource_yvaip")])
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_d407s")
+expand_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("12_5jo72")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"PanelEditorBlue"
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6dbd4")
+
+[node name="LineDecorations" parent="PanelContainer" instance=ExtResource("13_8ea1r")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="VBox3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 64
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox3"]
+layout_mode = 2
+theme_override_constants/margin_left = 264
+
+[node name="Title" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 235)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichSlideTitle"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 172
+bbcode_enabled = true
+text = "[b]Thank you![/b]"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/margin_left = 556
+
+[node name="BackgroundScreen" type="ColorRect" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.396078)
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 270)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_type_variation = &"RichContent"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[right][b]Socials[/b]
+Twitter/X: [b]@jantho1990[/b] 
+Bluesky: [b]@joshanthony1990[/b]
+LinkedIn: [b]Josh Anthony[/b]
+
+[b]Websites[/b]
+[i]joshanthony.info
+loonicy.com
+
+[b]Presentation Repo[/b]
+https://github.com/Jantho1990/
+presentation-so-you-
+wanna-do-a-side-project[/i]
+[/right]"
+fit_content = true
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("15_krc8g")]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_clmje")
+}

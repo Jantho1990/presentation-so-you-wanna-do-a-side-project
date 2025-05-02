@@ -1,0 +1,254 @@
+[gd_scene load_steps=26 format=3 uid="uid://bgmkmrv2dbwrs"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_k86j7"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_dm0p7"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_xg7p8"]
+[ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="4_dm0p7"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_k72nw"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_rlusi"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_1uyqe"]
+[ext_resource type="Script" uid="uid://d0h3stf45a3hu" path="res://resources/SetFadeStep.gd" id="6_xg7p8"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="8_1bqkd"]
+[ext_resource type="PackedScene" uid="uid://bt0q3yfxuiytc" path="res://scenes/SlideHeader/SlideHeader.tscn" id="9_x68ga"]
+[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="10_0me4s"]
+[ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="11_3maux"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="12_6dnnk"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("4_k72nw")
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_k72nw"]
+script = ExtResource("6_xg7p8")
+fade = 1
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper/Point0"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper2/Point1"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper3/Point2"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper4/Point3")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://d0h3stf45a3hu"
+
+[sub_resource type="Resource" id="Resource_rlusi"]
+script = ExtResource("4_dm0p7")
+slide_steps = Array[ExtResource("2_dm0p7")]([SubResource("Resource_sho4t"), SubResource("Resource_k72nw")])
+animation_duration = 0.1
+metadata/_custom_type_script = "uid://kdht20jhjko6"
+
+[sub_resource type="Resource" id="Resource_744ps"]
+script = ExtResource("5_rlusi")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_sn6hl"]
+script = ExtResource("3_xg7p8")
+slide_steps = Array[ExtResource("2_dm0p7")]([SubResource("Resource_rlusi"), SubResource("Resource_744ps")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1uyqe"]
+script = ExtResource("5_rlusi")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper/Point0")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
+[sub_resource type="Resource" id="Resource_mqkff"]
+script = ExtResource("5_rlusi")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper2/Point1")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
+[sub_resource type="Resource" id="Resource_1bqkd"]
+script = ExtResource("5_rlusi")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper3/Point2")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
+[sub_resource type="Resource" id="Resource_x68ga"]
+script = ExtResource("5_rlusi")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper4/Point3")])
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://bcqb05pw1pkii"
+
+[sub_resource type="Resource" id="Resource_u6o0g"]
+script = ExtResource("6_1uyqe")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader"), NodePath("PanelContainer/MarginContainer/VBox/SlideContent")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("8_1bqkd")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1wvi1"]
+script = ExtResource("3_xg7p8")
+slide_steps = Array[ExtResource("2_dm0p7")]([SubResource("Resource_u6o0g"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[node name="WhyBotherSideProjectResponse" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k86j7")
+steps = Array[ExtResource("2_dm0p7")]([SubResource("Resource_sn6hl"), SubResource("Resource_1uyqe"), SubResource("Resource_mqkff"), SubResource("Resource_1bqkd"), SubResource("Resource_x68ga"), SubResource("Resource_1wvi1")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="SlideHeader" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("9_x68ga")]
+layout_mode = 2
+title = "Why You Bother"
+
+[node name="SlideContent" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="List" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.4
+theme_override_constants/separation = 32
+
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
+custom_minimum_size = Vector2(896, 90)
+layout_mode = 2
+script = ExtResource("10_0me4s")
+
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper"]
+layout_mode = 2
+offset_right = 896.0
+offset_bottom = 64.0
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper/Point0" instance=ExtResource("11_3maux")]
+layout_mode = 2
+
+[node name="TopMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper/Point0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper/Point0/TopMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[i]Isn't it expensive?[/i]
+[b][ul]
+  You can find cheap or free ways to do things!
+[/ul][/b]"
+fit_content = true
+
+[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
+custom_minimum_size = Vector2(896, 90)
+layout_mode = 2
+script = ExtResource("10_0me4s")
+
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper2"]
+layout_mode = 2
+offset_right = 896.0
+offset_bottom = 64.0
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper2/Point1" instance=ExtResource("11_3maux")]
+layout_mode = 2
+
+[node name="TopMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper2/Point1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper2/Point1/TopMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[i]It'll take up my spare time![/i]
+[b][ul]
+  Not if you plan the time you want to spend!
+[/ul][/b]"
+fit_content = true
+
+[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
+custom_minimum_size = Vector2(1200, 90)
+layout_mode = 2
+script = ExtResource("10_0me4s")
+
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper3"]
+layout_mode = 2
+offset_right = 1200.0
+offset_bottom = 90.0
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper3/Point2" instance=ExtResource("11_3maux")]
+layout_mode = 2
+
+[node name="TopMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper3/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper3/Point2/TopMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[i]It's hard, I just want to relax after work![/i]
+[b][ul]
+  The fruits of your labor are lasting and valuable!
+[/ul][/b]"
+fit_content = true
+
+[node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/List"]
+custom_minimum_size = Vector2(896, 90)
+layout_mode = 2
+script = ExtResource("10_0me4s")
+
+[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper4"]
+layout_mode = 2
+offset_right = 896.0
+offset_bottom = 64.0
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper4/Point3" instance=ExtResource("11_3maux")]
+layout_mode = 2
+
+[node name="TopMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper4/Point3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/List/AnimationWrapper4/Point3/TopMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "[i]I'm not good enough to do this![/i]
+[b][ul]
+  You'll get better with experience!
+[/ul][/b]"
+fit_content = true
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("12_6dnnk")]
+layout_mode = 2
+size_flags_vertical = 8

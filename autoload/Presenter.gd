@@ -37,11 +37,13 @@ func _on_ActivePresentation_finished() -> void:
   activePresentation = null
 
 
+# Makes the presentation ready for use.
 func activate_presentation(presentationNode: Presentation) -> void:
   activePresentation = presentationNode
   activePresentation.finished.connect(_on_ActivePresentation_finished)
   
 
+# Starts the active presentation.
 func start_presentation() -> void:
   if not activePresentation:
     return

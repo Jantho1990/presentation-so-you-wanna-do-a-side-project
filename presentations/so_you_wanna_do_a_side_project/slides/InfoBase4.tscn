@@ -1,0 +1,90 @@
+[gd_scene load_steps=17 format=3 uid="uid://bj0iyrx42stup"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_1mtnn"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_bikgo"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_10l7m"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_30egh"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_e8tv0"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_8ytt2"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="7_cac4s"]
+[ext_resource type="PackedScene" uid="uid://bt0q3yfxuiytc" path="res://scenes/SlideHeader/SlideHeader.tscn" id="8_qw38p"]
+[ext_resource type="Texture2D" uid="uid://bdfh6dhj8o861" path="res://assets/media/images/logo_large_color_dark_md.png" id="9_evpn0"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="10_wfqcw"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("4_30egh")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_awelw"]
+script = ExtResource("5_e8tv0")
+targetNodes = Array[NodePath]([NodePath("")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_20msc"]
+script = ExtResource("3_10l7m")
+slide_steps = Array[ExtResource("2_bikgo")]([SubResource("Resource_sho4t"), SubResource("Resource_awelw")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_kf1sq"]
+script = ExtResource("6_8ytt2")
+targetNodes = Array[NodePath]([NodePath(""), NodePath("PanelContainer/MarginContainer/VBox/SlideContent/GodotLogo")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("7_cac4s")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_4e6wk"]
+script = ExtResource("3_10l7m")
+slide_steps = Array[ExtResource("2_bikgo")]([SubResource("Resource_kf1sq"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[node name="InfoBase4" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1mtnn")
+steps = Array[ExtResource("2_bikgo")]([SubResource("Resource_20msc"), SubResource("Resource_4e6wk")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="SlideHeader" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("8_qw38p")]
+layout_mode = 2
+title = "Info 4!"
+
+[node name="SlideContent" type="CenterContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GodotLogo" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent"]
+custom_minimum_size = Vector2(1200, 485)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_evpn0")
+stretch_mode = 5
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("10_wfqcw")]
+layout_mode = 2
+size_flags_vertical = 8

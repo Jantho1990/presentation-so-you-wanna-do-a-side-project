@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cja617wedpwxe"]
+
+[ext_resource type="Texture2D" uid="uid://dtwvo2ahl74oj" path="res://assets/media/icons/flag.png" id="1_4gi1k"]
+
+[node name="IconFlag" type="TextureRect"]
+custom_minimum_size = Vector2(64, 64)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("1_4gi1k")
+expand_mode = 3
+stretch_mode = 5

@@ -2,7 +2,7 @@ class_name HighlightStep
 extends SlideStep
 
 
-@export var highlight_color := Color('#ffeda1')
+@export var highlight_color := Color('#fee7d5')
 @export var animatedNodePaths : Array[NodePath]
 
 var _animatedNodes : Array[Node]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dku4nhq87kkos"]
+
+[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="1_4wmei"]
+
+[node name="IconRightArrow" type="TextureRect"]
+custom_minimum_size = Vector2(64, 64)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_4wmei")
+expand_mode = 3
+stretch_mode = 5

@@ -1,0 +1,367 @@
+[gd_scene load_steps=32 format=3 uid="uid://cmekalqo5ycxu"]
+
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_bf1c5"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_vw88y"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="3_odvif"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="4_rkqt3"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="5_3rdv7"]
+[ext_resource type="Script" uid="uid://ctoliojwclq4e" path="res://resources/SlideToZeroStep.gd" id="6_6exuj"]
+[ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="7_ftpmm"]
+[ext_resource type="Script" uid="uid://yq4ysscbjf0r" path="res://resources/SlideToLocalPositionStep.gd" id="8_qjdnh"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="9_gimst"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="10_ckpi0"]
+[ext_resource type="PackedScene" uid="uid://bt0q3yfxuiytc" path="res://scenes/SlideHeader/SlideHeader.tscn" id="11_rc3qm"]
+[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="12_hr2d1"]
+[ext_resource type="Texture2D" uid="uid://cm5kh8ot7ehdl" path="res://assets/media/images/Iven Smith - IMG_9331 400x600.JPG" id="13_rc3qm"]
+[ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="14_rc3qm"]
+[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="14_t6ksa"]
+[ext_resource type="Texture2D" uid="uid://ccfgi7halul2c" path="res://assets/media/images/loonicy_logo_white_lettering_sm.png" id="15_xfo63"]
+[ext_resource type="Texture2D" uid="uid://dq6bvebdtba5j" path="res://assets/media/images/Logo-DiceTower.png" id="16_po5xw"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="17_3753q"]
+
+[sub_resource type="Resource" id="Resource_sho4t"]
+script = ExtResource("4_rkqt3")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_arwlc"]
+script = ExtResource("5_3rdv7")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_whc7a"]
+script = ExtResource("3_odvif")
+slide_steps = Array[ExtResource("2_vw88y")]([SubResource("Resource_sho4t"), SubResource("Resource_arwlc")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_gi0mb"]
+script = ExtResource("6_6exuj")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper/Mugshot")])
+axis = 2
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_uly4x"]
+script = ExtResource("6_6exuj")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList")])
+axis = 2
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_ytwgk"]
+script = ExtResource("6_6exuj")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper3/LoonicyStuff")])
+axis = 2
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_0owdj"]
+script = ExtResource("8_qjdnh")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper/Mugshot")])
+target_position = Vector2(-800, 0)
+axis = 2
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_l2pno"]
+script = ExtResource("8_qjdnh")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList")])
+target_position = Vector2(0, 1000)
+axis = 2
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_8tfej"]
+script = ExtResource("8_qjdnh")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper3/LoonicyStuff")])
+target_position = Vector2(800, 0)
+axis = 2
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_hhihw"]
+script = ExtResource("7_ftpmm")
+slide_steps = Array[ExtResource("2_vw88y")]([SubResource("Resource_0owdj"), SubResource("Resource_l2pno"), SubResource("Resource_8tfej")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_ff5r5"]
+script = ExtResource("9_gimst")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/SlideHeader")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1vcjn"]
+script = ExtResource("10_ckpi0")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_ywcmg"]
+script = ExtResource("3_odvif")
+slide_steps = Array[ExtResource("2_vw88y")]([SubResource("Resource_hhihw"), SubResource("Resource_ff5r5"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
+
+[node name="WhoAmI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bf1c5")
+steps = Array[ExtResource("2_vw88y")]([SubResource("Resource_whc7a"), SubResource("Resource_gi0mb"), SubResource("Resource_uly4x"), SubResource("Resource_ytwgk"), SubResource("Resource_ywcmg")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="SlideHeader" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("11_rc3qm")]
+layout_mode = 2
+title = "Who Am I?"
+
+[node name="SlideContent" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="HBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent"]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox"]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("12_hr2d1")
+
+[node name="Mugshot" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper"]
+layout_mode = 2
+offset_left = -800.0
+offset_right = -400.0
+offset_bottom = 600.0
+
+[node name="Me" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper/Mugshot"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("13_rc3qm")
+stretch_mode = 5
+
+[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox"]
+custom_minimum_size = Vector2(540, 700)
+layout_mode = 2
+size_flags_horizontal = 6
+script = ExtResource("12_hr2d1")
+
+[node name="BioList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 0
+offset_top = 1000.0
+offset_right = 410.0
+offset_bottom = 1700.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="ContentHeading" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList"]
+custom_minimum_size = Vector2(410, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_type_variation = &"RichSlideContentHeading"
+bbcode_enabled = true
+text = "[b]Josh Anthony[/b]"
+fit_content = true
+
+[node name="Dev" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Dev" instance=ExtResource("14_rc3qm")]
+layout_mode = 2
+
+[node name="MarginTop" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Dev"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Dev/MarginTop"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Game Developer
+[ul]  Programming
+  Producing
+  Designing"
+fit_content = true
+
+[node name="Family" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Family" instance=ExtResource("14_rc3qm")]
+layout_mode = 2
+
+[node name="MarginTop" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Family"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Family/MarginTop"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Live with family in the
+Twin Cities"
+fit_content = true
+
+[node name="Experience" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Experience" instance=ExtResource("14_rc3qm")]
+layout_mode = 2
+
+[node name="MarginTop" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Experience"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Experience/MarginTop"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Other Experiences:
+[ul]  Web Development
+  Engineering Management
+[/ul]"
+fit_content = true
+
+[node name="SideProjects" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/SideProjects" instance=ExtResource("14_rc3qm")]
+layout_mode = 2
+
+[node name="MarginTop" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/SideProjects"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/SideProjects/MarginTop"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"RichContent"
+bbcode_enabled = true
+text = "Working on side projects
+since 2017"
+fit_content = true
+
+[node name="GodotUser" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/GodotUser" instance=ExtResource("14_rc3qm")]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/GodotUser"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Using Godot since: 2019"
+fit_content = true
+
+[node name="Loonicy" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Loonicy"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("14_t6ksa")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Loonicy"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Cofounder of: Loonicy Entertainment"
+fit_content = true
+
+[node name="CurrentGame" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/CurrentGame"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("14_t6ksa")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/CurrentGame"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Current Game: Dice Tower"
+fit_content = true
+
+[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox"]
+custom_minimum_size = Vector2(436, 700)
+layout_mode = 2
+script = ExtResource("12_hr2d1")
+
+[node name="LoonicyStuff" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper3"]
+layout_mode = 2
+offset_left = 800.0
+offset_right = 1159.0
+offset_bottom = 700.0
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="LoonicyLogo" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper3/LoonicyStuff"]
+layout_mode = 2
+texture = ExtResource("15_xfo63")
+stretch_mode = 3
+
+[node name="DTLogo" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper3/LoonicyStuff"]
+custom_minimum_size = Vector2(359, 0)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("16_po5xw")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("17_3753q")]
+layout_mode = 2

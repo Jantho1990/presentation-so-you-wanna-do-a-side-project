@@ -1,13 +1,14 @@
-[gd_scene load_steps=23 format=4 uid="uid://cs7wbuw84f87u"]
+[gd_scene load_steps=24 format=4 uid="uid://cs7wbuw84f87u"]
 
 [ext_resource type="Script" uid="uid://d32kst5ojrapb" path="res://scenes/MainStage/MainStage.gd" id="1_es3d1"]
 [ext_resource type="Material" uid="uid://egpru16uvbme" path="res://assets/grass/Stylized3DGrass.tres" id="2_csaat"]
 [ext_resource type="PackedScene" uid="uid://cwiu8nsyij4gn" path="res://data/player/player.tscn" id="3_cmu2n"]
 [ext_resource type="PackedScene" uid="uid://fia80f2s15bw" path="res://assets/models/tree_arbol/arbol_seco.blend" id="4_gk368"]
 [ext_resource type="PackedScene" uid="uid://efn840pdpyf3" path="res://assets/models/bench/bench.blend" id="5_p3rbw"]
-[ext_resource type="PackedScene" uid="uid://g11g8qtloe0y" path="res://scenes/SWFGPresentationLauncher/SWFGPresentationLauncher.tscn" id="6_don10"]
 [ext_resource type="Script" uid="uid://ci0vi15mimg43" path="res://scenes/OldMainStage/Camera3D.gd" id="7_oq33f"]
+[ext_resource type="Script" uid="uid://du7cywxltdl6r" path="res://scenes/PresentationLauncher/PresentationLauncher.gd" id="7_ysmp3"]
 [ext_resource type="Script" uid="uid://hjwt42hsvhrv" path="res://scenes/MainStage/InteractionCamera.gd" id="8_crlvf"]
+[ext_resource type="PackedScene" uid="uid://ixeixm2n366t" path="res://presentations/so_you_wanna_do_a_side_project/SoYouWannaDoASideProjectPresentation.tscn" id="8_p003e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6sp7b"]
 ground_bottom_color = Color(0.113725, 0.133333, 0.160784, 1)
@@ -141,7 +142,14 @@ transform = Transform3D(-0.604822, 0, -0.796361, 0, 1, 0, 0.796361, 0, -0.604822
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="SWFGPresentationLauncher" parent="Presentation/SubViewport" instance=ExtResource("6_don10")]
+[node name="PresentationLauncher" type="Control" parent="Presentation/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_ysmp3")
+presentationScene = ExtResource("8_p003e")
+metadata/_custom_type_script = "uid://du7cywxltdl6r"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Presentation"]
 mesh = SubResource("QuadMesh_1lygh")
