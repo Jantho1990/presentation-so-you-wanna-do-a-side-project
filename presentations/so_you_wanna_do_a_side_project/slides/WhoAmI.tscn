@@ -186,7 +186,12 @@ theme_override_constants/separation = 16
 [node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Dev" instance=ExtResource("14_rc3qm")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Dev"]
+[node name="MarginTop" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Dev"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Dev/MarginTop"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -205,14 +210,19 @@ theme_override_constants/separation = 16
 [node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Family" instance=ExtResource("14_rc3qm")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Family"]
+[node name="MarginTop" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Family"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Family/MarginTop"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "Live with partner and son in
-the Twin Cities"
+text = "Live with family in the
+Twin Cities"
 fit_content = true
 
 [node name="Experience" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList"]
@@ -222,7 +232,12 @@ theme_override_constants/separation = 16
 [node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Experience" instance=ExtResource("14_rc3qm")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Experience"]
+[node name="MarginTop" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Experience"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/Experience/MarginTop"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -241,7 +256,12 @@ theme_override_constants/separation = 16
 [node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/SideProjects" instance=ExtResource("14_rc3qm")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/SideProjects"]
+[node name="MarginTop" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/SideProjects"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/AnimationWrapper2/BioList/SideProjects/MarginTop"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
