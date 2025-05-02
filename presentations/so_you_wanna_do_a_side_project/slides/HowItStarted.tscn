@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ctwi2rxx52uky"]
+[gd_scene load_steps=42 format=3 uid="uid://ctwi2rxx52uky"]
 
 [ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_menih"]
 [ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_dtbys"]
@@ -14,8 +14,10 @@
 [ext_resource type="Script" uid="uid://els5543ifwap" path="res://resources/WaitStep.gd" id="8_j4myk"]
 [ext_resource type="PackedScene" uid="uid://cja617wedpwxe" path="res://scenes/IconFlag/IconFlag.tscn" id="9_mycu7"]
 [ext_resource type="Script" uid="uid://e2rb8hrg2r31" path="res://resources/ClearHighlightStep.gd" id="9_rmdqn"]
-[ext_resource type="Texture2D" uid="uid://ulhi0bin0nml" path="res://assets/media/images/godot-download-page.png" id="10_qjqqn"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="11_qpk2d"]
+[ext_resource type="Texture2D" uid="uid://bfudavbgkkd00" path="res://assets/media/images/bullet-journal-2-sm.jpg" id="15_rmdqn"]
+[ext_resource type="Texture2D" uid="uid://cwhule4tuf6ah" path="res://assets/media/images/morning-person-sm.jpg" id="16_08ht6"]
+[ext_resource type="Texture2D" uid="uid://d1owovbdx6lds" path="res://assets/media/images/consistency-sm.jpg" id="17_ukic1"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("4_iph3c")
@@ -282,19 +284,17 @@ layout_mode = 2
 
 [node name="ImgBojo" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer"]
 layout_mode = 2
-texture = ExtResource("10_qjqqn")
+texture = ExtResource("15_rmdqn")
 stretch_mode = 4
 
 [node name="ImgMorning" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer"]
-modulate = Color(0.25098, 1, 1, 1)
 layout_mode = 2
-texture = ExtResource("10_qjqqn")
+texture = ExtResource("16_08ht6")
 stretch_mode = 4
 
 [node name="ImgConsistency" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/ImageContainer"]
-modulate = Color(1, 0.333333, 1, 1)
 layout_mode = 2
-texture = ExtResource("10_qjqqn")
+texture = ExtResource("17_ukic1")
 stretch_mode = 4
 
 [node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("11_qpk2d")]
