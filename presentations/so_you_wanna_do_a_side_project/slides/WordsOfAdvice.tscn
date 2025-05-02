@@ -102,7 +102,7 @@ script = ExtResource("3_yjrnb")
 slide_steps = Array[ExtResource("2_88wrb")]([SubResource("Resource_nk01r"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
-[node name="WordsOfCaution" type="Control"]
+[node name="WordsOfAdvice" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -133,7 +133,7 @@ theme_override_constants/separation = 64
 
 [node name="SlideHeader" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("8_xdror")]
 layout_mode = 2
-title = "Words of Caution"
+title = "Words of Advice"
 
 [node name="SlideContent" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
 layout_mode = 2

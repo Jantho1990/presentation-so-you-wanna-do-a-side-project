@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bxgskyrt4tpgk" path="res://presentations/so_you_wanna_do_a_side_project/slides/TitleProcessSideProjects.tscn" id="10_gvklx"]
 [ext_resource type="PackedScene" uid="uid://ctwi2rxx52uky" path="res://presentations/so_you_wanna_do_a_side_project/slides/HowItStarted.tscn" id="12_8ilsc"]
 [ext_resource type="PackedScene" uid="uid://08n1pcn5utjb" path="res://presentations/so_you_wanna_do_a_side_project/slides/TitleConclusion.tscn" id="13_ej7u1"]
-[ext_resource type="PackedScene" uid="uid://bbn4usdt0u6dj" path="res://presentations/so_you_wanna_do_a_side_project/slides/WordsOfCaution.tscn" id="17_gpo44"]
+[ext_resource type="PackedScene" uid="uid://bbn4usdt0u6dj" path="res://presentations/so_you_wanna_do_a_side_project/slides/WordsOfAdvice.tscn" id="17_gpo44"]
 [ext_resource type="PackedScene" uid="uid://bgmkmrv2dbwrs" path="res://presentations/so_you_wanna_do_a_side_project/slides/WhyBotherSideProjectResponse.tscn" id="18_1yi3o"]
 [ext_resource type="PackedScene" uid="uid://ckvpy0cxocvbx" path="res://presentations/so_you_wanna_do_a_side_project/slides/ConclusionOverview.tscn" id="18_tenj6"]
 [ext_resource type="PackedScene" uid="uid://dovq32tx3xfdf" path="res://presentations/so_you_wanna_do_a_side_project/slides/FinalThoughts.tscn" id="20_lwktu"]
@@ -34,10 +34,6 @@ script = ExtResource("1_tvrrd")
 metadata/_custom_type_script = "uid://cx5ff6rmig1pl"
 
 [node name="SWFGTitle" parent="." instance=ExtResource("2_lx6xu")]
-layout_mode = 1
-
-[node name="TitleThankYou" parent="." instance=ExtResource("3_0ajfk")]
-visible = false
 layout_mode = 1
 
 [node name="WhoAreYou" parent="." instance=ExtResource("3_g2hp5")]
@@ -96,7 +92,7 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="WordsOfCaution" parent="." instance=ExtResource("17_gpo44")]
+[node name="WordsOfAdvice" parent="." instance=ExtResource("17_gpo44")]
 visible = false
 layout_mode = 1
 
@@ -113,5 +109,9 @@ visible = false
 layout_mode = 1
 
 [node name="FinalThoughts" parent="." instance=ExtResource("20_lwktu")]
+visible = false
+layout_mode = 1
+
+[node name="TitleThankYou" parent="." instance=ExtResource("3_0ajfk")]
 visible = false
 layout_mode = 1
