@@ -319,7 +319,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "Volunteering for Causes"
+text = "Volunteering for causes"
 fit_content = true
 
 [node name="Startup" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
@@ -335,7 +335,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "Founding a Company"
+text = "Founding a company"
 fit_content = true
 
 [node name="RPG" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
@@ -351,7 +351,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "Running a D&D Campaign"
+text = "Running a D&D campaign"
 fit_content = true
 
 [node name="Music" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
@@ -367,7 +367,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "Composing Music"
+text = "Composing music"
 fit_content = true
 
 [node name="Presentation" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBox/VBox"]
