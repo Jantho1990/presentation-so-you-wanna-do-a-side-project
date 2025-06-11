@@ -241,7 +241,12 @@ theme_override_constants/separation = 16
 [node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point0" instance=ExtResource("10_6f34n")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point0"]
+[node name="TopMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point0/TopMargin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -262,7 +267,12 @@ theme_override_constants/separation = 16
 [node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point1" instance=ExtResource("10_6f34n")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point1"]
+[node name="TopMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point1/TopMargin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -283,7 +293,12 @@ theme_override_constants/separation = 16
 [node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point2" instance=ExtResource("10_6f34n")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point2"]
+[node name="TopMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideLeft/Point2/TopMargin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -320,7 +335,12 @@ theme_override_constants/separation = 16
 [node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point0" instance=ExtResource("10_6f34n")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point0"]
+[node name="TopMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point0/TopMargin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -341,7 +361,12 @@ theme_override_constants/separation = 16
 [node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point1" instance=ExtResource("10_6f34n")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point1"]
+[node name="TopMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point1/TopMargin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -362,7 +387,12 @@ theme_override_constants/separation = 16
 [node name="IconFlag" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point2" instance=ExtResource("10_6f34n")]
 layout_mode = 2
 
-[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point2"]
+[node name="TopMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"RichContentTopMargin"
+
+[node name="Content" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/SlideContent/HBoxContainer/SideRight/Point2/TopMargin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4

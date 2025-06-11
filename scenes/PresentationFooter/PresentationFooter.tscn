@@ -15,7 +15,7 @@ size_flags_stretch_ratio = 0.72
 theme_type_variation = &"FooterRichTextLabel"
 bbcode_enabled = true
 text = "[i]So, You Wanna Do a Side Project?
-[/i]"
+Version 2.1[/i]"
 
 [node name="RightContent" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 32)
