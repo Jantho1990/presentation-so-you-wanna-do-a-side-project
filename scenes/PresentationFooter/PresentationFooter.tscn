@@ -7,7 +7,7 @@ offset_bottom = 48.0
 grow_horizontal = 2
 size_flags_vertical = 10
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="LeftContent" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -15,13 +15,13 @@ size_flags_stretch_ratio = 0.72
 theme_type_variation = &"FooterRichTextLabel"
 bbcode_enabled = true
 text = "[i]So, You Wanna Do a Side Project?
-[/i]"
+Version 2.1[/i]"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="RightContent" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"FooterRichTextLabel"
 bbcode_enabled = true
 text = "[right][i]Josh Anthony, Loonicy Entertainment
-Presented for Minnebar 19 (05/03/2025)[/i][/right]"
+Presented for IGDA Twin Cities (06/11/2025)[/i][/right]"
