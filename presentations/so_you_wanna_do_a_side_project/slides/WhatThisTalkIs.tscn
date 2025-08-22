@@ -217,7 +217,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_type_variation = &"RichContent"
 bbcode_enabled = true
-text = "Originally presented at Tech Con 2024 and Minnebar 19"
+text = "Originally presented at Tech Con 2024,  Minnebar 19, and IGDA Twin Cities"
 fit_content = true
 
 [node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("11_om071")]
